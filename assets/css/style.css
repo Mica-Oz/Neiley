@@ -88,9 +88,6 @@ img {
   transition: var(--transition);
 }
 
-.mack.image-zoom:hover .image-zoom-wrapper img {
-  transform: scale(1.25) !important;
-}
 .sarah.image-zoom:hover .image-zoom-wrapper img {
   transform: scale(1.1) !important;
 }
@@ -789,10 +786,6 @@ footer img {
 #lawyers .section-title h1 {
   color: var(--c-dark3) !important;
 }
-#mackenzie.row {
-  justify-content: flex-end;
-  /* transform: translateX(-201px); */
-}
 .title-cont {
   position: absolute;
   z-index: 3;
@@ -890,13 +883,6 @@ footer img {
   height: 570px;
   /* align-items: flex-end; */
 }
-#mackenzie .attorneyText {
-  display: flex;
-  flex-direction: column;
-  /* align-items: flex-start; */
-  height: 570px;
-  overflow-y: scroll;
-}
 #zoe .attorneyText {
   display: flex;
   flex-direction: column;
@@ -908,10 +894,6 @@ footer img {
   height: 559px;
 }
 
-#mackenzie .bio {
-  width: 98.5%;
-  transform: translateX(-9px);
-}
 .speaker-content {
   background-color: var(--c-brand);
   color: var(--c-light3);
