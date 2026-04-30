@@ -234,7 +234,7 @@ h2 {
   color: white;
   background: url(../images/Sarr-crop.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   width: 550px;
   height: 550px;
   border: 15px solid #d0b192;
