@@ -537,14 +537,30 @@ main:focus {
   }
 }
 
-/* BTN */
+/* BTN
+   Square and restrained: small tracked capitals, generous padding, and a
+   hairline set just inside the edge (like a debossed card). */
 
 .btn {
-  /* font-weight: 600; */
-  font-size: 26px;
+  --btn-line: color-mix(in srgb, var(--c-on-accent) 38%, transparent);
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   border-radius: 0;
-  padding: 10px 24px;
+  padding: 16px calc(34px - 0.24em) 15px 34px; /* offset trailing tracking */
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.btn-lg {
+  font-size: 15px;
+  padding: 18px calc(40px - 0.24em) 17px 40px;
+}
+.navbar .btn {
+  font-size: 13px;
+  padding: 12px calc(24px - 0.24em) 11px 24px;
 }
 
 .btn-brand,
@@ -552,6 +568,7 @@ main:focus {
   background-color: var(--c-accent);
   border: 1px solid var(--c-accent);
   color: var(--c-on-accent);
+  box-shadow: inset 0 0 0 3px var(--c-accent), inset 0 0 0 4px var(--btn-line);
 }
 .btn-brand-light {
   background-color: transparent;
@@ -561,10 +578,13 @@ main:focus {
 
 .btn-brand:hover,
 .btn-primary:hover,
-.btn-primary:active {
+.btn-primary:active,
+.btn-brand:focus-visible {
   background-color: transparent;
   border-color: var(--c-accent);
   color: var(--c-accent);
+  box-shadow: inset 0 0 0 3px transparent,
+    inset 0 0 0 4px color-mix(in srgb, var(--c-accent) 40%, transparent);
 }
 .btn-brand-light:hover {
   background-color: var(--c-body);
@@ -834,15 +854,18 @@ h2 {
 .pi-cta {
   margin-top: 48px;
 }
+.pi-cta .btn {
+  display: block;
+  width: 100%;
+  letter-spacing: 0.16em;
+  padding-inline: 16px;
+}
 .pi-cta p {
   font-family: var(--font-title);
   font-size: 24px;
   font-style: italic;
   color: var(--c-muted);
   margin-bottom: 20px;
-}
-.pi-cta .btn {
-  font-size: 20px;
 }
 
 /* Keep list tops aligned across columns when a heading wraps */
@@ -1014,6 +1037,8 @@ h2 {
 .get-directions-btn {
   border: var(--c-accent) 1px solid;
   color: var(--c-accent);
+  box-shadow: inset 0 0 0 3px transparent,
+    inset 0 0 0 4px color-mix(in srgb, var(--c-accent) 40%, transparent);
 }
 .get-directions-btn:hover {
   background-color: var(--c-accent);
@@ -1972,4 +1997,79 @@ footer img {
   .section-padding {
     padding: 0 !important;
   }
+}
+
+/* QUICK EXIT (safety pages; injected by main.js) */
+.quick-exit {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 1040;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px calc(22px - 0.2em) 13px 22px;
+  border: 1px solid var(--c-body);
+  border-radius: 0;
+  background-color: var(--c-body);
+  color: var(--c-bg);
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-shadow: var(--box-shadow);
+}
+.quick-exit:hover {
+  background-color: var(--c-bg);
+  color: var(--c-body);
+}
+.quick-exit-key {
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}
+@media (max-width: 767px) {
+  .quick-exit {
+    right: 12px;
+    bottom: calc(56px + 12px + env(safe-area-inset-bottom, 0px));
+  }
+  .quick-exit-key {
+    display: none;
+  }
+}
+.quick-exit-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 24px;
+  padding: 14px 20px;
+  background-color: var(--c-bg-alt);
+  border-bottom: 1px solid var(--c-hairline);
+  text-align: center;
+}
+.quick-exit-note p {
+  margin: 0;
+  font-size: 16px;
+}
+.quick-exit-note kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--c-hairline);
+  border-radius: 0;
+  background: none;
+  color: var(--c-body);
+  font-family: var(--font-base);
+  font-size: 14px;
+}
+.quick-exit-dismiss {
+  padding: 6px 14px;
+  border: 1px solid var(--c-hairline);
+  background: none;
+  color: var(--c-link);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }

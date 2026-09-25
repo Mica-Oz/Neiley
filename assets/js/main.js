@@ -361,6 +361,67 @@
     });
   }
 
+  /* ---------- Quick Exit (safety pages) ---------- */
+
+  // Leaves instantly for a neutral page. location.replace() swaps out this
+  // history entry, so the Back button doesn't return here.
+  var EXIT_URL = "https://www.google.com/search?q=weather";
+
+  function quickExit() {
+    try {
+      window.open(EXIT_URL, "_blank", "noopener");
+    } catch (e) {}
+    window.location.replace(EXIT_URL);
+  }
+
+  function setupQuickExit() {
+    if (!root.hasAttribute("data-quick-exit")) return;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "quick-exit";
+    btn.innerHTML =
+      (isSpanish ? "Salida rápida" : "Quick Exit") +
+      '<span class="quick-exit-key" aria-hidden="true">Esc</span>';
+    btn.setAttribute(
+      "aria-label",
+      isSpanish ? "Salida rápida: salir de este sitio de inmediato" : "Quick Exit: leave this site immediately"
+    );
+    btn.addEventListener("click", quickExit);
+    document.body.appendChild(btn);
+    document.body.classList.add("has-quick-exit");
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !e.defaultPrevented) quickExit();
+    });
+
+    // One-line safety notice, once per browser session (session storage
+    // only, so nothing lasting is left on the device).
+    var seen = false;
+    try {
+      seen = sessionStorage.getItem("nl-exit-note") === "1";
+    } catch (e) {}
+    if (seen) return;
+    var note = document.createElement("div");
+    note.className = "quick-exit-note";
+    note.setAttribute("role", "note");
+    note.innerHTML =
+      "<p>" +
+      (isSpanish
+        ? "Por su seguridad: presione <kbd>Esc</kbd> o seleccione <strong>Salida rápida</strong> en cualquier momento para salir de este sitio de inmediato. Considere usar una ventana de navegación privada."
+        : "For your safety: press <kbd>Esc</kbd> or select <strong>Quick Exit</strong> at any time to leave this site immediately. Consider using a private browsing window.") +
+      '</p><button type="button" class="quick-exit-dismiss">' +
+      (isSpanish ? "Entendido" : "Got it") +
+      "</button>";
+    note.querySelector("button").addEventListener("click", function () {
+      note.remove();
+      try {
+        sessionStorage.setItem("nl-exit-note", "1");
+      } catch (e) {}
+    });
+    var main = document.getElementById("main");
+    if (main) main.insertBefore(note, main.firstChild);
+  }
+
   /* ---------- Mobile call bar ---------- */
 
   var ICON_PHONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>';
@@ -451,6 +512,7 @@
   buildPrefs();
   setupIntake();
   setupTools();
+  setupQuickExit();
   buildCallBar();
   tuckHero();
   updateNav();
