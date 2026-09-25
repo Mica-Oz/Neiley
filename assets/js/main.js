@@ -285,7 +285,27 @@
     email.addEventListener("input", checkReach);
     phone.addEventListener("input", checkReach);
 
+    // Until the real Web3Forms key is added, don't send visitors to an error
+    // page; point them to the phone and email instead.
+    var key = form.querySelector("[data-intake-key]");
+    var notConnected = key && /^YOUR_/.test(key.value);
+
     form.addEventListener("submit", function (e) {
+      if (notConnected) {
+        e.preventDefault();
+        var note = form.querySelector("[data-intake-offline]");
+        if (!note) {
+          note = document.createElement("p");
+          note.className = "intake-urgent";
+          note.setAttribute("data-intake-offline", "");
+          note.setAttribute("role", "status");
+          note.innerHTML = isSpanish
+            ? 'Nuestro formulario en línea no está disponible en este momento. Llámenos al <a href="tel:970-963-6363">970-963-6363</a> o escríbanos a <a href="mailto:office@neiley.com">office@neiley.com</a>.'
+            : 'Our online form is temporarily unavailable. Please call <a href="tel:970-963-6363">970-963-6363</a> or email <a href="mailto:office@neiley.com">office@neiley.com</a>.';
+          form.querySelector(".intake-submit").appendChild(note);
+        }
+        return;
+      }
       open(false);
       checkReach();
       if (!form.checkValidity()) {
