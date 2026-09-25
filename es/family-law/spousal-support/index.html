@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abogado de manutención conyugal en Colorado | Abogado de pensión alimenticia en el Western Slope | Neiley Law</title>
+    <meta name="description" content="Abogados con experiencia en manutención conyugal al servicio de Carbondale y Rifle. Le orientamos sobre las pautas de manutención conyugal de Colorado, las modificaciones y el cumplimiento en todo el Western Slope." />
+    <link rel="canonical" href="https://www.neiley.com/es/family-law/spousal-support/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/family-law/spousal-support/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/family-law/spousal-support/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/family-law/spousal-support/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="es_US" />
+    <meta property="og:title" content="Abogado de manutención conyugal en Colorado | Abogado de pensión alimenticia en el Western Slope | Neiley Law" />
+    <meta property="og:description" content="Abogados con experiencia en manutención conyugal al servicio de Carbondale y Rifle. Le orientamos sobre las pautas de manutención conyugal de Colorado, las modificaciones y el cumplimiento en todo el Western Slope." />
+    <meta property="og:url" content="https://www.neiley.com/es/family-law/spousal-support/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abogado de manutención conyugal en Colorado | Abogado de pensión alimenticia en el Western Slope | Neiley Law" />
+    <meta name="twitter:description" content="Abogados con experiencia en manutención conyugal al servicio de Carbondale y Rifle. Le orientamos sobre las pautas de manutención conyugal de Colorado, las modificaciones y el cumplimiento en todo el Western Slope." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.neiley.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Derecho de familia",
+      "item": "https://www.neiley.com/es/family-law/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Abogado de manutención conyugal en Colorado",
+      "item": "https://www.neiley.com/es/family-law/spousal-support/"
+    }
+  ]
+}
+    </script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Neiley Law - Spousal Support",
+        "description": "Spousal support and maintenance attorneys serving Western Colorado including Carbondale and Rifle",
+        "provider": { "@type": "Attorney", "name": "Neiley Law" },
+        "areaServed": [ { "@type": "City", "name": "Aspen", "containedIn": { "@type": "State", "name": "Colorado" } },
+          { "@type": "City", "name": "Rifle", "containedIn": { "@type": "State", "name": "Colorado" } }
+        ],
+        "serviceType": "Spousal Support Law"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/es/"><img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" width="100%" id="logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir o cerrar el menú de navegación"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/es/#hero">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#about">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#team">Equipo</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#practice">Áreas de práctica</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#locations">Oficinas</a></li>
+          </ul>
+          <a href="/es/#contact" class="btn btn-brand ms-lg-3">Contacto</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" tabindex="-1">
+
+    <section id="location-hero" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h1 class="display-3 fw-semibold">Manutención conyugal</h1>
+            <div class="line" style="background-color: var(--c-brand)"></div>
+            <p class="lead">Protegemos sus intereses económicos durante y después del divorcio</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <article>
+              <h2>Abogados de manutención conyugal en Colorado</h2>
+              <p>La manutención conyugal, conocida comúnmente como pensión alimenticia, es uno de los temas más disputados en los procesos de divorcio en Colorado. Ya sea que usted busque recibir manutención para sostenerse después del divorcio o que pueda tener la obligación de pagarla, las consecuencias económicas pueden ser importantes y duraderas. En Neiley Law brindamos representación con experiencia en todos los asuntos de manutención conyugal en el oeste de Colorado, incluidos <a href="/es/locations/carbondale/">Carbondale</a> y <a href="/es/locations/rifle/">Rifle</a>.</p>
+
+              <p>Nuestro bufete boutique le asegura una atención personalizada de abogados con experiencia que conocen los detalles de la ley de manutención conyugal de Colorado y que defenderán con eficacia sus intereses económicos. Nos tomamos el tiempo para analizar a fondo su situación económica, entender sus necesidades y metas, y desarrollar una estrategia enfocada en lograr el mejor resultado posible.</p>
+
+              <h2>Las pautas de manutención conyugal de Colorado</h2>
+              <p>Colorado ofrece pautas orientativas de manutención conyugal para matrimonios que duraron entre 3 y 20 años cuando el ingreso bruto ajustado combinado de las partes es de $240,000 o menos. Estas pautas sugieren tanto la cantidad como la duración de la manutención con base en una fórmula que considera los ingresos de cada parte y la duración del matrimonio.</p>
+
+              <p>Según las pautas orientativas, la cantidad sugerida de manutención se calcula como el 40% del ingreso bruto ajustado mensual de la parte con mayores ingresos, menos el 50% del ingreso bruto ajustado mensual de la parte con menores ingresos. Sin embargo, la suma de la manutención y los ingresos de quien la recibe no debe superar el 40% del ingreso bruto ajustado mensual combinado de las partes.</p>
+
+              <p>La duración sugerida de la manutención aumenta según la duración del matrimonio. Para un matrimonio de 3 años, la duración orientativa es el 31% de los meses que duró el matrimonio. Este porcentaje aumenta gradualmente hasta llegar al 50% de los meses del matrimonio en los matrimonios que duraron 20 años o más. En los matrimonios de más de 20 años, la manutención puede otorgarse por un plazo indefinido.</p>
+
+              <p>Es fundamental entender que estas pautas son solo orientativas. Los tribunales tienen amplia facultad para apartarse de ellas según las circunstancias específicas de cada caso. Un abogado con experiencia puede ayudarle a entender cómo se aplican las pautas a su situación e identificar los factores que podrían justificar apartarse de la cantidad o la duración sugeridas.</p>
+
+              <h2>Factores que consideran los tribunales al otorgar manutención conyugal</h2>
+              <p>Para decidir si otorgan manutención conyugal, y en qué cantidad y por cuánto tiempo, los tribunales de Colorado consideran muchos factores además de las pautas orientativas. Estos factores le dan al tribunal una visión completa de la situación y las necesidades económicas de las partes:</p>
+
+              <ul>
+                <li>Los recursos económicos de la parte que solicita la manutención, incluidos los bienes conyugales que se le asignaron y su capacidad para cubrir sus necesidades por sí misma</li>
+                <li>Los recursos económicos de la otra parte, incluidos los bienes conyugales que se le asignaron y su capacidad para cubrir sus propias necesidades mientras paga la manutención</li>
+                <li>El estilo de vida establecido durante el matrimonio</li>
+                <li>La división de los bienes conyugales, incluido si se otorgaron bienes adicionales en lugar de manutención</li>
+                <li>Los ingresos, el empleo y la capacidad de conseguir empleo de ambas partes</li>
+                <li>Si alguna de las partes históricamente ganó menos o tuvo menos oportunidades de dedicarse a su desarrollo laboral debido a las responsabilidades del hogar o de la crianza de los hijos</li>
+                <li>La edad y la salud de cada parte</li>
+                <li>Las contribuciones económicas o no económicas importantes al matrimonio, o a la carrera o la capacidad de generar ingresos de la otra parte</li>
+                <li>Cualquier responsabilidad de custodia y responsabilidad parental respecto a los hijos del matrimonio</li>
+              </ul>
+
+              <h2>Manutención conyugal temporal durante el divorcio</h2>
+              <p>Se puede otorgar manutención temporal mientras el divorcio está en trámite, para mantener la situación económica tal como está y asegurar que ambas partes puedan cubrir sus necesidades básicas durante el proceso. La manutención temporal es especialmente importante cuando uno de los cónyuges dependió económicamente del otro durante el matrimonio y necesita apoyo para cubrir los gastos de vida, los honorarios de abogados y otros costos mientras se resuelve el divorcio.</p>
+
+              <p>El criterio para la manutención temporal es distinto del que se aplica a la manutención definitiva. Los tribunales se enfocan en las necesidades y los recursos económicos inmediatos de cada parte, más que en consideraciones a largo plazo. La manutención temporal termina cuando el divorcio es definitivo y entran en vigor las órdenes de manutención definitivas.</p>
+
+              <p>Ayudamos a nuestros clientes a solicitar manutención temporal cuando es necesaria para asegurar su estabilidad económica durante el proceso de divorcio, y los defendemos contra solicitudes de manutención temporal excesivas que crearían una carga económica injusta.</p>
+
+              <h2>Manutención conyugal de rehabilitación</h2>
+              <p>La manutención de rehabilitación está diseñada para apoyar a un cónyuge mientras obtiene la educación, la capacitación o la experiencia necesarias para mantenerse por sí mismo. Esta forma de manutención reconoce que un cónyuge que estuvo fuera del mercado laboral durante el matrimonio puede necesitar tiempo y recursos para desarrollar o actualizar sus habilidades y encontrar un empleo adecuado.</p>
+
+              <p>La manutención de rehabilitación normalmente incluye apoyo para gastos educativos, capacitación vocacional, certificaciones profesionales y gastos de vida durante el periodo de rehabilitación. Su duración generalmente depende del tiempo que se espera para completar el plan de rehabilitación y conseguir empleo.</p>
+
+              <p>Cuando buscamos manutención de rehabilitación, trabajamos con nuestros clientes para desarrollar planes de rehabilitación realistas que los tribunales consideren razonables y apropiados. Cuando defendemos contra solicitudes de manutención de rehabilitación, evaluamos la viabilidad, el calendario y el costo del plan propuesto para asegurar que la obligación sea razonable y tenga límites adecuados.</p>
+
+              <h2>Manutención conyugal en casos de altos ingresos</h2>
+              <p>Cuando los ingresos combinados de las partes superan los $240,000, las pautas orientativas de manutención no se aplican, y los tribunales tienen una facultad aún más amplia para determinar la manutención. Los casos de altos ingresos con frecuencia implican análisis financieros complejos, como la evaluación de paquetes de compensación para ejecutivos, opciones sobre acciones, compensación diferida, ingresos de negocios, rendimientos de inversiones y otras formas de ingresos no tradicionales.</p>
+
+              <p>En <a href="/es/locations/carbondale/">el Roaring Fork Valley</a>, los divorcios de altos ingresos son comunes, y las disputas sobre manutención pueden involucrar cantidades considerables. El estilo de vida matrimonial en estas comunidades suele incluir bienes raíces de lujo, membresías en centros turísticos, viajes frecuentes y otros elementos de alto costo que influyen en el cálculo de la manutención. Nuestros abogados tienen amplia experiencia en el análisis de situaciones financieras complejas y en la defensa de resultados justos de manutención en casos de altos ingresos.</p>
+
+              <p>Cuando es necesario, trabajamos con contadores forenses y expertos financieros para determinar con exactitud los ingresos, identificar ganancias ocultas o subdeclaradas y proyectar la capacidad futura de generar ingresos. Este análisis financiero minucioso asegura que la manutención otorgada se base en información financiera exacta y completa.</p>
+
+              <h2>Modificación de la manutención conyugal</h2>
+              <p>La ley de Colorado permite modificar la manutención cuando ha habido un cambio sustancial y continuo en las circunstancias que hace injusta la orden de manutención existente. Algunas razones comunes para pedir una modificación son los cambios importantes en los ingresos o la situación laboral de cualquiera de las partes, la pérdida involuntaria del empleo, una discapacidad o problemas de salud graves, la jubilación, recibir una herencia u otro acontecimiento económico importante, y los cambios sustanciales en los gastos de vida.</p>
+
+              <p>La parte que solicita la modificación tiene la carga de demostrar que el cambio en las circunstancias es tanto sustancial como continuo; por lo general, las variaciones temporales en los ingresos o los gastos no justifican una modificación. Los tribunales también consideran si el cambio fue voluntario o involuntario, y si la parte que solicita la modificación ha hecho esfuerzos razonables para mantener sus ingresos.</p>
+
+              <p>Representamos a ambas partes en los procesos de modificación de la manutención: ayudamos a quienes la reciben a proteger la manutención que se les otorgó y a quienes la pagan a obtener las reducciones apropiadas cuando las circunstancias realmente justifican una modificación.</p>
+
+              <h2>Cohabitación y manutención conyugal</h2>
+              <p>La ley de Colorado permite a los tribunales modificar o terminar la manutención cuando el cónyuge que la recibe vive con otra persona en una relación similar al matrimonio. La cohabitación no termina automáticamente la manutención, pero es un factor que los tribunales consideran al evaluar si una modificación es apropiada.</p>
+
+              <p>Para demostrar la cohabitación, el cónyuge que paga normalmente debe probar que quien recibe la manutención vive con otra persona en una relación que le brinda un apoyo económico similar al que brindaría un matrimonio. Los tribunales examinan factores como los gastos de vida compartidos, las cuentas financieras conjuntas, la duración de la relación y el grado en que la persona con quien vive contribuye a su sostén económico.</p>
+
+              <h2>Consecuencias fiscales de la manutención conyugal</h2>
+              <p>El tratamiento fiscal de la manutención conyugal cambió de manera importante con la Ley de Empleos y Reducción de Impuestos de 2017 (Tax Cuts and Jobs Act). En los acuerdos de divorcio firmados después del 31 de diciembre de 2018, los pagos de manutención ya no son deducibles para el cónyuge que paga y ya no se incluyen en los ingresos sujetos a impuestos de quien los recibe. Esto representa un cambio fundamental respecto al tratamiento fiscal anterior y tiene consecuencias importantes en las negociaciones de manutención.</p>
+
+              <p>Con las reglas fiscales actuales, la eliminación de la deducción en la práctica aumenta el costo después de impuestos de la manutención para el cónyuge que paga. Este cambio ha influido en la manera en que se negocia y se estructura la manutención, ya que ahora las consecuencias fiscales recaen por completo en quien paga. Nuestros abogados toman en cuenta las consecuencias fiscales actuales en las negociaciones de manutención y ayudan a los clientes a entender el verdadero impacto económico de los arreglos de manutención propuestos.</p>
+
+              <h2>Cumplimiento de las órdenes de manutención conyugal</h2>
+              <p>Cuando un excónyuge no paga la manutención ordenada por el tribunal, existen recursos para hacerla cumplir mediante procedimientos por desacato. Los tribunales pueden imponer diversas sanciones por no pagar la manutención, como el embargo de salario, el embargo de cuentas bancarias, los gravámenes sobre bienes, el desacato al tribunal (que puede resultar en cárcel) y la orden de que se paguen al cónyuge que recibe la manutención los honorarios de abogados por los costos de hacerla cumplir.</p>
+
+              <p>Representamos a quienes reciben manutención en los procesos de cumplimiento para asegurar que se cumplan las obligaciones de manutención. También representamos a quienes pagan y enfrentan acciones de cumplimiento, ayudándoles a demostrar que han hecho esfuerzos de buena fe para cumplir las órdenes de manutención o a obtener las modificaciones apropiadas cuando no pueden cumplirlas.</p>
+
+              <h2>Manutención conyugal y división de bienes</h2>
+              <p>La manutención y la división de bienes son aspectos del divorcio que están relacionados y deben considerarse en conjunto. Los tribunales pueden otorgar a uno de los cónyuges una parte mayor de los bienes conyugales en lugar de manutención o además de ella. Por otro lado, se puede otorgar manutención para compensar una división desigual de los bienes o para atender diferencias en la capacidad de generar ingresos que la división de bienes por sí sola no puede resolver.</p>
+
+              <p>La relación entre la manutención y la división de bienes abre la puerta a soluciones creativas en los acuerdos que benefician los intereses de ambas partes. Por ejemplo, un cónyuge podría aceptar una parte mayor de los bienes a cambio de una manutención reducida o de no recibir manutención, o viceversa. Ayudamos a nuestros clientes a evaluar estas opciones y a desarrollar estrategias que mejoren su situación económica en general.</p>
+
+              <h2>Acuerdos contractuales de manutención conyugal</h2>
+              <p>Las partes pueden acordar los términos de la manutención mediante un acuerdo de separación o un acuerdo estipulado, en lugar de que el tribunal la determine. Los acuerdos contractuales de manutención pueden incluir disposiciones que la manutención ordenada por el tribunal no puede incluir, como términos que hacen que la manutención no se pueda modificar, disposiciones de ajuste automático según el costo de vida y causas específicas de terminación además de las que establece la ley.</p>
+
+              <p>La ventaja de la manutención contractual es que ofrece certeza y control a ambas partes. La desventaja es que la manutención no modificable no puede cambiarse aunque las circunstancias cambien drásticamente. Ayudamos a nuestros clientes a evaluar las ventajas y desventajas de la manutención contractual frente a la manutención ordenada por el tribunal, y a negociar acuerdos que protejan sus intereses a largo plazo.</p>
+
+              <h2>Por qué elegir a Neiley Law para asuntos de manutención conyugal</h2>
+              <p>Las disputas sobre manutención conyugal requieren un conocimiento profundo de la ley de Colorado, un análisis financiero especializado y una defensa hábil. Nuestro modelo de bufete boutique asegura que cada cliente reciba la atención personal y la asesoría estratégica necesarias para manejar estos asuntos complejos con eficacia.</p>
+
+              <p>Nos tomamos el tiempo para entender el panorama económico completo de cada cliente, incluidos sus ingresos, gastos, bienes, deudas, capacidad de generar ingresos y necesidades económicas futuras. Este análisis minucioso nos permite desarrollar estrategias de manutención basadas en la realidad económica y adaptadas para lograr el mejor resultado posible para nuestros clientes.</p>
+
+              <h2>Comuníquese con nuestros abogados de manutención conyugal</h2>
+              <p>Si enfrenta asuntos de manutención conyugal en su divorcio o necesita modificar una orden de manutención existente, comuníquese con Neiley Law para programar una consulta en nuestra oficina de <a href="/es/locations/carbondale/">Carbondale</a> o de <a href="/es/locations/rifle/">Rifle</a>. Revisaremos su situación económica, le explicaremos sus derechos y opciones, y desarrollaremos una estrategia para proteger sus intereses económicos. Para más información sobre todos nuestros servicios de relaciones familiares, visite nuestra página del área de práctica de <a href="/es/family-law/">Derecho de familia</a>.</p>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4" data-aos="fade-up">
+              <div class="card-body">
+                <h3 class="card-title h4">Contáctenos</h3>
+                <p><i class="bi bi-telephone" aria-hidden="true"></i> <a href="tel:970-963-6363">970-963-6363</a></p>
+                <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:office@neiley.com">office@neiley.com</a></p>
+                <a href="/es/#contact" class="btn btn-brand w-100">Programar una consulta</a>
+              </div>
+            </div>
+            <div class="card shadow-sm mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h3 class="card-title h4">Servicios relacionados</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a href="/es/family-law/divorce/">Divorcio</a></li>
+                  <li class="mb-2"><a href="/family-law/high-asset-divorce/">Divorcio con patrimonio elevado</a></li>
+                  <li class="mb-2"><a href="/family-law/post-decree/">Modificaciones posteriores al decreto</a></li>
+                  <li class="mb-2"><a href="/es/family-law/child-support/">Manutención de menores</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card shadow-sm mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h3 class="card-title h4">Servicios de derecho de familia</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a href="/es/family-law/">Panorama del derecho de familia</a></li>
+                  <li class="mb-2"><a href="/es/family-law/child-custody/">Custodia de menores</a></li>
+                  <li class="mb-2"><a href="/family-law/prenuptial-agreements/">Acuerdos prenupciales</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body">
+                <h3 class="card-title h4">Nuestras oficinas</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a href="/es/locations/carbondale/">Oficina de Carbondale</a></li>
+                  <li class="mb-2"><a href="/es/locations/rifle/">Oficina de Rifle</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+    <footer class="footer-cont">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-5">
+            <div class="col-lg-3 col-sm-6 special-foot">
+              <a href="/es/"><img src="/assets/images/opt/logo-nd.png" alt="Neiley Law, página de inicio" /></a>
+              <div class="line special"></div>
+              <p>NEILEY LAW</p>
+              <div class="social-icons">
+                <a href="#" aria-label="Neiley Law en Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law en LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">MÁS INFORMACIÓN</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li><a href="/es/#about">Nosotros</a></li>
+                <li><a href="/es/#team">Nuestro equipo</a></li>
+                <li><a href="/es/#practice">Nuestra práctica</a></li>
+                <li><a href="/resources/">Recursos</a></li>
+                <li><a href="/privacy.html">Política de privacidad</a></li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONÉCTESE</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li><a href="/careers.html">Empleos</a></li>
+                <li><a href="/es/#contact">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONTACTO</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>1000 Dolores Way, Suite B</li>
+                <li>Carbondale, CO 81623</li>
+                <li>-</li>
+                <li>111 East Third Street, Unit 219</li>
+                <li>Rifle, CO 81650</li>
+                <li>-</li>
+                <li>970-963-6363</li>
+                <li>office@neiley.com</li>
+                <li>www.neiley.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row g-4 justify-content-between">
+            <div class="col-auto">
+              <p class="mb-0">&copy; Copyright Neiley Law. Todos los derechos reservados.</p>
+              <p class="mb-0">Neiley Law LLC no está afiliado a ninguna entidad gubernamental.</p>
+            </div>
+            <div class="col-auto">
+              <p class="mb-0">Diseño web por <a href="https://micaoz-3e29397c429a.herokuapp.com/">Mica Oz</a></p>
+              <p class="mb-0">Fotografía por <a href="https://www.siriraitto.com/">Siri Raitto</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

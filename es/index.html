@@ -1,0 +1,1488 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neiley Law | Abogados de derecho de familia en Carbondale y Rifle, Colorado</title>
+    <meta name="description" content="Neiley Law es un bufete especializado en derecho de familia que atiende al Roaring Fork Valley y al Western Slope desde sus oficinas en Carbondale y Rifle, Colorado. Programe una consulta." />
+    <link rel="canonical" href="https://www.neiley.com/es/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="es_US" />
+    <meta property="og:title" content="Neiley Law | Abogados de derecho de familia en Carbondale y Rifle, Colorado" />
+    <meta property="og:description" content="Neiley Law es un bufete especializado en derecho de familia que atiende al Roaring Fork Valley y al Western Slope desde sus oficinas en Carbondale y Rifle, Colorado. Programe una consulta." />
+    <meta property="og:url" content="https://www.neiley.com/es/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Neiley Law | Abogados de derecho de familia en Carbondale y Rifle, Colorado" />
+    <meta name="twitter:description" content="Neiley Law es un bufete especializado en derecho de familia que atiende al Roaring Fork Valley y al Western Slope desde sus oficinas en Carbondale y Rifle, Colorado. Programe una consulta." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "@id": "https://www.neiley.com/#firm",
+  "name": "Neiley Law",
+  "url": "https://www.neiley.com/",
+  "logo": "https://www.neiley.com/assets/images/opt/logo-nd.png",
+  "image": "https://www.neiley.com/assets/images/og-image.jpg",
+  "telephone": "+1-970-963-6363",
+  "email": "office@neiley.com",
+  "areaServed": [
+    "Roaring Fork Valley",
+    "Western Slope",
+    "Pitkin County",
+    "Garfield County",
+    "Eagle County"
+  ],
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Neiley Law Carbondale Office",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1000 Dolores Way, Suite B",
+        "addressLocality": "Carbondale",
+        "addressRegion": "CO",
+        "postalCode": "81623",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Neiley Law Rifle Office",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "111 East Third Street, Unit 219",
+        "addressLocality": "Rifle",
+        "addressRegion": "CO",
+        "postalCode": "81650",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}
+    </script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/images/apple-touch-icon.png"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
+    "
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body data-spy="scroll" data-target=".navbar">
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/assets/images/opt/logo-n.png"
+            alt="Neiley Law"
+            width="100%"
+            id="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir o cerrar el menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <script>
+          $(document).ready(function () {
+            $(document).on("click", function (event) {
+              var $navbarCollapse = $("#navbarNav");
+              var $navbarToggler = $(".navbar-toggler");
+              // If menu is open and click is outside menu and toggler
+              if (
+                $navbarCollapse.hasClass("show") &&
+                !$navbarCollapse.is(event.target) &&
+                $navbarCollapse.has(event.target).length === 0 &&
+                !$navbarToggler.is(event.target) &&
+                $navbarToggler.has(event.target).length === 0
+              ) {
+                $navbarCollapse.collapse("hide");
+              }
+            });
+          });
+        </script>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Equipo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#practice">Áreas de práctica </a>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#news">News</a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="#locations">Oficinas</a>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-brand ms-lg-3">Contacto</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" tabindex="-1">
+
+    <!-- hero -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+      <div class="container">
+        <video
+          id="background-video"
+          aria-hidden="true"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="none"
+          poster="/assets/images/hero-poster.jpg"
+          data-src-small="/assets/images/hero-540.mp4"
+          data-src-large="/assets/images/hero-1080.mp4"
+        ></video>
+        <div class="row">
+          <div class="col-12">
+            <h1
+              class="text-uppercase fw-semibold display-1"
+            >
+              NEILEY LAW
+            </h1>
+            <!-- <h3 class="text-white mt-3 mb-4" data-aos="fade-up">
+              PROFESSIONAL CORPORATION
+            </h3> -->
+            <!-- <div class="hero-btns mb-6" data-aos="fade-up">
+              <a href="#speakers" class="btn btn-brand-light me-2">OUR TEAM</a>
+              <a href="#contact" class="btn btn-brand ms-2">CONTACT</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">
+                REPRESENTACIÓN LEGAL ENFOCADA EN SOLUCIONES
+              </h2>
+              <div class="line" style="background-color: var(--c-brand)"></div>
+              <p>
+                Neiley Law es un bufete especializado en derecho de familia
+                que atiende al Roaring Fork Valley y al Western Slope. Contamos
+                con un equipo de abogados y personal con amplia experiencia en
+                juicios, en la presentación de pruebas y en negociación. Los
+                clientes de Neiley Law reciben asesoría legal fundamentada y
+                una defensa firme y dedicada mientras los ayudamos a enfrentar
+                asuntos de derecho de familia complejos y difíciles.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+          <div
+            class="col-lg-6"
+            id="abt-img-cont"
+            data-aos="fade-up"
+            data-aos-delay="170"
+          >
+            <!-- <img id="about-img" src="/assets/images/about.jpg" alt="about" />
+            <div id="overlay"></div> -->
+          </div>
+          <div
+            class="col-lg-5 about-dets"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <h2 class="abouth1">Un equipo en quien puede confiar.</h2>
+            <div class="d-flex pt-4 mb-3">
+              <!-- <div class="iconbox me-4 ">
+                <i class="bi bi-diamond" aria-hidden="true"></i>
+              </div> -->
+              <div>
+                <h3 class="h5 abouth5">Defensa</h3>
+                <p>
+                  Trabajamos directamente con nuestros clientes para entender
+                  sus necesidades y metas. Luchamos por la justicia y por
+                  soluciones centradas en el cliente.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              <!-- <div class="iconbox me-4 ">
+                <i class="bi bi-diamond" aria-hidden="true"></i>
+              </div> -->
+              <div>
+                <h3 class="h5 abouth5">Preparación</h3>
+                <p>
+                  Preparamos nuestros casos y a nuestros clientes mediante una
+                  revisión temprana de documentos, investigación y un manejo
+                  cercano de cada caso. Desde el principio, nos familiarizamos
+                  con los problemas legales y los retos que enfrentan nuestros
+                  clientes, y estamos listos para resolverlos, sean grandes o
+                  pequeños.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <!-- <div class="iconbox me-4 ">
+                <i class="bi bi-diamond" aria-hidden="true"></i>
+              </div> -->
+              <div>
+                <h3 class="h5 abouth5">Integridad</h3>
+                <p>
+                  Tomamos en cuenta las consecuencias a corto y a largo plazo de
+                  nuestro trabajo y les damos a nuestros clientes una asesoría
+                  legal clara y honesta. Los orientamos y apoyamos al tomar
+                  decisiones legales importantes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- legal team -->
+
+    <section id="team" class="section-padding">
+      <div class="container">
+        <!-- title row -->
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">EQUIPO</h2>
+              <div class="line" style="background-color: var(--c-light)"></div>
+            </div>
+          </div>
+        </div>
+        <!-- team row -->
+        <div
+          class="row g-4 text-center"
+          style="display: flex; justify-content: center"
+        >
+          <!-- Sarah -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <a href="/attorneys.html#sarah-link" class="team-member-link">
+              <div class="speaker image-zoom sarah">
+                <div class="image-zoom-wrapper">
+                  <img src="/assets/images/opt/sarah1-800.webp"
+              srcset="/assets/images/opt/sarah1-480.webp 480w, /assets/images/opt/sarah1-800.webp 800w, /assets/images/opt/sarah1-1200.webp 1200w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async" alt="Retrato de Sarah M. Neiley" />
+                </div>
+                <div class="speaker-content" aria-hidden="true">
+                  <h4>Conozca más sobre</h4>
+                  <h4 class="hover-name">Sarah M. Neiley</h4>
+                </div>
+              </div>
+              <div class="name-box">
+                <h3 class="h4">Sarah M. Neiley</h3>
+                <h4 class="mb-0 role">Socia</h4>
+              </div>
+            </a>
+          </div>
+
+          <!-- Zoe -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+            <a href="/attorneys.html#zoe" class="team-member-link">
+              <div class="speaker image-zoom zoe">
+                <div class="image-zoom-wrapper">
+                  <img
+                    src="/assets/images/opt/zoe1-800.webp"
+              srcset="/assets/images/opt/zoe1-480.webp 480w, /assets/images/opt/zoe1-800.webp 800w, /assets/images/opt/zoe1-1200.webp 1200w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async" alt="Retrato de Zoe M. Dotson"
+                    style="transform: scale(1.2)"
+                  />
+                </div>
+                <div class="speaker-content" aria-hidden="true">
+                  <h4>Conozca más sobre</h4>
+                  <h4 class="hover-name">Zoe M. Dotson</h4>
+                </div>
+              </div>
+              <div class="name-box">
+                <h3 class="h4">Zoe M. Dotson</h3>
+                <h4 class="mb-0 role">Paraprofesional Legal Certificada (Licensed Legal Paraprofessional)</h4>
+              </div>
+            </a>
+          </div>
+
+          <!-- MaryAnn -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+            <a href="/attorneys.html#mar" class="team-member-link">
+              <div class="speaker image-zoom mar">
+                <div class="image-zoom-wrapper">
+                  <img
+                    src="/assets/images/opt/mar4-800.webp"
+              srcset="/assets/images/opt/mar4-480.webp 480w, /assets/images/opt/mar4-800.webp 800w, /assets/images/opt/mar4-1200.webp 1200w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async" alt="Retrato de Mary Ann Leonardi"
+                    style="transform: scale(1.2)"
+                  />
+                </div>
+                <div class="speaker-content" aria-hidden="true">
+                  <h4>Conozca más sobre</h4>
+                  <h4 class="hover-name">Mary Ann Leonardi</h4>
+                </div>
+              </div>
+              <div class="name-box">
+                <h3 class="h4">Mary Ann Leonardi</h3>
+                <h4 class="mb-0 role">Asistente legal (paralegal)</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- counter -->
+    <section id="counter" class="section-padding">
+      <div class="row" data-aos="fade-up" data-aos-delay="50">
+        <hr class="hr-top" />
+        <p class="about-bottom">
+          En Neiley Law, nuestros clientes son lo primero. Buscamos
+          soluciones adaptadas a las metas y necesidades de cada cliente.
+        </p>
+        <hr class="hr-bottom" />
+      </div>
+      <!-- <div class="container text-center">
+        <div class="row g-4">
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <h1 class="display-4">300+</h1>
+            <h6 class="text-uppercase mt-3 mb-0">Succesful Cases</h6>
+          </div>
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h1 class="display-4">300+</h1>
+            <h6 class="text-uppercase mt-3 mb-0">Satisfied Clients</h6>
+          </div>
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <h1 class="display-4">150+</h1>
+            <h6 class="text-uppercase mt-3 mb-0">Families Served</h6>
+          </div>
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+            <h1 class="display-4">$20,000,000+</h1>
+            <h6 class="text-uppercase mt-3 mb-0">Won for Clients</h6>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- areas of practice -->
+    <section id="practice" class="section-padding border-top">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">ÁREAS DE PRÁCTICA</h2>
+              <div class="line"></div>
+              <p>
+                Una práctica dedicada exclusivamente al
+                <a href="/es/family-law/">derecho de familia</a>, desde patrimonios
+                conyugales complejos hasta los acuerdos que más importan para sus hijos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="practice-index">
+          <div class="row g-0">
+            <div class="col-lg-4 pi-col" data-aos="fade-up" data-aos-delay="200">
+              <span class="pi-numeral">I</span>
+              <h3 class="pi-heading">
+                <a href="/es/family-law/divorce/">Divorcio y separación legal</a>
+              </h3>
+              <ul class="pi-list">
+                <li><a href="/family-law/high-asset-divorce/">Divorcio con patrimonio elevado y patrimonios conyugales complejos</a></li>
+                <li><a href="/family-law/business-valuation/">Valuación de bienes inmuebles y participaciones en negocios</a></li>
+                <li><a href="/family-law/same-sex-divorce/">Divorcio y separación legal de parejas del mismo sexo</a></li>
+                <li><a href="/es/family-law/spousal-support/">Manutención conyugal y modificaciones</a></li>
+                <li><a href="/family-law/executive-compensation/">Compensación ejecutiva</a></li>
+                <li><a href="/family-law/common-law-marriage/">Matrimonio de hecho (common law marriage)</a></li>
+                <li><a href="/family-law/post-decree/">Desacato y cumplimiento posteriores al decreto</a></li>
+                <li><a href="/family-law/prenuptial-agreements/">Acuerdos prenupciales y posnupciales</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 pi-col" data-aos="fade-up" data-aos-delay="300">
+              <span class="pi-numeral">II</span>
+              <h3 class="pi-heading">
+                <a href="/es/family-law/child-custody/">Derechos de los padres</a>
+              </h3>
+              <ul class="pi-list">
+                <li><a href="/family-law/parental-responsibilities/">Asignación de responsabilidades parentales</a></li>
+                <li><a href="/family-law/same-sex-parenting/">Derechos parentales de parejas del mismo sexo</a></li>
+                <li><a href="/family-law/decision-making/">Toma de decisiones</a></li>
+                <li><a href="/family-law/parenting-time/">Tiempo de crianza</a></li>
+                <li><a href="/es/family-law/child-support/">Manutención de menores y gastos</a></li>
+                <li><a href="/family-law/relocation/">Mudanza y traslado fuera del estado</a></li>
+                <li><a href="/family-law/child-support-modification/">Modificación de la manutención de menores</a></li>
+                <li><a href="/family-law/parenting-plan-modification/">Modificación del plan de crianza</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 pi-col" data-aos="fade-up" data-aos-delay="400">
+              <span class="pi-numeral">III</span>
+              <h3 class="pi-heading">General</h3>
+              <ul class="pi-list">
+                <li><a href="/es/family-law/civil-protection-orders/">Órdenes de protección civil</a></li>
+                <li><a href="/family-law/family-law-appeals/">Apelaciones</a></li>
+              </ul>
+              <div class="pi-cta">
+                <p>¿No sabe en qué categoría encaja su caso?</p>
+                <a href="#contact" class="btn btn-brand">Programe una consulta</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- locations -->
+    <section id="locations" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">OFICINAS</h2>
+              <div class="line"></div>
+              <p>Al servicio del Western Slope y las comunidades de montaña de Colorado</p>
+            </div>
+          </div>
+        </div>
+        <!-- Service Area Accordion -->
+        <div class="row mt-5 mb-5">
+          <div class="col-12" data-aos="fade-up" data-aos-delay="350">
+            <div class="accordion" id="serviceAreaAccordion">
+              <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#countiesList"
+                    aria-expanded="false"
+                    aria-controls="countiesList"
+                  >
+                    <strong>Vea los 28 condados que atendemos</strong>
+                  </button>
+                </h2>
+                <div
+                  id="countiesList"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#serviceAreaAccordion"
+                >
+                  <div class="accordion-body">
+                    <div class="row text-center">
+                      <div class="col-md-3 col-6">
+                        <ul class="list-unstyled">
+                          <li>Condado de Garfield</li>
+                          <li>Condado de Pitkin</li>
+                          <li>Condado de Rio Blanco</li>
+                          <li>Condado de Eagle</li>
+                          <li>Condado de Mesa</li>
+                          <li>Condado de Summit</li>
+                          <li>Condado de La Plata</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3 col-6">
+                        <ul class="list-unstyled">
+                          <li>Condado de Montezuma</li>
+                          <li>Condado de Delta</li>
+                          <li>Condado de Hinsdale</li>
+                          <li>Condado de Mineral</li>
+                          <li>Condado de Dolores</li>
+                          <li>Condado de San Juan</li>
+                          <li>Condado de San Miguel</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3 col-6">
+                        <ul class="list-unstyled">
+                          <li>Condado de Gunnison</li>
+                          <li>Condado de Montrose</li>
+                          <li>Condado de Ouray</li>
+                          <li>Condado de Archuleta</li>
+                          <li>Condado de Rio Grande</li>
+                          <li>Condado de Alamosa</li>
+                          <li>Condado de Routt</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-3 col-6">
+                        <ul class="list-unstyled">
+                          <li>Condado de Lake</li>
+                          <li>Condado de Chaffee</li>
+                          <li>Condado de Fremont</li>
+                          <li>Condado de Grand</li>
+                          <li>Condado de Boulder</li>
+                          <li>Condado de Gilpin</li>
+                          <li>Condado de Clear Creek</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Carbondale Office -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="location-card">
+              <div class="location-image-container image-zoom">
+                <div class="image-zoom-wrapper">
+                  <a href="/es/locations/carbondale/">
+                    <img
+                      src="/assets/images/opt/sopris-1040.webp"
+              srcset="/assets/images/opt/sopris-600.webp 600w, /assets/images/opt/sopris-1040.webp 1040w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="1040" height="450" loading="lazy" decoding="async"
+                      alt="Oficina de Carbondale"
+                      class="location-image"
+                    />
+                  </a>
+                </div>
+                <div class="speaker-content location-hover-content" aria-hidden="true">
+                  <h4>Conozca más sobre la</h4>
+                  <h4 class="hover-name">Oficina de Carbondale</h4>
+                </div>
+              </div>
+              <div class="card h-100 shadow-sm" style="margin-top: 20px">
+                <div class="ratio ratio-4x3">
+                  <iframe title="Mapa de la oficina de Neiley Law en Carbondale"
+                    src="https://www.google.com/maps?q=1000+Dolores+Way+Suite+B+Carbondale+CO+81623&output=embed"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  >
+                  </iframe>
+                </div>
+                <div class="card-body text-center">
+                  <h3 class="card-title h4">Oficina de Carbondale</h3>
+                  <p class="card-text">
+                    1000 Dolores Way, Suite B<br />
+                    Carbondale, CO 81623
+                  </p>
+                  <a
+                    href="https://maps.google.com/?q=1000+Dolores+Way+Suite+B+Carbondale+CO+81623"
+                    target="_blank" rel="noopener"
+                    class="btn btn-outline-primary get-directions-btn"
+                    >Cómo llegar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Rifle Office -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="location-card">
+              <div class="location-image-container image-zoom">
+                <div class="image-zoom-wrapper">
+                  <a href="/es/locations/rifle/">
+                    <img
+                      src="/assets/images/opt/rifle-1000.webp"
+              srcset="/assets/images/opt/rifle-600.webp 600w, /assets/images/opt/rifle-1000.webp 1000w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="1000" height="500" loading="lazy" decoding="async"
+                      alt="Oficina de Rifle"
+                      class="location-image"
+                    />
+                  </a>
+                </div>
+                <div class="speaker-content location-hover-content" aria-hidden="true">
+                  <h4>Conozca más sobre la</h4>
+                  <h4 class="hover-name">Oficina de Rifle</h4>
+                </div>
+              </div>
+              <div class="card h-100 shadow-sm" style="margin-top: 20px">
+                <div class="ratio ratio-4x3">
+                  <iframe title="Mapa de la oficina de Neiley Law en Rifle"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.8234!2d-107.7831!3d39.5347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741489f1d7c7f7d%3A0x123456780!2s111%20E%203rd%20St%2C%20Rifle%2C%20CO%2081650!5e0!3m2!1sen!2sus!4v1234567890"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  >
+                  </iframe>
+                </div>
+                <div class="card-body text-center">
+                  <h3 class="card-title h4">Oficina de Rifle</h3>
+                  <p class="card-text">
+                    111 East Third Street, Unit 219<br />
+                    Rifle, CO 81650
+                  </p>
+                  <a
+                    href="https://maps.google.com/?q=111+East+Third+Street+Unit+219+Rifle+CO+81650"
+                    target="_blank" rel="noopener"
+                    class="btn btn-outline-primary get-directions-btn"
+                    >Cómo llegar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery -->
+
+    <!-- <section id="gallery" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">GALLERY</h2>
+              <div class="line"></div>
+              <p>Indulge your senses and connect with community.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="gallery-item image-zoom">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/gallery-1.jpg" />
+              </div>
+              <a
+                href="/assets/images/gallery-1.jpg"
+                data-fancybox="gallery"
+                class="iconbox"
+                ><i class="ri-search-line" aria-hidden="true"></i
+              ></a>
+            </div>
+            <div class="gallery-item image-zoom mt-4">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/gallery-2.jpg" />
+              </div>
+              <a
+                href="/assets/images/gallery-2.jpg"
+                data-fancybox="gallery"
+                class="iconbox"
+                ><i class="ri-search-line" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="gallery-item image-zoom">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/gallery-3.jpg" />
+              </div>
+              <a
+                href="/assets/images/gallery-3.jpg"
+                data-fancybox="gallery"
+                class="iconbox"
+                ><i class="ri-search-line" aria-hidden="true"></i
+              ></a>
+            </div>
+            <div class="gallery-item image-zoom mt-4">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/gallery-4.jpg" />
+              </div>
+              <a
+                href="/assets/images/gallery-4.jpg"
+                data-fancybox="gallery"
+                class="iconbox"
+                ><i class="ri-search-line" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="gallery-item image-zoom">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/gallery-5.jpg" />
+              </div>
+              <a
+                href="/assets/images/gallery-5.jpg"
+                data-fancybox="gallery"
+                class="iconbox"
+                ><i class="ri-search-line" aria-hidden="true"></i
+              ></a>
+            </div>
+            <div class="gallery-item image-zoom mt-4">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/gallery-6.jpg" />
+              </div>
+              <a
+                href="/assets/images/gallery-6.jpg"
+                data-fancybox="gallery"
+                class="iconbox"
+                ><i class="ri-search-line" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- reviews -->
+
+    <!-- <section id="reviews" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">REVIEWS</h2>
+              <div class="line"></div>
+              <p>Read reviews from satisfied clients.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row gy-5 g-4">
+          <div
+            class="col-lg-4 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="review">
+              <div class="review-head p-4 bg-white theme-shadow">
+                <div class="text-warning">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                </div>
+                <p>
+                  "Exceptional legal service! Our family entrusted them with our
+                  toughest legal matters, from estate planning to criminal
+                  defense. Their dedication and expertise surpassed our
+                  expectations. Every interaction was professional, informative,
+                  and compassionate. Highly recommend this firm for anyone
+                  seeking reliable legal assistance."
+                </p>
+              </div>
+              <div class="review-person mt-4 d-flex align-items-center">
+                <img
+                  class="rounded-circle"
+                  src="/assets/images/avatar-1.jpg"
+                />
+                <div class="ms-3">
+                  <h5>Niko Cokinos</h5>
+                  <small class="text-uppercase">Speaker</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="review">
+              <div class="review-head p-4 bg-white theme-shadow">
+                <div class="text-warning">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                </div>
+                <p>
+                  "Outstanding legal representation! From resolving complex
+                  family disputes to navigating through criminal charges, this
+                  firm exceeded all our expectations. Their team's expertise,
+                  attention to detail, and commitment to achieving the best
+                  outcomes for their clients are unparalleled. Trustworthy,
+                  responsive, and knowledgeable - they truly go above and
+                  beyond. Highly recommend!"
+                </p>
+              </div>
+              <div class="review-person mt-4 d-flex align-items-center">
+                <img
+                  class="rounded-circle"
+                  src="/assets/images/avatar-2.jpg"
+                />
+                <div class="ms-3">
+                  <h5>Mackenzie Broadhurst</h5>
+                  <small class="text-uppercase">Attendee</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <div class="review">
+              <div class="review-head p-4 bg-white theme-shadow">
+                <div class="text-warning">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                </div>
+                <p>
+                  "Five stars for this outstanding firm! Their legal team
+                  provided us with expert guidance and representation in both
+                  family law matters. From the initial
+                  consultation to the resolution of our cases, they exhibited
+                  professionalism, integrity, and a deep commitment to serving
+                  their clients' best interests. Their strategic approach,
+                  attention to detail, and effective communication skills
+                  ensured successful outcomes. We are grateful for their
+                </p>
+              </div>
+              <div class="review-person mt-4 d-flex align-items-center">
+                <img
+                  class="rounded-circle"
+                  src="/assets/images/avatar-3.jpg"
+                />
+                <div class="ms-3">
+                  <h5>Luis Vazquez</h5>
+                  <small class="text-uppercase">Attendee</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+            <div class="review">
+              <div class="review-head p-4 bg-white theme-shadow">
+                <div class="text-warning">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                </div>
+                <p>
+                  "Top-notch legal professionals! This firm provided invaluable
+                  support and guidance during a challenging time for our family.
+                  From handling sensitive family matters to defending against
+                  criminal allegations, their team demonstrated expertise,
+                  professionalism, and genuine care for our well-being. Their
+                  dedication to achieving favorable results and keeping us
+                  informed every step of the way was commendable. Highly
+                  recommend their services!"
+                </p>
+              </div>
+              <div class="review-person mt-4 d-flex align-items-center">
+                <img
+                  class="rounded-circle"
+                  src="/assets/images/avatar-4.jpg"
+                />
+                <div class="ms-3">
+                  <h5>Stanislav Vassiljev</h5>
+                  <small class="text-uppercase">Chef</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="550"
+          >
+            <div class="review">
+              <div class="review-head p-4 bg-white theme-shadow">
+                <div class="text-warning">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                </div>
+                <p>
+                  "Excellent legal services! The attorneys at this firm are
+                  knowledgeable, approachable, and dedicated to their clients'
+                  needs. Whether it was a family issue requiring delicate
+                  handling or a criminal case demanding robust defense
+                  strategies, they delivered exceptional results. Their
+                  attention to detail, clear communication, and commitment to
+                  achieving the best possible outcomes set them apart. Highly
+                  recommend this firm for anyone seeking reliable legal
+                  representation."
+                </p>
+              </div>
+              <div class="review-person mt-4 d-flex align-items-center">
+                <img
+                  class="rounded-circle"
+                  src="/assets/images/avatar-5.jpg"
+                />
+                <div class="ms-3">
+                  <h5>Julio Montanez</h5>
+                  <small class="text-uppercase">Attendee</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="650"
+          >
+            <div class="review">
+              <div class="review-head p-4 bg-white theme-shadow">
+                <div class="text-warning">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                </div>
+                <p>
+                  "Impressive legal expertise! We turned to this firm for
+                  assistance with both family law matters and criminal defense,
+                  and they exceeded our expectations in every aspect. Their
+                  attorneys are highly skilled, compassionate, and responsive,
+                  providing personalized attention to our case and guiding us
+                  through every step of the legal process. With their expertise
+                  and unwavering support, we achieved favorable outcomes. Highly
+                  recommend this firm to anyone in need of comprehensive legal
+                  assistance."
+                </p>
+              </div>
+              <div class="review-person mt-4 d-flex align-items-center">
+                <img
+                  class="rounded-circle"
+                  src="/assets/images/avatar-6.jpg"
+                />
+                <div class="ms-3">
+                  <h5>Karl Henley</h5>
+                  <small class="text-uppercase">Speaker</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- contact -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">CONTACTO</h2>
+              <div class="line"></div>
+              <p>
+                Para hablar con nuestros abogados, por favor programe una
+                consulta. Esperamos poder conversar con usted.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="250"
+        >
+          <div class="col-lg-9">
+            <form
+              id="intake"
+              class="intake theme-shadow"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="cbf589d6-f737-4697-9136-922e5fa95a11"
+              />
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://neiley.com/es/thank-you.html"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New consultation request"
+                data-intake-subject
+              />
+              <input type="hidden" name="from_name" value="Neiley Law website" />
+              <!-- Spam trap: real visitors never see or tick this -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="intake-trap"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
+              <fieldset class="intake-step">
+                <legend>
+                  <span class="intake-num">I</span>
+                  ¿En qué podemos ayudarle?
+                </legend>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="matter" value="Divorce or legal separation" /><span>Divorcio o separación</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Parenting and custody" /><span>Crianza y custodia</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Child or spousal support" /><span>Manutención de menores o conyugal</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Protection order" data-urgent /><span>Orden de protección</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Prenuptial or postnuptial agreement" /><span>Acuerdo prenupcial o posnupcial</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Modification or enforcement" /><span>Modificar o hacer cumplir una orden</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Not sure" /><span>No estoy seguro/a</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Other" data-other /><span>Otro</span></label>
+                </div>
+                <div class="intake-other" data-intake-other hidden>
+                  <label for="cf-other" class="intake-label">¿De qué se trata? <span class="intake-optional">opcional</span></label>
+                  <input id="cf-other" type="text" name="matter_other" class="form-control" maxlength="120" />
+                </div>
+                <p class="intake-urgent" data-intake-urgent hidden>
+                  Si está en peligro inmediato, llame al
+                  <a href="tel:911">911</a>. Para hablar con nosotros hoy, llame al
+                  <a href="tel:970-963-6363">970-963-6363</a>.
+                </p>
+                <button type="button" class="intake-skip" data-intake-skip>
+                  Omitir este paso y solo enviar un mensaje
+                </button>
+              </fieldset>
+
+              <div class="intake-more" data-intake-more>
+                <div class="intake-more-inner">
+                  <fieldset class="intake-step">
+                    <legend>
+                      <span class="intake-num">II</span>
+                      Sus datos
+                    </legend>
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="cf-name" class="intake-label">Nombre</label>
+                        <input
+                          id="cf-name"
+                          type="text"
+                          name="name"
+                          class="form-control"
+                          autocomplete="name"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cf-email" class="intake-label">Correo electrónico</label>
+                        <input
+                          id="cf-email"
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          autocomplete="email"
+                          aria-describedby="cf-reach-hint"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cf-phone" class="intake-label">Teléfono</label>
+                        <input
+                          id="cf-phone"
+                          type="tel"
+                          name="phone"
+                          class="form-control"
+                          autocomplete="tel"
+                          aria-describedby="cf-reach-hint"
+                        />
+                      </div>
+                      <p id="cf-reach-hint" class="intake-hint col-12">
+                        Correo electrónico o teléfono, lo que usted prefiera.
+                      </p>
+                      <div class="col-md-6">
+                        <label for="cf-county" class="intake-label"
+                          >Condado <span class="intake-optional">opcional</span></label
+                        >
+                        <select id="cf-county" name="county" class="form-select">
+                          <option value="">Seleccione</option>
+                          <option>Pitkin</option>
+                          <option>Garfield</option>
+                          <option>Eagle</option>
+                          <option>Mesa</option>
+                          <option>Otro / no estoy seguro/a</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <span class="intake-label" id="cf-children-label"
+                          >¿Hay hijos involucrados?
+                          <span class="intake-optional">opcional</span></span
+                        >
+                        <div class="chips chips-sm" role="radiogroup" aria-labelledby="cf-children-label">
+                          <label class="chip"><input type="radio" name="children" value="Yes" /><span>Sí</span></label>
+                          <label class="chip"><input type="radio" name="children" value="No" /><span>No</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="intake-step">
+                    <legend>
+                      <span class="intake-num">III</span>
+                      ¿Cómo prefiere que nos comuniquemos con usted?
+                      <span class="intake-optional">opcional</span>
+                    </legend>
+                    <div class="chips chips-sm" role="radiogroup" aria-label="Método de contacto preferido">
+                      <label class="chip"><input type="radio" name="contact_method" value="Email" /><span>Correo electrónico</span></label>
+                      <label class="chip"><input type="radio" name="contact_method" value="Phone call" /><span>Llamada telefónica</span></label>
+                      <label class="chip"><input type="radio" name="contact_method" value="Text message" /><span>Mensaje de texto</span></label>
+                    </div>
+                    <label for="cf-times" class="intake-label mt-3">Mejores días u horarios para comunicarnos con usted</label>
+                    <input
+                      id="cf-times"
+                      type="text"
+                      name="best_times"
+                      class="form-control"
+                      placeholder="p. ej., entre semana después de las 3 p. m."
+                    />
+                    <div class="intake-checks">
+                      <label class="intake-check"
+                        ><input type="checkbox" name="no_voicemail" value="Yes" />
+                        Por favor, no deje mensaje de voz</label
+                      >
+                      <label class="intake-check"
+                        ><input type="checkbox" name="discreet" value="Yes" />
+                        Por favor, no mencione el nombre de Neiley Law al llamar o
+                        enviar mensajes de texto</label
+                      >
+                    </div>
+                    <label for="cf-message" class="intake-label mt-3"
+                      >¿Hay algo que quiera que sepamos?
+                      <span class="intake-optional">opcional</span></label
+                    >
+                    <textarea
+                      id="cf-message"
+                      name="message"
+                      class="form-control"
+                      rows="4"
+                      aria-describedby="cf-message-hint"
+                    ></textarea>
+                    <p id="cf-message-hint" class="intake-hint">
+                      Con una o dos oraciones es suficiente. Revisaremos los
+                      detalles con usted en persona.
+                    </p>
+                  </fieldset>
+
+                  <div class="intake-submit">
+                    <button class="btn btn-brand" type="submit">
+                      Solicitar una consulta
+                    </button>
+                    <p class="intake-fineprint">
+                      El envío de este formulario no establece una relación
+                      abogado-cliente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- news -->
+    <!-- <section id="news" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 text-center"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="section-title">
+              <h2 class="display-4 fw-semibold">AVL NEWS</h2>
+              <div class="line"></div>
+              <p>Stay up to date on AVL news.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="speaker image-zoom">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/scales.jpeg" />
+              </div>
+              <h5 class="mt-4">
+                "Navigating the Legal Maze: Expertise in Family Practice and
+                Criminal Defense"
+              </h5>
+              <p>
+                Delve into the comprehensive legal services offered by our
+                esteemed law firm, specializing in family law and criminal
+                defense. With a team of experienced attorneys...
+              </p>
+              <a href="#">READ MORE</a>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="speaker image-zoom">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/court.jpeg" />
+              </div>
+              <h5 class="mt-4">
+                "Protecting Your Family, Defending Your Rights: A Closer Look at
+                Our Legal Practice"
+              </h5>
+              <p>
+                Discover the intersection of family law at
+                our reputable law firm. Our skilled attorneys offer
+                compassionate support and zealous advocacy for clients dealing
+                with sensitive family matters and challenging legal issues.
+                Whether you're facing divorce...
+              </p>
+              <a href="#">READ MORE</a>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="speaker image-zoom">
+              <div class="image-zoom-wrapper">
+                <img src="/assets/images/legal.jpeg" />
+              </div>
+              <h5 class="mt-4">
+                "Empowering Clients, Delivering Results: The Hallmarks of Our
+                Legal Services"
+              </h5>
+              <p>
+                Uncover the pillars of excellence that define our law firm's
+                approach to serving clients in family law
+                cases. With a focus on empowerment, education, and strategic
+                advocacy, we strive to...
+              </p>
+              <a href="#">READ MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- footer -->
+    </main>
+    <footer class="footer-cont">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-5">
+            <div class="col-lg-3 col-sm-6 special-foot">
+              <a href="#">
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law, página de inicio" />
+              </a>
+              <div class="line special"></div>
+              <p>NEILEY LAW</p>
+              <div class="social-icons">
+                <a href="#" aria-label="Neiley Law en Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law en LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">MÁS INFORMACIÓN</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>
+                  <a href="#about">Nosotros</a>
+                </li>
+                <li>
+                  <a href="#team">Nuestro equipo</a>
+                </li>
+                <li>
+                  <a href="#practice">Nuestra práctica</a>
+                </li>
+                <li>
+                  <a href="/resources/">Recursos</a>
+                </li>
+                <li>
+                  <a href="/privacy.html">Política de privacidad</a>
+                </li>
+                <!-- <li>
+                  <a href="#reviews">Reviews</a>
+                </li> -->
+                <!-- <li>
+                  <a href="#news">News</a>
+                </li> -->
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONÉCTESE</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>
+                  <a href="/careers.html">Empleos</a>
+                </li>
+                <li>
+                  <a href="#contact">Contacto</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONTACTO</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>1000 Dolores Way, Suite B</li>
+                <li>Carbondale, CO 81623</li>
+                <li>-</li>
+                <li>111 East Third Street, Unit 219</li>
+                <li>Rifle, CO 81650</li>
+                <li>-</li>
+                <li>970-963-6363</li>
+                <li>office@neiley.com</li>
+                <li>www.neiley.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row g-4 justify-content-between">
+            <div class="col-auto">
+              <p class="mb-0">
+                © Copyright Neiley Law. Todos los derechos reservados.
+              </p>
+              <p class="mb-0">
+                Neiley Law LLC no está afiliada a ninguna entidad
+                gubernamental.
+              </p>
+            </div>
+            <div class="col-auto">
+              <p class="mb-0">
+                Diseño web por
+                <a href="https://micaoz-3e29397c429a.herokuapp.com/">Mica Oz</a>
+              </p>
+              <p class="mb-0">
+                Fotografía por
+                <a href="https://www.siriraitto.com/">Siri Raitto</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        //
+      });
+    </script>
+  </body>
+</html>

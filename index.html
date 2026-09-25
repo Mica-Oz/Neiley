@@ -1,18 +1,103 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      property="og:image"
-      content="https://neiley.com/assets/images/About3.jpg"
-    />
-    <meta property="og:title" content="NEILEY LAW" />
-    <meta
-      property="og:description"
-      content="Neiley Law is a boutique family law firm serving the Roaring Fork Valley and Western Slope. We provide experienced attorneys and staff with extensive trial, evidentiary, and negotiation expertise. Clients receive reasoned legal advice and zealous advocacy as we help them navigate complex family law matters."
-    />
-    <title>NEILEY LAW</title>
+    <title>Neiley Law | Family Law Attorneys in Carbondale &amp; Rifle, Colorado</title>
+    <meta name="description" content="Neiley Law is a boutique family law firm serving the Roaring Fork Valley and Western Slope from offices in Carbondale and Rifle, Colorado. Schedule a consultation." />
+    <link rel="canonical" href="https://www.neiley.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Neiley Law | Family Law Attorneys in Carbondale &amp; Rifle, Colorado" />
+    <meta property="og:description" content="Neiley Law is a boutique family law firm serving the Roaring Fork Valley and Western Slope from offices in Carbondale and Rifle, Colorado. Schedule a consultation." />
+    <meta property="og:url" content="https://www.neiley.com/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Neiley Law | Family Law Attorneys in Carbondale &amp; Rifle, Colorado" />
+    <meta name="twitter:description" content="Neiley Law is a boutique family law firm serving the Roaring Fork Valley and Western Slope from offices in Carbondale and Rifle, Colorado. Schedule a consultation." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "@id": "https://www.neiley.com/#firm",
+  "name": "Neiley Law",
+  "url": "https://www.neiley.com/",
+  "logo": "https://www.neiley.com/assets/images/opt/logo-nd.png",
+  "image": "https://www.neiley.com/assets/images/og-image.jpg",
+  "telephone": "+1-970-963-6363",
+  "email": "office@neiley.com",
+  "areaServed": [
+    "Roaring Fork Valley",
+    "Western Slope",
+    "Pitkin County",
+    "Garfield County",
+    "Eagle County"
+  ],
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Neiley Law Carbondale Office",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1000 Dolores Way, Suite B",
+        "addressLocality": "Carbondale",
+        "addressRegion": "CO",
+        "postalCode": "81623",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Neiley Law Rifle Office",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "111 East Third Street, Unit 219",
+        "addressLocality": "Rifle",
+        "addressRegion": "CO",
+        "postalCode": "81650",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}
+    </script>
     <link
       rel="icon"
       type="image/png"
@@ -52,13 +137,14 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body data-spy="scroll" data-target=".navbar">
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img
-            src="./assets/images/AVL-LOGO-LightCamel.png"
-            alt="logo"
+            src="/assets/images/opt/logo-n.png"
+            alt="Neiley Law"
             width="100%"
             id="logo"
           />
@@ -122,28 +208,31 @@
         </div>
       </div>
     </nav>
+    <main id="main" tabindex="-1">
 
     <!-- hero -->
     <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
       <div class="container">
         <video
           id="background-video"
+          aria-hidden="true"
           autoplay
           loop
           muted
-          poster="../images/hero-bg.jpg"
-        >
-          <source src="./assets/images/vid.mp4" type="video/mp4" />
-        </video>
+          playsinline
+          preload="none"
+          poster="./assets/images/hero-poster.jpg"
+          data-src-small="./assets/images/hero-540.mp4"
+          data-src-large="./assets/images/hero-1080.mp4"
+        ></video>
         <div class="row">
           <div class="col-12">
             <h1
               class="text-uppercase fw-semibold display-1"
-              data-aos="fade-right"
             >
               NEILEY LAW
             </h1>
-            <!-- <h3 class="text-white mt-3 mb-4" data-aos="fade-left">
+            <!-- <h3 class="text-white mt-3 mb-4" data-aos="fade-up">
               PROFESSIONAL CORPORATION
             </h3> -->
             <!-- <div class="hero-btns mb-6" data-aos="fade-up">
@@ -161,13 +250,13 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="50"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">
+              <h2 class="display-4 fw-semibold">
                 RESOLUTION-DRIVEN LEGAL REPRESENTATION
-              </h1>
+              </h2>
               <div class="line" style="background-color: var(--c-brand)"></div>
               <p>
                 Neiley Law is a boutique family law firm serving the
@@ -184,7 +273,7 @@
           <div
             class="col-lg-6"
             id="abt-img-cont"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="170"
           >
             <!-- <img id="about-img" src="./assets/images/about.jpg" alt="about" />
@@ -192,16 +281,16 @@
           </div>
           <div
             class="col-lg-5 about-dets"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
-            <h1 class="abouth1">A team you can trust.</h1>
+            <h2 class="abouth1">A team you can trust.</h2>
             <div class="d-flex pt-4 mb-3">
               <!-- <div class="iconbox me-4 ">
-                <i class="bi bi-diamond"></i>
+                <i class="bi bi-diamond" aria-hidden="true"></i>
               </div> -->
               <div>
-                <h5 class="abouth5">Advocacy</h5>
+                <h3 class="h5 abouth5">Advocacy</h3>
                 <p>
                   We work with our clients directly to understand their needs
                   and goals. We advocate for justice and resolution that is
@@ -211,10 +300,10 @@
             </div>
             <div class="d-flex mb-3">
               <!-- <div class="iconbox me-4 ">
-                <i class="bi bi-diamond"></i>
+                <i class="bi bi-diamond" aria-hidden="true"></i>
               </div> -->
               <div>
-                <h5 class="abouth5">Preparedness</h5>
+                <h3 class="h5 abouth5">Preparedness</h3>
                 <p>
                   We prepare our cases and clients by conducting early document
                   review, investigation, and hands-on case management. From the
@@ -226,10 +315,10 @@
             </div>
             <div class="d-flex">
               <!-- <div class="iconbox me-4 ">
-                <i class="bi bi-diamond"></i>
+                <i class="bi bi-diamond" aria-hidden="true"></i>
               </div> -->
               <div>
-                <h5 class="abouth5">Integrity</h5>
+                <h3 class="h5 abouth5">Integrity</h3>
                 <p>
                   We consider the short-term and long-term implications of our
                   work and provide straightforward, honest legal advice to our
@@ -250,11 +339,11 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">TEAM</h1>
+              <h2 class="display-4 fw-semibold">TEAM</h2>
               <div class="line" style="background-color: var(--c-light)"></div>
             </div>
           </div>
@@ -265,63 +354,72 @@
           style="display: flex; justify-content: center"
         >
           <!-- Sarah -->
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
             <a href="./attorneys.html#sarah-link" class="team-member-link">
               <div class="speaker image-zoom sarah">
                 <div class="image-zoom-wrapper">
-                  <img src="./assets/images/sarah1.jpg" />
+                  <img src="/assets/images/opt/sarah1-800.webp"
+              srcset="/assets/images/opt/sarah1-480.webp 480w, /assets/images/opt/sarah1-800.webp 800w, /assets/images/opt/sarah1-1200.webp 1200w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async" alt="Portrait of Sarah M. Neiley" />
                 </div>
-                <div class="speaker-content">
+                <div class="speaker-content" aria-hidden="true">
                   <h4>Read More About</h4>
                   <h4 class="hover-name">Sarah M. Neiley</h4>
                 </div>
               </div>
               <div class="name-box">
-                <h4>Sarah M. Neiley</h4>
+                <h3 class="h4">Sarah M. Neiley</h3>
                 <h4 class="mb-0 role">Partner</h4>
               </div>
             </a>
           </div>
 
           <!-- Zoe -->
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
             <a href="./attorneys.html#zoe" class="team-member-link">
               <div class="speaker image-zoom zoe">
                 <div class="image-zoom-wrapper">
                   <img
-                    src="./assets/images/zoe1.jpg"
+                    src="/assets/images/opt/zoe1-800.webp"
+              srcset="/assets/images/opt/zoe1-480.webp 480w, /assets/images/opt/zoe1-800.webp 800w, /assets/images/opt/zoe1-1200.webp 1200w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async" alt="Portrait of Zoe M. Dotson"
                     style="transform: scale(1.2)"
                   />
                 </div>
-                <div class="speaker-content">
+                <div class="speaker-content" aria-hidden="true">
                   <h4>Read More About</h4>
                   <h4 class="hover-name">Zoe M. Dotson</h4>
                 </div>
               </div>
               <div class="name-box">
-                <h4>Zoe M. Dotson</h4>
+                <h3 class="h4">Zoe M. Dotson</h3>
                 <h4 class="mb-0 role">Licensed Legal Paraprofessional</h4>
               </div>
             </a>
           </div>
 
           <!-- MaryAnn -->
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
             <a href="./attorneys.html#mar" class="team-member-link">
               <div class="speaker image-zoom mar">
                 <div class="image-zoom-wrapper">
                   <img
-                    src="./assets/images/mar4.jpg"
+                    src="/assets/images/opt/mar4-800.webp"
+              srcset="/assets/images/opt/mar4-480.webp 480w, /assets/images/opt/mar4-800.webp 800w, /assets/images/opt/mar4-1200.webp 1200w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async" alt="Portrait of Mary Ann Leonardi"
                     style="transform: scale(1.2)"
                   />
                 </div>
-                <div class="speaker-content">
+                <div class="speaker-content" aria-hidden="true">
                   <h4>Read More About</h4>
                   <h4 class="hover-name">Mary Ann Leonardi</h4>
                 </div>
               </div>
               <div class="name-box">
-                <h4>Mary Ann Leonardi</h4>
+                <h3 class="h4">Mary Ann Leonardi</h3>
                 <h4 class="mb-0 role">Paralegal</h4>
               </div>
             </a>
@@ -332,19 +430,19 @@
 
     <!-- counter -->
     <section id="counter" class="section-padding">
-      <div class="row" data-aos="fade-down" data-aos-delay="50">
+      <div class="row" data-aos="fade-up" data-aos-delay="50">
         <hr class="hr-top" />
-        <h1 class="about-bottom">
+        <p class="about-bottom">
           At Neiley Law, clients come first. We seek resolution
           tailored to our clients’ goals and needs.
-        </h1>
+        </p>
         <hr class="hr-bottom" />
       </div>
       <!-- <div class="container text-center">
         <div class="row g-4">
           <div
             class="col-lg-3 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <h1 class="display-4">300+</h1>
@@ -352,7 +450,7 @@
           </div>
           <div
             class="col-lg-3 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="250"
           >
             <h1 class="display-4">300+</h1>
@@ -360,7 +458,7 @@
           </div>
           <div
             class="col-lg-3 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="350"
           >
             <h1 class="display-4">150+</h1>
@@ -368,7 +466,7 @@
           </div>
           <div
             class="col-lg-3 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="450"
           >
             <h1 class="display-4">$20,000,000+</h1>
@@ -384,140 +482,67 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">AREAS OF PRACTICE</h1>
+              <h2 class="display-4 fw-semibold">AREAS OF PRACTICE</h2>
               <div class="line"></div>
+              <p>
+                A practice devoted exclusively to
+                <a href="./family-law/">Family Law</a>, from complex marital
+                estates to the arrangements that matter most for your children.
+              </p>
             </div>
           </div>
         </div>
-        <div class="row g-4 text-center box-row">
-          <div class="prac" data-aos="fade-down" data-aos-delay="150">
-            <div class="offerings theme-shadow p-lg-5 p-4 family">
-              <h5 class="mt-4 mb-3 prac-title">
-                <a
-                  href="./family-law/"
-                  style="color: inherit; text-decoration: none"
-                  >Family Law</a
-                >
-              </h5>
-              <p>What We Do</p>
+        <div class="practice-index">
+          <div class="row g-0">
+            <div class="col-lg-4 pi-col" data-aos="fade-up" data-aos-delay="200">
+              <span class="pi-numeral">I</span>
+              <h3 class="pi-heading">
+                <a href="./family-law/divorce/">Divorce &amp; Legal Separation</a>
+              </h3>
+              <ul class="pi-list">
+                <li><a href="./family-law/high-asset-divorce/">High-Asset and Complex Marital Estates</a></li>
+                <li><a href="./family-law/business-valuation/">Valuation of Real Estate and Business Interests</a></li>
+                <li><a href="./family-law/same-sex-divorce/">Same-Sex Divorce and Legal Separation</a></li>
+                <li><a href="./family-law/spousal-support/">Spousal Support and Modifications</a></li>
+                <li><a href="./family-law/executive-compensation/">Executive Compensation</a></li>
+                <li><a href="./family-law/common-law-marriage/">Common Law Marriage</a></li>
+                <li><a href="./family-law/post-decree/">Post-Decree Contempt and Enforcement</a></li>
+                <li><a href="./family-law/prenuptial-agreements/">Prenuptial and Postnuptial Agreements</a></li>
+              </ul>
             </div>
-            <div class="prac-sub">
-              <h6>
-                <a
-                  href="./family-law/divorce/"
-                  style="color: inherit; text-decoration: none"
-                  >Divorce and Legal Separation</a
-                >
-              </h6>
-              <div class="line"></div>
-              <a href="./family-law/high-asset-divorce/" class="prac-sub-link"
-                >High-Asset and Complex Marital Estates</a
-              ><br />
-              <a href="./family-law/business-valuation/" class="prac-sub-link"
-                >Valuation and Allocation of Real Estate and Business
-                Interests</a
-              ><br />
-              <a href="./family-law/same-sex-divorce/" class="prac-sub-link"
-                >Same-Sex Divorce and Legal Separation</a
-              ><br />
-              <a href="./family-law/spousal-support/" class="prac-sub-link"
-                >Spousal Support and Modifications</a
-              ><br />
-              <a
-                href="./family-law/executive-compensation/"
-                class="prac-sub-link"
-                >Executive Compensation</a
-              ><br />
-              <a href="./family-law/common-law-marriage/" class="prac-sub-link"
-                >Common Law Marriage</a
-              ><br />
-              <a href="./family-law/post-decree/" class="prac-sub-link"
-                >Post-Decree Contempt and Enforcement</a
-              ><br />
-              <a
-                href="./family-law/prenuptial-agreements/"
-                class="prac-sub-link"
-                >Prenuptial and Postnuptial Marital Agreements</a
-              ><br />
-              <div class="iconbox" style="visibility: hidden">
-                <i class="bi bi-diamond pb-4" style="margin: 0"></i>
-              </div>
-
-              <h6>
-                <a
-                  href="./family-law/child-custody/"
-                  style="color: inherit; text-decoration: none"
-                  >Parenting Rights</a
-                >
-              </h6>
-              <div class="line"></div>
-              <a
-                href="./family-law/parental-responsibilities/"
-                class="prac-sub-link"
-                >Allocation of Parental Rights</a
-              ><br />
-              <a
-                href="./family-law/parental-responsibilities/"
-                class="prac-sub-link"
-                >Allocation of Parental Responsibilities</a
-              ><br />
-              <a href="./family-law/same-sex-parenting/" class="prac-sub-link"
-                >Same-Sex Parenting Rights</a
-              ><br />
-              <a href="./family-law/decision-making/" class="prac-sub-link"
-                >Decision-Making</a
-              ><br />
-              <a href="./family-law/parenting-time/" class="prac-sub-link"
-                >Parenting Time</a
-              ><br />
-              <a href="./family-law/child-support/" class="prac-sub-link"
-                >Child Support and Expenses</a
-              ><br />
-              <a href="./family-law/relocation/" class="prac-sub-link"
-                >Relocation and Removal</a
-              ><br />
-              <a
-                href="./family-law/child-support-modification/"
-                class="prac-sub-link"
-                >Modification of Child Support</a
-              ><br />
-              <a
-                href="./family-law/parenting-plan-modification/"
-                class="prac-sub-link"
-                >Modification of Parenting Plan</a
-              ><br />
-              <div class="iconbox pb-4" style="visibility: hidden">
-                <i class="bi bi-diamond" style="margin: 0"></i>
-              </div>
-              <h6>General</h6>
-              <div class="line"></div>
-              <a
-                href="./family-law/civil-protection-orders/"
-                class="prac-sub-link"
-                >Civil Protection Orders</a
-              ><br />
-              <a href="./family-law/family-law-appeals/" class="prac-sub-link"
-                >Appeals</a
-              ><br />
-              <div class="iconbox" style="visibility: hidden">
-                <i class="bi bi-diamond" style="margin: 0"></i>
+            <div class="col-lg-4 pi-col" data-aos="fade-up" data-aos-delay="300">
+              <span class="pi-numeral">II</span>
+              <h3 class="pi-heading">
+                <a href="./family-law/child-custody/">Parenting Rights</a>
+              </h3>
+              <ul class="pi-list">
+                <li><a href="./family-law/parental-responsibilities/">Allocation of Parental Responsibilities</a></li>
+                <li><a href="./family-law/same-sex-parenting/">Same-Sex Parenting Rights</a></li>
+                <li><a href="./family-law/decision-making/">Decision-Making</a></li>
+                <li><a href="./family-law/parenting-time/">Parenting Time</a></li>
+                <li><a href="./family-law/child-support/">Child Support and Expenses</a></li>
+                <li><a href="./family-law/relocation/">Relocation and Removal</a></li>
+                <li><a href="./family-law/child-support-modification/">Modification of Child Support</a></li>
+                <li><a href="./family-law/parenting-plan-modification/">Modification of Parenting Plan</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 pi-col" data-aos="fade-up" data-aos-delay="400">
+              <span class="pi-numeral">III</span>
+              <h3 class="pi-heading">General</h3>
+              <ul class="pi-list">
+                <li><a href="./family-law/civil-protection-orders/">Civil Protection Orders</a></li>
+                <li><a href="./family-law/family-law-appeals/">Appeals</a></li>
+              </ul>
+              <div class="pi-cta">
+                <p>Not sure where your matter fits?</p>
+                <a href="#contact" class="btn btn-brand">Schedule a Consultation</a>
               </div>
             </div>
           </div>
-          <!-- <div class="prac">
-            <div
-              class="offerings theme-shadow p-lg-5 p-4 appeals"
-              data-aos="fade-down"
-              data-aos-delay="350"
-            > 
-              <h5 class="mt-4 mb-3">Appeals</h5>
-              <p>What We Do</p>
-            </div>
-          </div> -->
         </div>
       </div>
     </section>
@@ -528,11 +553,11 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">LOCATIONS</h1>
+              <h2 class="display-4 fw-semibold">LOCATIONS</h2>
               <div class="line"></div>
               <p>Serving Colorado's Western Slope and Mountain Communities</p>
             </div>
@@ -615,26 +640,29 @@
         </div>
         <div class="row g-4 justify-content-center">
           <!-- Carbondale Office -->
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
             <div class="location-card">
               <div class="location-image-container image-zoom">
                 <div class="image-zoom-wrapper">
                   <a href="./locations/carbondale/">
                     <img
-                      src="/assets/images/sopris.jpeg"
+                      src="/assets/images/opt/sopris-1040.webp"
+              srcset="/assets/images/opt/sopris-600.webp 600w, /assets/images/opt/sopris-1040.webp 1040w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="1040" height="450" loading="lazy" decoding="async"
                       alt="Carbondale Office"
                       class="location-image"
                     />
                   </a>
                 </div>
-                <div class="speaker-content location-hover-content">
+                <div class="speaker-content location-hover-content" aria-hidden="true">
                   <h4>Learn More About</h4>
                   <h4 class="hover-name">Carbondale Office</h4>
                 </div>
               </div>
               <div class="card h-100 shadow-sm" style="margin-top: 20px">
                 <div class="ratio ratio-4x3">
-                  <iframe
+                  <iframe title="Map of the Neiley Law Carbondale office"
                     src="https://www.google.com/maps?q=1000+Dolores+Way+Suite+B+Carbondale+CO+81623&output=embed"
                     style="border: 0"
                     allowfullscreen=""
@@ -644,14 +672,14 @@
                   </iframe>
                 </div>
                 <div class="card-body text-center">
-                  <h4 class="card-title">Carbondale Office</h4>
+                  <h3 class="card-title h4">Carbondale Office</h3>
                   <p class="card-text">
                     1000 Dolores Way, Suite B<br />
                     Carbondale, CO 81623
                   </p>
                   <a
                     href="https://maps.google.com/?q=1000+Dolores+Way+Suite+B+Carbondale+CO+81623"
-                    target="_blank"
+                    target="_blank" rel="noopener"
                     class="btn btn-outline-primary get-directions-btn"
                     >Get Directions</a
                   >
@@ -660,26 +688,29 @@
             </div>
           </div>
           <!-- Rifle Office -->
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
             <div class="location-card">
               <div class="location-image-container image-zoom">
                 <div class="image-zoom-wrapper">
                   <a href="./locations/rifle/">
                     <img
-                      src="/assets/images/rifle.jpg"
+                      src="/assets/images/opt/rifle-1000.webp"
+              srcset="/assets/images/opt/rifle-600.webp 600w, /assets/images/opt/rifle-1000.webp 1000w"
+              sizes="(min-width: 768px) 33vw, 100vw"
+              width="1000" height="500" loading="lazy" decoding="async"
                       alt="Rifle Office"
                       class="location-image"
                     />
                   </a>
                 </div>
-                <div class="speaker-content location-hover-content">
+                <div class="speaker-content location-hover-content" aria-hidden="true">
                   <h4>Learn More About</h4>
                   <h4 class="hover-name">Rifle Office</h4>
                 </div>
               </div>
               <div class="card h-100 shadow-sm" style="margin-top: 20px">
                 <div class="ratio ratio-4x3">
-                  <iframe
+                  <iframe title="Map of the Neiley Law Rifle office"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.8234!2d-107.7831!3d39.5347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741489f1d7c7f7d%3A0x123456780!2s111%20E%203rd%20St%2C%20Rifle%2C%20CO%2081650!5e0!3m2!1sen!2sus!4v1234567890"
                     style="border: 0"
                     allowfullscreen=""
@@ -689,14 +720,14 @@
                   </iframe>
                 </div>
                 <div class="card-body text-center">
-                  <h4 class="card-title">Rifle Office</h4>
+                  <h3 class="card-title h4">Rifle Office</h3>
                   <p class="card-text">
                     111 East Third Street, Unit 219<br />
                     Rifle, CO 81650
                   </p>
                   <a
                     href="https://maps.google.com/?q=111+East+Third+Street+Unit+219+Rifle+CO+81650"
-                    target="_blank"
+                    target="_blank" rel="noopener"
                     class="btn btn-outline-primary get-directions-btn"
                     >Get Directions</a
                   >
@@ -715,18 +746,18 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">GALLERY</h1>
+              <h2 class="display-4 fw-semibold">GALLERY</h2>
               <div class="line"></div>
               <p>Indulge your senses and connect with community.</p>
             </div>
           </div>
         </div>
         <div class="row g-4">
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
             <div class="gallery-item image-zoom">
               <div class="image-zoom-wrapper">
                 <img src="./assets/images/gallery-1.jpg" />
@@ -735,7 +766,7 @@
                 href="./assets/images/gallery-1.jpg"
                 data-fancybox="gallery"
                 class="iconbox"
-                ><i class="ri-search-line"></i
+                ><i class="ri-search-line" aria-hidden="true"></i
               ></a>
             </div>
             <div class="gallery-item image-zoom mt-4">
@@ -746,11 +777,11 @@
                 href="./assets/images/gallery-2.jpg"
                 data-fancybox="gallery"
                 class="iconbox"
-                ><i class="ri-search-line"></i
+                ><i class="ri-search-line" aria-hidden="true"></i
               ></a>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
             <div class="gallery-item image-zoom">
               <div class="image-zoom-wrapper">
                 <img src="./assets/images/gallery-3.jpg" />
@@ -759,7 +790,7 @@
                 href="./assets/images/gallery-3.jpg"
                 data-fancybox="gallery"
                 class="iconbox"
-                ><i class="ri-search-line"></i
+                ><i class="ri-search-line" aria-hidden="true"></i
               ></a>
             </div>
             <div class="gallery-item image-zoom mt-4">
@@ -770,11 +801,11 @@
                 href="./assets/images/gallery-4.jpg"
                 data-fancybox="gallery"
                 class="iconbox"
-                ><i class="ri-search-line"></i
+                ><i class="ri-search-line" aria-hidden="true"></i
               ></a>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
             <div class="gallery-item image-zoom">
               <div class="image-zoom-wrapper">
                 <img src="./assets/images/gallery-5.jpg" />
@@ -783,7 +814,7 @@
                 href="./assets/images/gallery-5.jpg"
                 data-fancybox="gallery"
                 class="iconbox"
-                ><i class="ri-search-line"></i
+                ><i class="ri-search-line" aria-hidden="true"></i
               ></a>
             </div>
             <div class="gallery-item image-zoom mt-4">
@@ -794,7 +825,7 @@
                 href="./assets/images/gallery-6.jpg"
                 data-fancybox="gallery"
                 class="iconbox"
-                ><i class="ri-search-line"></i
+                ><i class="ri-search-line" aria-hidden="true"></i
               ></a>
             </div>
           </div>
@@ -809,11 +840,11 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">REVIEWS</h1>
+              <h2 class="display-4 fw-semibold">REVIEWS</h2>
               <div class="line"></div>
               <p>Read reviews from satisfied clients.</p>
             </div>
@@ -822,17 +853,17 @@
         <div class="row gy-5 g-4">
           <div
             class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="review">
               <div class="review-head p-4 bg-white theme-shadow">
                 <div class="text-warning">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
                 </div>
                 <p>
                   "Exceptional legal service! Our family entrusted them with our
@@ -857,17 +888,17 @@
           </div>
           <div
             class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="250"
           >
             <div class="review">
               <div class="review-head p-4 bg-white theme-shadow">
                 <div class="text-warning">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
                 </div>
                 <p>
                   "Outstanding legal representation! From resolving complex
@@ -893,17 +924,17 @@
           </div>
           <div
             class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="350"
           >
             <div class="review">
               <div class="review-head p-4 bg-white theme-shadow">
                 <div class="text-warning">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
                 </div>
                 <p>
                   "Five stars for this outstanding firm! Their legal team
@@ -930,17 +961,17 @@
           </div>
           <div
             class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="450"
           >
             <div class="review">
               <div class="review-head p-4 bg-white theme-shadow">
                 <div class="text-warning">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
                 </div>
                 <p>
                   "Top-notch legal professionals! This firm provided invaluable
@@ -967,17 +998,17 @@
           </div>
           <div
             class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="550"
           >
             <div class="review">
               <div class="review-head p-4 bg-white theme-shadow">
                 <div class="text-warning">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
                 </div>
                 <p>
                   "Excellent legal services! The attorneys at this firm are
@@ -1005,17 +1036,17 @@
           </div>
           <div
             class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="650"
           >
             <div class="review">
               <div class="review-head p-4 bg-white theme-shadow">
                 <div class="text-warning">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <i class="ri-star-fill" aria-hidden="true"></i>
                 </div>
                 <p>
                   "Impressive legal expertise! We turned to this firm for
@@ -1051,11 +1082,11 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">CONTACT</h1>
+              <h2 class="display-4 fw-semibold">CONTACT</h2>
               <div class="line"></div>
               <p>
                 To speak with our attorneys, please schedule a consultation. We
@@ -1066,82 +1097,199 @@
         </div>
         <div
           class="row justify-content-center"
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-delay="250"
         >
-          <div class="col-lg-8">
+          <div class="col-lg-9">
             <form
+              id="intake"
+              class="intake theme-shadow"
               action="https://api.web3forms.com/submit"
               method="POST"
-              class="row g-3 p-lg-5 p-4 theme-shadow"
             >
-              <div class="form-group col-lg-6">
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="cbf589d6-f737-4697-9136-922e5fa95a11"
-                />
-                <input
-                  type="hidden"
-                  name="redirect"
-                  value="https://neiley.com/thank-you.html"
-                />
-                <input
-                  type="text"
-                  name="first_name"
-                  class="form-control"
-                  placeholder="First Name"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-6">
-                <input
-                  type="text"
-                  name="last_name"
-                  class="form-control"
-                  placeholder="Last Name"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-12">
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="Email Address"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-12">
-                <input
-                  type="phone"
-                  name="phone"
-                  class="form-control"
-                  placeholder="Phone Number"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-12">
-                <input
-                  type="text"
-                  name="subject"
-                  class="form-control"
-                  placeholder="Subject"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-12">
-                <textarea
-                  name="message"
-                  class="form-control"
-                  rows="5"
-                  placeholder="Message"
-                  required
-                ></textarea>
-              </div>
+              <input
+                type="hidden"
+                name="access_key"
+                value="cbf589d6-f737-4697-9136-922e5fa95a11"
+              />
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://neiley.com/thank-you.html"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New consultation request"
+                data-intake-subject
+              />
+              <input type="hidden" name="from_name" value="Neiley Law website" />
+              <!-- Spam trap: real visitors never see or tick this -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="intake-trap"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
 
-              <div class="form-group col-lg-12 d-grid">
-                <button class="btn btn-brand">Send Message</button>
+              <fieldset class="intake-step">
+                <legend>
+                  <span class="intake-num">I</span>
+                  What can we help with?
+                </legend>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="matter" value="Divorce or legal separation" /><span>Divorce or separation</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Parenting and custody" /><span>Parenting &amp; custody</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Child or spousal support" /><span>Child or spousal support</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Protection order" data-urgent /><span>Protection order</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Prenuptial or postnuptial agreement" /><span>Prenup or postnup</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Modification or enforcement" /><span>Modify or enforce an order</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Not sure" /><span>Not sure</span></label>
+                  <label class="chip"><input type="radio" name="matter" value="Other" data-other /><span>Other</span></label>
+                </div>
+                <div class="intake-other" data-intake-other hidden>
+                  <label for="cf-other" class="intake-label">What’s it about? <span class="intake-optional">optional</span></label>
+                  <input id="cf-other" type="text" name="matter_other" class="form-control" maxlength="120" />
+                </div>
+                <p class="intake-urgent" data-intake-urgent hidden>
+                  If you are in immediate danger, call
+                  <a href="tel:911">911</a>. To speak with us today, call
+                  <a href="tel:970-963-6363">970-963-6363</a>.
+                </p>
+                <button type="button" class="intake-skip" data-intake-skip>
+                  Skip this and just send a message
+                </button>
+              </fieldset>
+
+              <div class="intake-more" data-intake-more>
+                <div class="intake-more-inner">
+                  <fieldset class="intake-step">
+                    <legend>
+                      <span class="intake-num">II</span>
+                      About you
+                    </legend>
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="cf-name" class="intake-label">Name</label>
+                        <input
+                          id="cf-name"
+                          type="text"
+                          name="name"
+                          class="form-control"
+                          autocomplete="name"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cf-email" class="intake-label">Email</label>
+                        <input
+                          id="cf-email"
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          autocomplete="email"
+                          aria-describedby="cf-reach-hint"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cf-phone" class="intake-label">Phone</label>
+                        <input
+                          id="cf-phone"
+                          type="tel"
+                          name="phone"
+                          class="form-control"
+                          autocomplete="tel"
+                          aria-describedby="cf-reach-hint"
+                        />
+                      </div>
+                      <p id="cf-reach-hint" class="intake-hint col-12">
+                        Email or phone, whichever you prefer.
+                      </p>
+                      <div class="col-md-6">
+                        <label for="cf-county" class="intake-label"
+                          >County <span class="intake-optional">optional</span></label
+                        >
+                        <select id="cf-county" name="county" class="form-select">
+                          <option value="">Select</option>
+                          <option>Pitkin</option>
+                          <option>Garfield</option>
+                          <option>Eagle</option>
+                          <option>Mesa</option>
+                          <option>Other / not sure</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <span class="intake-label" id="cf-children-label"
+                          >Children involved?
+                          <span class="intake-optional">optional</span></span
+                        >
+                        <div class="chips chips-sm" role="radiogroup" aria-labelledby="cf-children-label">
+                          <label class="chip"><input type="radio" name="children" value="Yes" /><span>Yes</span></label>
+                          <label class="chip"><input type="radio" name="children" value="No" /><span>No</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="intake-step">
+                    <legend>
+                      <span class="intake-num">III</span>
+                      How should we reach you?
+                      <span class="intake-optional">optional</span>
+                    </legend>
+                    <div class="chips chips-sm" role="radiogroup" aria-label="Preferred contact method">
+                      <label class="chip"><input type="radio" name="contact_method" value="Email" /><span>Email</span></label>
+                      <label class="chip"><input type="radio" name="contact_method" value="Phone call" /><span>Phone call</span></label>
+                      <label class="chip"><input type="radio" name="contact_method" value="Text message" /><span>Text message</span></label>
+                    </div>
+                    <label for="cf-times" class="intake-label mt-3">Best days or times to reach you</label>
+                    <input
+                      id="cf-times"
+                      type="text"
+                      name="best_times"
+                      class="form-control"
+                      placeholder="e.g. weekdays after 3 pm"
+                    />
+                    <div class="intake-checks">
+                      <label class="intake-check"
+                        ><input type="checkbox" name="no_voicemail" value="Yes" />
+                        Please don’t leave a voicemail</label
+                      >
+                      <label class="intake-check"
+                        ><input type="checkbox" name="discreet" value="Yes" />
+                        Please don’t mention Neiley Law by name when calling or
+                        texting</label
+                      >
+                    </div>
+                    <label for="cf-message" class="intake-label mt-3"
+                      >Anything you’d like us to know?
+                      <span class="intake-optional">optional</span></label
+                    >
+                    <textarea
+                      id="cf-message"
+                      name="message"
+                      class="form-control"
+                      rows="4"
+                      aria-describedby="cf-message-hint"
+                    ></textarea>
+                    <p id="cf-message-hint" class="intake-hint">
+                      A sentence or two is plenty. We’ll go over the details
+                      with you in person.
+                    </p>
+                  </fieldset>
+
+                  <div class="intake-submit">
+                    <button class="btn btn-brand" type="submit">
+                      Request a Consultation
+                    </button>
+                    <p class="intake-fineprint">
+                      Submitting this form does not create an attorney-client
+                      relationship.
+                    </p>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -1154,18 +1302,18 @@
         <div class="row">
           <div
             class="col-12 text-center"
-            data-aos="fade-down"
+            data-aos="fade-up"
             data-aos-delay="150"
           >
             <div class="section-title">
-              <h1 class="display-4 fw-semibold">AVL NEWS</h1>
+              <h2 class="display-4 fw-semibold">AVL NEWS</h2>
               <div class="line"></div>
               <p>Stay up to date on AVL news.</p>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
             <div class="speaker image-zoom">
               <div class="image-zoom-wrapper">
                 <img src="./assets/images/scales.jpeg" />
@@ -1182,7 +1330,7 @@
               <a href="#">READ MORE</a>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
             <div class="speaker image-zoom">
               <div class="image-zoom-wrapper">
                 <img src="./assets/images/court.jpeg" />
@@ -1201,7 +1349,7 @@
               <a href="#">READ MORE</a>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
             <div class="speaker image-zoom">
               <div class="image-zoom-wrapper">
                 <img src="./assets/images/legal.jpeg" />
@@ -1224,27 +1372,24 @@
     </section> -->
 
     <!-- footer -->
+    </main>
     <footer class="footer-cont">
       <div class="footer-top">
         <div class="container">
           <div class="row gy-5">
             <div class="col-lg-3 col-sm-6 special-foot">
               <a href="#">
-                <img src="./assets/images/AVL-LOGO-LightCamel.png" alt="" />
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law home" />
               </a>
               <div class="line special"></div>
               <p>NEILEY LAW</p>
               <div class="social-icons">
-                <a href="#">
-                  <i class="ri-instagram-line"></i>
-                </a>
-                <a href="#">
-                  <i class="ri-linkedin-box-line"></i>
-                </a>
+                <a href="#" aria-label="Neiley Law on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law on LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
               </div>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">LEARN MORE</h5>
+              <h2 class="h5 mb-0">LEARN MORE</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -1255,6 +1400,9 @@
                 </li>
                 <li>
                   <a href="#practice">Our Practice</a>
+                </li>
+                <li>
+                  <a href="/resources/">Resources</a>
                 </li>
                 <li>
                   <a href="./privacy.html">Privacy Policy</a>
@@ -1268,7 +1416,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONNECT</h5>
+              <h2 class="h5 mb-0">CONNECT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -1280,7 +1428,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONTACT</h5>
+              <h2 class="h5 mb-0">CONTACT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>1000 Dolores Way, Suite B</li>
@@ -1328,14 +1476,11 @@
     "></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="/assets/js/main.js"></script>
     <script>
       Fancybox.bind('[data-fancybox="gallery"]', {
         //
       });
     </script>
-    <script src="script.js"></script>
   </body>
 </html>

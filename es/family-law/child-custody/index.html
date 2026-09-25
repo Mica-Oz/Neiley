@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abogado de Custodia de Menores en Colorado | Abogados de Tiempo de Crianza | Neiley Law</title>
+    <meta name="description" content="Abogados con experiencia en custodia de menores al servicio de Carbondale y Rifle. Protegemos los derechos parentales, el tiempo de crianza y el interés superior del menor en todo el oeste de Colorado.">
+    <link rel="canonical" href="https://www.neiley.com/es/family-law/child-custody/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/family-law/child-custody/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/family-law/child-custody/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/family-law/child-custody/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="es_US" />
+    <meta property="og:title" content="Abogado de Custodia de Menores en Colorado | Abogados de Tiempo de Crianza | Neiley Law" />
+    <meta property="og:description" content="Abogados con experiencia en custodia de menores al servicio de Carbondale y Rifle. Protegemos los derechos parentales, el tiempo de crianza y el interés superior del menor en todo el oeste de Colorado." />
+    <meta property="og:url" content="https://www.neiley.com/es/family-law/child-custody/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abogado de Custodia de Menores en Colorado | Abogados de Tiempo de Crianza | Neiley Law" />
+    <meta name="twitter:description" content="Abogados con experiencia en custodia de menores al servicio de Carbondale y Rifle. Protegemos los derechos parentales, el tiempo de crianza y el interés superior del menor en todo el oeste de Colorado." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.neiley.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Derecho de familia",
+      "item": "https://www.neiley.com/es/family-law/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Abogado de Custodia de Menores en Colorado",
+      "item": "https://www.neiley.com/es/family-law/child-custody/"
+    }
+  ]
+}
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Neiley Law - Child Custody",
+      "description": "Child custody and parenting time attorneys serving Western Colorado",
+      "provider": {
+        "@type": "Attorney",
+        "name": "Neiley Law"
+      },
+      "areaServed": [ {
+          "@type": "City",
+          "name": "Aspen",
+          "containedIn": {
+            "@type": "State",
+            "name": "Colorado"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Rifle",
+          "containedIn": {
+            "@type": "State",
+            "name": "Colorado"
+          }
+        }
+      ],
+      "serviceType": "Child Custody Law"
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/es/">
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" height="40">
+            </a>
+            <button class="navbar-toggler" aria-label="Abrir o cerrar el menú de navegación" aria-controls="navbarNav" aria-expanded="false" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/es/#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#practice">Áreas de práctica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#team">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#locations">Oficinas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="main" tabindex="-1">
+
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 text-white mb-3" data-aos="fade-up">Custodia de menores y tiempo de crianza</h1>
+                    <p class="lead text-white" data-aos="fade-up" data-aos-delay="100">Protegemos sus derechos parentales y el interés superior de sus hijos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Abogados dedicados a la custodia de menores en el oeste de Colorado</h2>
+                        <p>Nada es más importante que su relación con sus hijos. Cuando usted enfrenta una disputa de custodia, ya sea como parte de un divorcio, de una modificación de órdenes existentes o de un caso de paternidad, necesita un abogado que comprenda la enorme importancia del vínculo entre padres e hijos y que luche por proteger sus derechos como padre o madre.</p>
+
+                        <p>En Neiley Law ofrecemos representación integral en todos los asuntos de custodia de menores y tiempo de crianza en todo el oeste de Colorado, incluidos <a href="/es/locations/carbondale/">Carbondale</a> y <a href="/es/locations/rifle/">Rifle</a>. Nuestro despacho pequeño y especializado le garantiza atención personalizada de abogados de derecho de familia con experiencia, comprometidos con lograr resultados que protejan tanto sus derechos parentales como el interés superior de sus hijos.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Las responsabilidades parentales en Colorado</h2>
+                        <p>La ley de Colorado utiliza el término “asignación de responsabilidades parentales” en lugar de “custodia”. Esto abarca dos componentes distintos: el tiempo de crianza (custodia física) y la responsabilidad de toma de decisiones (custodia legal). Comprender estos conceptos es esencial para enfrentar un proceso de custodia.</p>
+
+                        <p><strong>El tiempo de crianza</strong> se refiere al horario que determina cuándo pasan los hijos tiempo con cada uno de los padres. Incluye los horarios regulares para días de escuela y fines de semana, los horarios de días festivos, el tiempo de vacaciones y disposiciones para ocasiones especiales como los cumpleaños. Los tribunales de Colorado no presumen que un arreglo de tiempo de crianza en particular sea el mejor; en cambio, se enfocan en lo que atiende el interés superior del menor según las circunstancias específicas de cada familia.</p>
+
+                        <p><strong>La responsabilidad de toma de decisiones</strong> se refiere a la autoridad para tomar las decisiones importantes sobre la crianza de los hijos, incluidas la educación, la atención médica y dental, la formación religiosa y las actividades extracurriculares. La toma de decisiones puede asignarse de forma conjunta (ambos padres comparten la toma de decisiones) o a uno solo de los padres en algunas o en todas las áreas. La toma de decisiones conjunta requiere que los padres se consulten y se pongan de acuerdo en las decisiones importantes. Cuando la toma de decisiones se asigna a uno de los padres, ese padre o madre puede tomar decisiones en esa área sin el consentimiento del otro.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>El criterio del interés superior del menor</h2>
+                        <p>Los tribunales de Colorado determinan el tiempo de crianza y la toma de decisiones según el “interés superior del menor”. Este criterio exige que el tribunal considere múltiples factores diseñados para promover el desarrollo sano y el bienestar de los hijos. Comprender estos factores es fundamental, porque guían la forma en que los tribunales evalúan los casos de custodia.</p>
+
+                        <p>Entre los factores principales que consideran los tribunales se encuentran:</p>
+
+                        <ul>
+                            <li>Los deseos de los padres</li>
+                            <li>Los deseos de los hijos, dando más peso a los hijos mayores y más maduros</li>
+                            <li>La relación de los hijos con cada uno de los padres, con sus hermanos y con otras personas importantes en su vida</li>
+                            <li>La adaptación de los hijos a su hogar, su escuela y su comunidad</li>
+                            <li>La salud mental y física de todas las partes</li>
+                            <li>La capacidad de cada padre para fomentar una relación positiva entre los hijos y el otro padre</li>
+                            <li>Pruebas de abuso o negligencia infantil</li>
+                            <li>Pruebas de violencia doméstica</li>
+                            <li>La capacidad de cada padre para poner las necesidades de los hijos por encima de las suyas</li>
+                            <li>La cercanía entre los hogares de los padres</li>
+                            <li>La capacidad de cada padre para ofrecer un entorno seguro y estable</li>
+                        </ul>
+
+                        <p>Ningún factor por sí solo es decisivo. Los tribunales evalúan todos los factores pertinentes según las pruebas y las circunstancias de cada caso. Por eso, en los procesos de custodia es esencial una preparación minuciosa y una presentación estratégica de las pruebas.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Planes de crianza</h2>
+                        <p>Colorado exige que los padres tengan un plan de crianza: un acuerdo escrito detallado o una orden del tribunal que establece los horarios de tiempo de crianza, la asignación de la toma de decisiones y otras disposiciones sobre el cuidado de los hijos. Un plan de crianza completo incluye los horarios regulares, los horarios de días festivos, el tiempo de vacaciones, los arreglos de transporte, la comunicación entre los padres, los métodos para resolver disputas y cualquier disposición especial que corresponda a su familia.</p>
+
+                        <p>Los padres pueden ponerse de acuerdo en un plan de crianza y presentarlo al tribunal para su aprobación; si no logran ponerse de acuerdo, el tribunal impondrá un plan de crianza después de escuchar las pruebas sobre el interés superior del menor. Ayudamos a nuestros clientes a elaborar planes de crianza que protejan su tiempo de crianza, asignen adecuadamente la toma de decisiones y establezcan horarios claros y viables que reduzcan los conflictos y atiendan las necesidades de los hijos.</p>
+
+                        <p>Los planes de crianza deben ser lo bastante detallados para evitar disputas, pero lo bastante flexibles para adaptarse a las necesidades y los horarios cambiantes de los hijos a medida que crecen. Trabajamos con nuestros clientes para redactar planes de crianza completos que den claridad y, al mismo tiempo, permitan hacer los ajustes necesarios mediante la cooperación.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Tipos de arreglos de tiempo de crianza</h2>
+                        <p>Los arreglos de tiempo de crianza varían mucho según los horarios de trabajo de los padres, la distancia entre sus hogares, la edad y las necesidades de los hijos y otros factores. Entre los arreglos más comunes se encuentran:</p>
+
+                        <p><strong>Tiempo de crianza igual o casi igual:</strong> Los hijos pasan aproximadamente el mismo tiempo con ambos padres. Esto puede consistir en alternar semanas, un horario 2-2-3 (dos días con uno de los padres, dos días con el otro y tres días con el primero) u otros arreglos que dividan el tiempo de forma más o menos igual. El tiempo de crianza igual funciona mejor cuando los padres viven relativamente cerca, pueden comunicarse de manera eficaz y los hijos pueden manejar cambios frecuentes entre hogares.</p>
+
+                        <p><strong>Residencia principal con tiempo de crianza:</strong> Los hijos viven principalmente con uno de los padres, y el otro tiene tiempo de crianza programado. Esto puede incluir fines de semana alternos, noches entre semana, periodos más largos en el verano y días festivos compartidos. Este arreglo puede ser adecuado cuando los padres viven lejos uno del otro, cuando el horario de trabajo de uno de ellos hace que el tiempo igual no sea práctico o cuando los hijos son muy pequeños.</p>
+
+                        <p><strong>Tiempo de crianza supervisado:</strong> En casos donde hay preocupaciones sobre la seguridad de los hijos, violencia doméstica, abuso de sustancias u otros factores de riesgo, el tribunal puede ordenar tiempo de crianza supervisado. La supervisión puede ir desde la supervisión profesional en un centro de supervisión hasta la supervisión por parte de un familiar o amigo de confianza, según el nivel de preocupación.</p>
+
+                        <p>El arreglo de tiempo de crianza adecuado depende de las circunstancias específicas de su familia. Le ayudamos a elaborar y defender horarios que protejan su relación con sus hijos y, al mismo tiempo, atiendan sus necesidades emocionales y de desarrollo.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Casos de reubicación y mudanza</h2>
+                        <p>Cuando uno de los padres quiere mudarse con los hijos, la ley de Colorado exige seguir procedimientos específicos. Si los padres comparten el tiempo de crianza y uno de ellos quiere mudarse a más de 10 millas de distancia (o a cualquier distancia que cambie sustancialmente el arreglo de tiempo de crianza existente), ese padre o madre debe obtener el consentimiento del otro o pedir autorización al tribunal.</p>
+
+                        <p>El padre o la madre que desea mudarse debe dar aviso por escrito de la mudanza propuesta al menos 60 días antes de la fecha prevista de reubicación (o tan pronto como sea razonablemente posible si la mudanza se debe a circunstancias fuera de su control). El otro padre puede oponerse, lo que da lugar a una audiencia ante el tribunal.</p>
+
+                        <p>En los casos de reubicación, los tribunales consideran los motivos de la mudanza, el posible impacto en la relación de los hijos con cada uno de los padres, los deseos de los hijos, si la mudanza ofrece ventajas educativas o de calidad de vida, si otros arreglos de tiempo de crianza pueden mantener la relación de los hijos con ambos padres y otros factores pertinentes.</p>
+
+                        <p>Los casos de reubicación suelen ser muy disputados y emocionalmente intensos. Ya sea que usted quiera mudarse con sus hijos o se oponga a una reubicación propuesta, necesita una representación legal hábil que proteja sus derechos y los intereses de sus hijos.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Evaluaciones de custodia de menores</h2>
+                        <p>En los casos de custodia disputados en los que el tribunal necesita información adicional para determinar el interés superior del menor, el tribunal puede ordenar que un Investigador de Niños y Familia (CFI) o un evaluador de responsabilidades parentales (PRE) realice una evaluación y haga recomendaciones al tribunal.</p>
+
+                        <p>Un CFI o un PRE entrevistará a los padres y a los hijos, observará la interacción entre padres e hijos, revisará los registros pertinentes, hablará con otras personas relacionadas, como maestros o terapeutas, y evaluará la capacidad de cada padre para atender las necesidades de los hijos. Después, el evaluador presenta un informe escrito con recomendaciones sobre el tiempo de crianza y la toma de decisiones.</p>
+
+                        <p>Aunque las recomendaciones de los evaluadores no son obligatorias para el tribunal, los jueces les dan mucho peso. Es fundamental prepararse a fondo para una evaluación, entender qué buscan los evaluadores y presentarse usted y su forma de criar de la manera más favorable. Ayudamos a nuestros clientes a prepararse para las evaluaciones de custodia y, cuando es necesario, a impugnar evaluaciones que contengan errores o recomendaciones injustas.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Asuntos de custodia relacionados con violencia doméstica</h2>
+                        <p>Las acusaciones de violencia doméstica tienen consecuencias importantes en las decisiones de custodia. La ley de Colorado exige que los tribunales consideren las pruebas creíbles de violencia doméstica al asignar las responsabilidades parentales. Cuando el tribunal determina que uno de los padres cometió violencia doméstica, esto afecta tanto la asignación del tiempo de crianza como la de la toma de decisiones.</p>
+
+                        <p>El padre o la madre que cometió violencia doméstica puede enfrentar restricciones en su tiempo de crianza, la obligación de que su tiempo de crianza sea supervisado, la obligación de completar un tratamiento por violencia doméstica, la prohibición de tener a los hijos durante la noche o, en casos graves, un contacto muy limitado con los hijos. Los tribunales también deben considerar la seguridad del padre o la madre víctima y de los hijos al elaborar los planes de crianza.</p>
+
+                        <p>Lamentablemente, en las disputas de custodia a veces se presentan acusaciones falsas de violencia doméstica. Cuando a usted se le acusa injustamente de violencia doméstica, sus derechos de custodia corren un grave riesgo. Nos defendemos con firmeza contra las acusaciones falsas y, al mismo tiempo, presentamos pruebas de su relación positiva con sus hijos y de su capacidad como padre o madre.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Abuso de sustancias y problemas de salud mental</h2>
+                        <p>Cuando existen preocupaciones por abuso de sustancias o de salud mental, los tribunales deben equilibrar los derechos de los padres con la seguridad y el bienestar de los hijos. Las pruebas de abuso de sustancias o de una enfermedad mental sin tratamiento pueden dar lugar a restricciones en el tiempo de crianza, la obligación de recibir tratamiento, pruebas de drogas o alcohol, o tiempo de crianza supervisado.</p>
+
+                        <p>Sin embargo, haber tenido problemas de abuso de sustancias o haber recibido tratamiento de salud mental en el pasado no descalifica automáticamente a un padre o madre para tener tiempo de crianza o participar en la toma de decisiones. Si usted ha atendido estos problemas mediante tratamiento y sobriedad, los tribunales tomarán en cuenta su progreso. Ayudamos a nuestros clientes a demostrar su compromiso con la recuperación y su capacidad para criar a sus hijos de manera segura.</p>
+
+                        <p>También representamos a padres y madres que buscan proteger a sus hijos del abuso de sustancias o de la enfermedad mental sin tratamiento del otro padre. Cuando existen preocupaciones de seguridad, defendemos que se establezcan restricciones y medidas de protección adecuadas para proteger a los hijos, a la vez que se anima al otro padre a atender sus problemas.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Derechos de abuelos y de terceros</h2>
+                        <p>Aunque los padres tienen el derecho fundamental de tomar decisiones sobre sus hijos, la ley de Colorado reconoce que, en algunas situaciones, los abuelos u otros terceros pueden solicitar la custodia o tiempo de crianza. Los terceros pueden solicitar la asignación de responsabilidades parentales cuando el menor no está bajo el cuidado físico de uno de sus padres, cuando uno de los padres ha fallecido, o cuando el menor ha vivido con el tercero durante un periodo prolongado y separarlo le causaría un daño grave.</p>
+
+                        <p>Los abuelos pueden solicitar derechos de visita en circunstancias limitadas, por ejemplo, cuando se les ha negado sin motivo razonable la relación con el nieto, cuando el matrimonio de los padres se ha disuelto o los padres están legalmente separados, o cuando uno de los padres del menor ha fallecido. El tribunal debe determinar que las visitas serían en el interés superior del menor y que la decisión del padre o la madre de negar las visitas no atiende adecuadamente la necesidad del menor de tener relación con sus abuelos.</p>
+
+                        <p>Representamos a padres y madres que buscan proteger sus derechos parentales frente a la interferencia de terceros y, cuando corresponde, también representamos a abuelos y otros terceros que buscan relaciones legalmente protegidas con los menores.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Modificación de órdenes de custodia</h2>
+                        <p>Los planes de crianza pueden modificarse cuando las circunstancias cambian de manera sustancial. La ley de Colorado hace relativamente difícil modificar los arreglos de tiempo de crianza durante los primeros dos años después de las órdenes iniciales, reconociendo que los hijos necesitan estabilidad. Después de dos años, es más fácil obtener una modificación si usted puede demostrar que las circunstancias han cambiado de manera sustancial y significativa y que la modificación atiende el interés superior del menor.</p>
+
+                        <p>Algunas razones comunes para una modificación son la reubicación de uno de los padres, los cambios en las necesidades de los hijos a medida que crecen, los cambios en los horarios de trabajo o en la situación de vivienda de los padres, preocupaciones por el abuso de sustancias o la salud mental de uno de los padres, el incumplimiento de las órdenes existentes por parte de uno de los padres, o las preferencias firmes de los adolescentes sobre dónde quieren vivir.</p>
+
+                        <p>Representamos a clientes que buscan modificar las órdenes existentes para que se ajusten mejor a sus circunstancias actuales, y nos oponemos a las solicitudes de modificación cuando mantener el arreglo actual atiende el interés superior del menor.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Cumplimiento de órdenes de custodia</h2>
+                        <p>Cuando uno de los padres incumple las órdenes de custodia negando el tiempo de crianza, no regresando a los hijos según lo programado o negándose a respetar la asignación de la toma de decisiones, el padre o la madre afectado puede solicitar su cumplimiento mediante un procedimiento por desacato. Las medidas por desacato pueden incluir tiempo de crianza de reposición, la modificación de las órdenes, el pago de honorarios de abogados y, en casos graves, cárcel.</p>
+
+                        <p>Sin embargo, no todo incumplimiento de las órdenes de custodia constituye desacato. Para probar el desacato, usted debe demostrar que el otro padre tenía conocimiento claro de la orden, tenía la capacidad de cumplirla y, de manera intencional, no la cumplió. Ayudamos a nuestros clientes a documentar los incumplimientos y a buscar las medidas adecuadas, y también les asesoramos sobre cómo evitar acusaciones de desacato cuando surgen problemas de cumplimiento.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Asuntos de custodia entre estados</h2>
+                        <p>Los casos de custodia que involucran a más de un estado se rigen por la Ley Uniforme de Jurisdicción y Cumplimiento en Materia de Custodia de Menores (Uniform Child Custody Jurisdiction and Enforcement Act, UCCJEA). Por lo general, el “estado de residencia” del menor (el estado donde el menor ha vivido durante los seis meses inmediatamente anteriores al proceso de custodia) tiene jurisdicción para tomar las decisiones de custodia.</p>
+
+                        <p>Los casos de custodia entre estados pueden ser complejos e implican preguntas sobre qué estado tiene jurisdicción, cómo hacer cumplir órdenes de custodia de otros estados y cómo prevenir la sustracción de menores por parte de uno de los padres. Tenemos experiencia en asuntos de custodia entre estados y en la protección de sus derechos cuando los asuntos de custodia cruzan las fronteras estatales.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Paternidad y custodia</h2>
+                        <p>Cuando los padres no están casados, establecer la paternidad es un requisito previo para obtener órdenes de custodia. La paternidad puede establecerse firmando un reconocimiento de paternidad en el hospital cuando nace el bebé, por acuerdo de ambos padres o mediante un proceso judicial que incluya pruebas genéticas.</p>
+
+                        <p>Una vez establecida la paternidad, los padres no casados tienen los mismos derechos y responsabilidades que los padres casados en cuanto a la custodia, el tiempo de crianza, la toma de decisiones y la manutención de menores. Representamos tanto a madres que buscan establecer la paternidad y obtener manutención de menores como a padres que buscan establecer la paternidad y asegurar sus derechos parentales.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Consideraciones especiales en casos de alto conflicto</h2>
+                        <p>Algunos casos de custodia implican altos niveles de conflicto, mala comunicación entre los padres, desacuerdos frecuentes y regresos repetidos al tribunal. Los casos de alto conflicto son emocionalmente agotadores para los padres y pueden ser perjudiciales para los hijos. Cuando el conflicto es grave, pueden ser necesarias disposiciones especiales, como planes de crianza detallados que reduzcan al mínimo la comunicación necesaria, el uso de aplicaciones de crianza para la comunicación y los horarios, el nombramiento de un coordinador de crianza que ayude a resolver disputas, o arreglos de crianza paralela que reduzcan al mínimo la interacción entre los padres.</p>
+
+                        <p>Ayudamos a nuestros clientes a manejar situaciones de custodia de alto conflicto, con un enfoque en reducir el conflicto, proteger a los hijos de las disputas entre los padres y crear estructuras que permitan a ambos padres mantener su relación con los hijos a pesar de la hostilidad entre ellos.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Protección de sus derechos parentales</h2>
+                        <p>Su relación con sus hijos es valiosa e irremplazable. Cuando esa relación se ve amenazada por una disputa de custodia, usted necesita a alguien que defienda su caso, que comprenda lo que está en juego y que luche por proteger sus derechos. En Neiley Law combinamos un conocimiento jurídico sólido con una verdadera comprensión de los aspectos emocionales de los litigios de custodia.</p>
+
+                        <p>Nos tomamos el tiempo de entender las necesidades de sus hijos, su relación con ellos y sus preocupaciones sobre el otro padre. Diseñamos estrategias adaptadas a su situación, ya sea negociar un plan de crianza de común acuerdo, mediar los asuntos en disputa o litigar con firmeza los asuntos de custodia disputados.</p>
+
+                        <p>Durante todo el proceso, no nos enfocamos solo en ganar batallas legales, sino en lograr resultados que atiendan el interés superior de sus hijos y, al mismo tiempo, protejan sus derechos parentales. Sabemos que los litigios de custodia afectan a familias y relaciones reales, y abordamos cada caso con la seriedad y la sensibilidad que merece.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Comuníquese con nuestros abogados de custodia de menores</h2>
+                        <p>Si enfrenta una disputa de custodia de menores o tiene preguntas sobre sus derechos parentales, le invitamos a programar una consulta. Comuníquese hoy con Neiley Law para reunirse con un abogado de custodia de menores con experiencia en nuestra oficina de <a href="/es/locations/carbondale/">Carbondale</a> o de <a href="/es/locations/rifle/">Rifle</a>. Escucharemos sus preocupaciones, le explicaremos sus derechos y opciones, y conversaremos sobre cómo podemos ayudarle a proteger su relación con sus hijos.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-up">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Contáctenos</h3>
+                                <p><i class="bi bi-telephone" aria-hidden="true"></i> <a href="tel:970-963-6363">970-963-6363</a></p>
+                                <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:office@neiley.com">office@neiley.com</a></p>
+                                <a href="/es/#contact" class="btn btn-primary w-100">Programe una consulta</a>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Servicios relacionados</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/es/family-law/divorce/">Divorcio</a></li>
+                                    <li><a href="/es/family-law/child-support/">Manutención de menores</a></li>
+                                    <li><a href="/family-law/parental-responsibilities/">Derechos parentales</a></li>
+                                    <li><a href="/family-law/parenting-plan-modification/">Modificaciones de custodia</a></li>
+                                    <li><a href="/family-law/relocation/">Reubicación</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Servicios de derecho de familia</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/es/family-law/">Panorama del derecho de familia</a></li>
+                                    <li><a href="/es/family-law/civil-protection-orders/">Órdenes de protección</a></li>
+                                    <li><a href="/family-law/post-decree/">Desacato y cumplimiento</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Nuestras oficinas</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/es/locations/carbondale/">Oficina de Carbondale</a></li>
+                                    <li><a href="/es/locations/rifle/">Oficina de Rifle</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Neiley Law. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="/resources/" class="text-white me-3">Recursos</a>
+                    <a href="/privacy.html" class="text-white">Política de privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

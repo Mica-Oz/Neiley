@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divorce Attorney Colorado | Western Slope Divorce Lawyer | Neiley Law</title>
     <meta name="description" content="Experienced divorce attorneys serving Carbondale and Rifle. Handling contested divorce, high-asset divorce, legal separation, property division, and spousal support across Western Colorado.">
+    <link rel="canonical" href="https://www.neiley.com/family-law/divorce/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/family-law/divorce/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/family-law/divorce/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/family-law/divorce/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Divorce Attorney Colorado | Western Slope Divorce Lawyer | Neiley Law" />
+    <meta property="og:description" content="Experienced divorce attorneys serving Carbondale and Rifle. Handling contested divorce, high-asset divorce, legal separation, property division, and spousal support across Western Colorado." />
+    <meta property="og:url" content="https://www.neiley.com/family-law/divorce/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Divorce Attorney Colorado | Western Slope Divorce Lawyer | Neiley Law" />
+    <meta name="twitter:description" content="Experienced divorce attorneys serving Carbondale and Rifle. Handling contested divorce, high-asset divorce, legal separation, property division, and spousal support across Western Colorado." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.neiley.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Family Law",
+      "item": "https://www.neiley.com/family-law/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Divorce Attorney Colorado",
+      "item": "https://www.neiley.com/family-law/divorce/"
+    }
+  ]
+}
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -41,12 +110,13 @@
     </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="../../index.html">
-                <img src="../../assets/images/logo.png" alt="Neiley Law" height="40">
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" height="40">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -61,6 +131,7 @@
             </div>
         </div>
     </nav>
+    <main id="main" tabindex="-1">
 
     <section class="page-header">
         <div class="container">
@@ -226,45 +297,44 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <div class="sidebar" data-aos="fade-left">
+                    <div class="sidebar" data-aos="fade-up">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="card-title">Contact Us</h5>
-                                <p><i class="bi bi-telephone"></i> <a href="tel:970-728-4420">970-728-4420</a></p>
-                                <p><i class="bi bi-envelope"></i> <a href="mailto:info@neiley.com">info@neiley.com</a></p>
+                                <h3 class="card-title h5">Contact Us</h3>
+                                <p><i class="bi bi-telephone" aria-hidden="true"></i> <a href="tel:970-963-6363">970-963-6363</a></p>
+                                <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:office@neiley.com">office@neiley.com</a></p>
                                 <a href="../../index.html#contact" class="btn btn-primary w-100">Schedule Consultation</a>
                             </div>
                         </div>
 
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="card-title">Related Services</h5>
+                                <h3 class="card-title h5">Related Services</h3>
                                 <ul class="list-unstyled">
                                     <li><a href="../child-custody/">Child Custody</a></li>
-                                    <li><a href="#">Spousal Support</a></li>
-                                    <li><a href="#">Property Division</a></li>
-                                    <li><a href="#">High-Asset Divorce</a></li>
-                                    <li><a href="#">Legal Separation</a></li>
-                                    <li><a href="#">Post-Decree Modifications</a></li>
+                                    <li><a href="/family-law/spousal-support/">Spousal Support</a></li>
+                                    <li><a href="/family-law/high-asset-divorce/">Property Division</a></li>
+                                    <li><a href="/family-law/high-asset-divorce/">High-Asset Divorce</a></li>
+                                    <li><a href="/family-law/post-decree/">Post-Decree Modifications</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="card-title">Family Law Services</h5>
+                                <h3 class="card-title h5">Family Law Services</h3>
                                 <ul class="list-unstyled">
                                     <li><a href="../">Family Law Overview</a></li>
-                                    <li><a href="#">Prenuptial Agreements</a></li>
-                                    <li><a href="#">Parental Rights</a></li>
-                                    <li><a href="#">Protection Orders</a></li>
+                                    <li><a href="/family-law/prenuptial-agreements/">Prenuptial Agreements</a></li>
+                                    <li><a href="/family-law/parental-responsibilities/">Parental Rights</a></li>
+                                    <li><a href="/family-law/civil-protection-orders/">Protection Orders</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Our Locations</h5>
+                                <h3 class="card-title h5">Our Locations</h3>
                                 <ul class="list-unstyled">
                                     <li><a href="../../locations/carbondale/">Carbondale Office</a></li>
                                     <li><a href="../../locations/rifle/">Rifle Office</a></li>
@@ -277,6 +347,7 @@
         </div>
     </section>
 
+    </main>
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
@@ -284,8 +355,8 @@
                     <p>&copy; 2024 Neiley Law. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="../../index.html#privacy" class="text-white me-3">Privacy Policy</a>
-                    <a href="../../index.html#terms" class="text-white">Terms of Service</a>
+                    <a href="/resources/" class="text-white me-3">Resources</a>
+                    <a href="/privacy.html" class="text-white">Privacy Policy</a>
                 </div>
             </div>
         </div>
@@ -293,11 +364,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

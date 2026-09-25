@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NEILEY LAW</title>
+    <title>Privacy Policy | Neiley Law</title>
+    <meta name="description" content="How Neiley Law collects, uses, and discloses information when you use our website and online services." />
+    <link rel="canonical" href="https://www.neiley.com/privacy.html" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Privacy Policy | Neiley Law" />
+    <meta property="og:description" content="How Neiley Law collects, uses, and discloses information when you use our website and online services." />
+    <meta property="og:url" content="https://www.neiley.com/privacy.html" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy | Neiley Law" />
+    <meta name="twitter:description" content="How Neiley Law collects, uses, and discloses information when you use our website and online services." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
@@ -38,13 +79,14 @@
     />
   </head>
   <body data-spy="scroll" data-target=".navbar">
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html#hero">
           <img
-            src="./assets/images/AVL-LOGO-LightCamel.png"
-            alt="logo"
+            src="/assets/images/opt/logo-nd.png"
+            alt="Neiley Law"
             width="100%"
             id="logo"
           />
@@ -72,7 +114,7 @@
               <a class="nav-link" href="./index.html#speakers">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./index.html#offerings">Practice </a>
+              <a class="nav-link" href="./index.html#practice">Practice </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./index.html#locations">Locations </a>
@@ -90,11 +132,12 @@
         </div>
       </div>
     </nav>
+    <main id="main" tabindex="-1">
 
     <!-- policy
        -->
     <section id="privacy" class="section-padding">
-      <p><strong>PRIVACY POLICY</strong></p>
+      <h1 class="privacy-title">PRIVACY POLICY</h1>
       <p>
         This privacy policy explains how Neiley Law, LLC ("the Firm")
         collects, uses and discloses information about you when you use our
@@ -170,27 +213,24 @@
     </section>
 
     <!-- footer -->
+    </main>
     <footer class="footer-cont">
       <div class="footer-top">
         <div class="container">
           <div class="row gy-5">
             <div class="col-lg-3 col-sm-6 special-foot">
               <a href="#">
-                <img src="./assets/images/AVL-LOGO-LightCamel.png" alt="" />
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law home" />
               </a>
               <div class="line special"></div>
               <p>NEILEY LAW</p>
               <div class="social-icons">
-                <a href="#">
-                  <i class="ri-instagram-line"></i>
-                </a>
-                <a href="#">
-                  <i class="ri-linkedin-box-line"></i>
-                </a>
+                <a href="#" aria-label="Neiley Law on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law on LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
               </div>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">LEARN MORE</h5>
+              <h2 class="h5 mb-0">LEARN MORE</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -200,7 +240,10 @@
                   <a href="./index.html#speakers">Our Team</a>
                 </li>
                 <li>
-                  <a href="./index.html#offerings">Our Practice</a>
+                  <a href="./index.html#practice">Our Practice</a>
+                </li>
+                <li>
+                  <a href="/resources/">Resources</a>
                 </li>
                 <li>
                   <a href="./privacy.html">Privacy Policy</a>
@@ -214,7 +257,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONNECT</h5>
+              <h2 class="h5 mb-0">CONNECT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -226,7 +269,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONTACT</h5>
+              <h2 class="h5 mb-0">CONTACT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>1000 Dolores Way, Suite B</li>
@@ -274,9 +317,7 @@
     "></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="/assets/js/main.js"></script>
     <script>
       Fancybox.bind('[data-fancybox="gallery"]', {
         //

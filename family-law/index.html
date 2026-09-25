@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Colorado Family Law Attorney | Western Slope | Neiley Law</title>
@@ -8,6 +32,45 @@
       name="description"
       content="Experienced Colorado family law attorneys serving the Western Slope and mountain communities. Divorce, child custody, spousal support. Call (970) 963-6363 for consultation."
     />
+    <link rel="canonical" href="https://www.neiley.com/family-law/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/family-law/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/family-law/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/family-law/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Colorado Family Law Attorney | Western Slope | Neiley Law" />
+    <meta property="og:description" content="Experienced Colorado family law attorneys serving the Western Slope and mountain communities. Divorce, child custody, spousal support. Call (970) 963-6363 for consultation." />
+    <meta property="og:url" content="https://www.neiley.com/family-law/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Colorado Family Law Attorney | Western Slope | Neiley Law" />
+    <meta name="twitter:description" content="Experienced Colorado family law attorneys serving the Western Slope and mountain communities. Divorce, child custody, spousal support. Call (970) 963-6363 for consultation." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.neiley.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Family Law",
+      "item": "https://www.neiley.com/family-law/"
+    }
+  ]
+}
+    </script>
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -33,12 +96,13 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="/assets/images/AVL-LOGO-LightCamel.png" alt="logo" width="100%" id="logo" />
+          <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" width="100%" id="logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -53,11 +117,12 @@
         </div>
       </div>
     </nav>
+    <main id="main" tabindex="-1">
 
     <section id="location-hero" class="section-padding bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center" data-aos="fade-down">
+          <div class="col-12 text-center" data-aos="fade-up">
             <h1 class="display-3 fw-semibold">Colorado Family Law Attorney</h1>
             <div class="line" style="background-color: var(--c-brand)"></div>
             <p class="lead">Experienced Family Law Representation Across Colorado's Western Slope and Mountain Communities</p>
@@ -257,7 +322,7 @@
 
               <h2>Our Family Law Locations</h2>
               <p>
-                We serve families throughout Colorado's Western Slope and mountain communities from three convenient offices:
+                We serve families throughout Colorado's Western Slope and mountain communities from two convenient offices:
               </p>
               <ul>
                 
@@ -287,7 +352,7 @@
 
               <h2>Schedule Your Family Law Consultation</h2>
               <p>
-                If you're facing a family law matter in Colorado, contact Neiley Law today to schedule a consultation. We offer flexible meeting times and can meet at any of our three Western Slope locations.
+                If you're facing a family law matter in Colorado, contact Neiley Law today to schedule a consultation. We offer flexible meeting times and can meet at either of our Western Slope locations.
               </p>
               <p>
                 Call <strong>(970) 963-6363</strong> or email <strong>office@neiley.com</strong> to discuss your family law matter with an experienced Colorado family law attorney.
@@ -301,9 +366,9 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="card shadow-sm mb-4" data-aos="fade-left">
+            <div class="card shadow-sm mb-4" data-aos="fade-up">
               <div class="card-body">
-                <h4 class="card-title">Schedule a Consultation</h4>
+                <h3 class="card-title h4">Schedule a Consultation</h3>
                 <p class="card-text">
                   <strong>Phone:</strong> (970) 963-6363<br />
                   <strong>Email:</strong> office@neiley.com
@@ -312,9 +377,9 @@
               </div>
             </div>
 
-            <div class="card shadow-sm mb-4" data-aos="fade-left" data-aos-delay="100">
+            <div class="card shadow-sm mb-4" data-aos="fade-up" data-aos-delay="100">
               <div class="card-body">
-                <h4 class="card-title">Our Office Locations</h4>
+                <h3 class="card-title h4">Our Office Locations</h3>
                 <ul class="list-unstyled">
                   <li class="mb-2"><a href="/locations/carbondale/">Roaring Fork Valley Office</a></li>
                   <li class="mb-2"><a href="/locations/rifle/">Rifle Office</a></li>
@@ -322,9 +387,9 @@
               </div>
             </div>
 
-            <div class="card shadow-sm" data-aos="fade-left" data-aos-delay="200">
+            <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="200">
               <div class="card-body">
-                <h4 class="card-title">Related Practice Areas</h4>
+                <h3 class="card-title h4">Related Practice Areas</h3>
                 <ul class="list-unstyled">
                 </ul>
               </div>
@@ -334,17 +399,18 @@
       </div>
     </section>
 
+    </main>
     <footer class="footer-cont">
       <div class="footer-top">
         <div class="container">
           <div class="row gy-5">
             <div class="col-lg-3 col-sm-6 special-foot">
-              <a href="/"><img src="/assets/images/AVL-LOGO-LightCamel.png" alt="" /></a>
+              <a href="/"><img src="/assets/images/opt/logo-nd.png" alt="Neiley Law home" /></a>
               <div class="line special"></div>
               <p>NEILEY LAW</p>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONTACT</h5>
+              <h2 class="h5 mb-0">CONTACT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>970-963-6363</li>
@@ -367,6 +433,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

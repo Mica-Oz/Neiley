@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
@@ -10,6 +34,51 @@
       name="description"
       content="Experienced Rifle family law attorneys at Neiley Law. Serving Garfield County, Glenwood Springs, Silt, Parachute, and the Western Slope."
     />
+    <link rel="canonical" href="https://www.neiley.com/locations/rifle/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/locations/rifle/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/locations/rifle/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/locations/rifle/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Rifle Attorney | Family Law Lawyer Garfield County | Neiley Law" />
+    <meta property="og:description" content="Experienced Rifle family law attorneys at Neiley Law. Serving Garfield County, Glenwood Springs, Silt, Parachute, and the Western Slope." />
+    <meta property="og:url" content="https://www.neiley.com/locations/rifle/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rifle Attorney | Family Law Lawyer Garfield County | Neiley Law" />
+    <meta name="twitter:description" content="Experienced Rifle family law attorneys at Neiley Law. Serving Garfield County, Glenwood Springs, Silt, Parachute, and the Western Slope." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.neiley.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Locations",
+      "item": "https://www.neiley.com/#locations"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rifle Attorney",
+      "item": "https://www.neiley.com/locations/rifle/"
+    }
+  ]
+}
+    </script>
     <link
       rel="icon"
       type="image/png"
@@ -43,7 +112,7 @@
         "@context": "https://schema.org",
         "@type": "LegalService",
         "name": "Neiley Law - Rifle Office",
-        "image": "https://neiley.com/assets/images/About3.jpg",
+        "image": "https://www.neiley.com/assets/images/og-image.jpg",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "111 East Third Street, Unit 219",
@@ -78,13 +147,14 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <img
-            src="/assets/images/AVL-LOGO-LightCamel.png"
-            alt="logo"
+            src="/assets/images/opt/logo-nd.png"
+            alt="Neiley Law"
             width="100%"
             id="logo"
           />
@@ -122,12 +192,13 @@
         </div>
       </div>
     </nav>
+    <main id="main" tabindex="-1">
 
     <!-- Hero Section -->
     <section id="location-hero" class="section-padding bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center" data-aos="fade-down">
+          <div class="col-12 text-center" data-aos="fade-up">
             <h1 class="display-3 fw-semibold">Rifle Family Law Attorney</h1>
             <div class="line" style="background-color: var(--c-brand)"></div>
             <p class="lead">
@@ -305,7 +376,7 @@
               </p>
               <div class="card my-4">
                 <div class="card-body">
-                  <h5 class="card-title">Garfield County Combined Courts</h5>
+                  <h3 class="card-title h5">Garfield County Combined Courts</h3>
                   <p class="card-text mb-1">
                     109 8th Street, Suite 104<br />
                     Glenwood Springs, CO 81601<br />
@@ -369,9 +440,9 @@
 
           <!-- Sidebar -->
           <div class="col-lg-4">
-            <div class="card shadow-sm mb-4" data-aos="fade-left">
+            <div class="card shadow-sm mb-4" data-aos="fade-up">
               <div class="card-body">
-                <h4 class="card-title">Rifle Office</h4>
+                <h3 class="card-title h4">Rifle Office</h3>
                 <p class="card-text">
                   <strong>Address:</strong><br />
                   111 East Third Street, Unit 219<br />
@@ -387,7 +458,7 @@
                 </p>
                 <a
                   href="https://maps.google.com/?q=111+East+Third+Street+Unit+219+Rifle+CO+81650"
-                  target="_blank"
+                  target="_blank" rel="noopener"
                   class="btn btn-brand w-100"
                   >Get Directions</a
                 >
@@ -397,11 +468,11 @@
             <!-- Map -->
             <div
               class="card shadow-sm mb-4"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="100"
             >
               <div class="ratio ratio-4x3">
-                <iframe
+                <iframe title="Map of the Neiley Law Rifle office"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.8234!2d-107.7831!3d39.5347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741489f1d7c7f7d%3A0x123456780!2s111%20E%203rd%20St%2C%20Rifle%2C%20CO%2081650!5e0!3m2!1sen!2sus!4v1234567890"
                   style="border: 0"
                   allowfullscreen=""
@@ -415,11 +486,11 @@
             <!-- Practice Areas -->
             <div
               class="card shadow-sm mb-4"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="200"
             >
               <div class="card-body">
-                <h4 class="card-title">Practice Areas</h4>
+                <h3 class="card-title h4">Practice Areas</h3>
                 <ul class="list-unstyled">
                   <li class="mb-2">
                     <a href="/family-law/">Family Law</a>
@@ -446,11 +517,11 @@
             <!-- Other Locations -->
             <div
               class="card shadow-sm"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="300"
             >
               <div class="card-body">
-                <h4 class="card-title">Other Locations</h4>
+                <h3 class="card-title h4">Other Locations</h3>
                 <ul class="list-unstyled">
                   <li class="mb-2">
                     <a href="/locations/carbondale/">Carbondale Office</a>
@@ -464,27 +535,24 @@
     </section>
 
     <!-- footer -->
+    </main>
     <footer class="footer-cont">
       <div class="footer-top">
         <div class="container">
           <div class="row gy-5">
             <div class="col-lg-3 col-sm-6 special-foot">
               <a href="/">
-                <img src="/assets/images/AVL-LOGO-LightCamel.png" alt="" />
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law home" />
               </a>
               <div class="line special"></div>
               <p>NEILEY LAW</p>
               <div class="social-icons">
-                <a href="#">
-                  <i class="ri-instagram-line"></i>
-                </a>
-                <a href="#">
-                  <i class="ri-linkedin-box-line"></i>
-                </a>
+                <a href="#" aria-label="Neiley Law on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law on LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
               </div>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">LEARN MORE</h5>
+              <h2 class="h5 mb-0">LEARN MORE</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -497,12 +565,15 @@
                   <a href="/#practice">Our Practice</a>
                 </li>
                 <li>
+                  <a href="/resources/">Resources</a>
+                </li>
+                <li>
                   <a href="/privacy.html">Privacy Policy</a>
                 </li>
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONNECT</h5>
+              <h2 class="h5 mb-0">CONNECT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -514,7 +585,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONTACT</h5>
+              <h2 class="h5 mb-0">CONTACT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>1000 Dolores Way, Suite B</li>
@@ -560,8 +631,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

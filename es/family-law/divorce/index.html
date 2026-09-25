@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abogado de Divorcio en Colorado | Abogados de Divorcio en el Western Slope | Neiley Law</title>
+    <meta name="description" content="Abogados con experiencia en divorcio al servicio de Carbondale y Rifle. Atendemos divorcios disputados, divorcios con patrimonio elevado, separación legal, división de bienes y manutención conyugal en todo el oeste de Colorado.">
+    <link rel="canonical" href="https://www.neiley.com/es/family-law/divorce/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/family-law/divorce/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/family-law/divorce/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/family-law/divorce/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="es_US" />
+    <meta property="og:title" content="Abogado de Divorcio en Colorado | Abogados de Divorcio en el Western Slope | Neiley Law" />
+    <meta property="og:description" content="Abogados con experiencia en divorcio al servicio de Carbondale y Rifle. Atendemos divorcios disputados, divorcios con patrimonio elevado, separación legal, división de bienes y manutención conyugal en todo el oeste de Colorado." />
+    <meta property="og:url" content="https://www.neiley.com/es/family-law/divorce/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abogado de Divorcio en Colorado | Abogados de Divorcio en el Western Slope | Neiley Law" />
+    <meta name="twitter:description" content="Abogados con experiencia en divorcio al servicio de Carbondale y Rifle. Atendemos divorcios disputados, divorcios con patrimonio elevado, separación legal, división de bienes y manutención conyugal en todo el oeste de Colorado." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.neiley.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Derecho de familia",
+      "item": "https://www.neiley.com/es/family-law/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Abogado de Divorcio en Colorado",
+      "item": "https://www.neiley.com/es/family-law/divorce/"
+    }
+  ]
+}
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Neiley Law - Divorce",
+      "description": "Divorce attorneys serving Western Colorado including Carbondale and Rifle",
+      "provider": {
+        "@type": "Attorney",
+        "name": "Neiley Law"
+      },
+      "areaServed": [ {
+          "@type": "City",
+          "name": "Aspen",
+          "containedIn": {
+            "@type": "State",
+            "name": "Colorado"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Rifle",
+          "containedIn": {
+            "@type": "State",
+            "name": "Colorado"
+          }
+        }
+      ],
+      "serviceType": "Divorce Law"
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/es/">
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" height="40">
+            </a>
+            <button class="navbar-toggler" aria-label="Abrir o cerrar el menú de navegación" aria-controls="navbarNav" aria-expanded="false" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/es/#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#practice">Áreas de práctica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#team">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#locations">Oficinas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/es/#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="main" tabindex="-1">
+
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 text-white mb-3" data-aos="fade-up">Divorcio y separación legal</h1>
+                    <p class="lead text-white" data-aos="fade-up" data-aos-delay="100">Orientación comprensiva en las transiciones difíciles de la vida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Abogados de divorcio con experiencia en el oeste de Colorado</h2>
+                        <p>El divorcio es uno de los acontecimientos más difíciles en lo emocional y más importantes en lo económico que usted vivirá. El fin de un matrimonio afecta todos los aspectos de su vida: sus finanzas, dónde y cómo vive, su relación con sus hijos y sus planes para el futuro. En este momento difícil, usted necesita un abogado que comprenda tanto las complejidades legales como el lado humano del divorcio.</p>
+
+                        <p>En Neiley Law ofrecemos representación integral en casos de divorcio en todo el oeste de Colorado, incluidos <a href="/es/locations/carbondale/">Carbondale</a> y <a href="/es/locations/rifle/">Rifle</a>. Nuestro modelo de despacho pequeño y especializado le garantiza atención personalizada de abogados con experiencia que le guiarán en cada paso del proceso de divorcio. Nos tomamos el tiempo para entender su situación particular, sus preocupaciones y sus metas, y luego diseñamos una estrategia a su medida para lograr el mejor resultado posible para usted y su familia.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Cómo funciona la ley de divorcio en Colorado</h2>
+                        <p>Colorado es un estado de divorcio “sin culpa”, lo que significa que usted no necesita demostrar que su cónyuge actuó mal para obtener el divorcio. La única causa de divorcio en Colorado es que el matrimonio esté “irremediablemente roto” (irretrievably broken). Aunque esto simplifica algunos aspectos del divorcio, no significa que el divorcio sea sencillo: todavía hay asuntos legales y financieros complejos que deben resolverse.</p>
+
+                        <p>Para presentar una solicitud de divorcio en Colorado, al menos uno de los cónyuges debe haber residido en Colorado durante al menos 91 días antes de presentarla. El proceso de divorcio incluye dividir los bienes y las deudas matrimoniales, determinar las responsabilidades parentales si tienen hijos, resolver la manutención conyugal y atender cualquier otro asunto propio de su matrimonio.</p>
+
+                        <p>La ley de Colorado exige un período de espera mínimo de 91 días desde la fecha en que se notifican los documentos del divorcio hasta que el divorcio pueda finalizarse. Este período de espera da tiempo para negociar, para el intercambio de información sobre bienes y deudas, y para tomar decisiones bien pensadas sobre los términos de su divorcio.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Divorcio disputado vs. divorcio de mutuo acuerdo</h2>
+                        <p>Los divorcios generalmente se dividen en dos categorías: disputados y de mutuo acuerdo. Un divorcio de mutuo acuerdo ocurre cuando ambos cónyuges están de acuerdo en todos los asuntos, incluidos la división de bienes, la distribución de las deudas, los acuerdos de crianza, la manutención de menores y la manutención conyugal. Los divorcios de mutuo acuerdo pueden resolverse con mayor rapidez y a menor costo que los divorcios disputados.</p>
+
+                        <p>Un divorcio disputado surge cuando los cónyuges no logran ponerse de acuerdo en uno o más asuntos importantes. Los divorcios disputados suelen implicar un intercambio de pruebas (discovery) más extenso, negociaciones y, posiblemente, mediación o juicio. Aunque su divorcio comience como disputado, muchos casos se resuelven antes del juicio mediante negociación o métodos alternativos de resolución de conflictos.</p>
+
+                        <p>Representamos a clientes tanto en divorcios disputados como en divorcios de mutuo acuerdo. Si usted y su cónyuge están de acuerdo en términos generales, podemos ayudarle a documentar sus acuerdos correctamente y asegurarnos de que no se haya pasado por alto ningún asunto importante. Si existen desacuerdos significativos, le brindamos una representación firme para proteger sus intereses mientras buscamos una solución justa.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>División de bienes y deudas matrimoniales</h2>
+                        <p>Colorado sigue el principio de “distribución equitativa” de los bienes matrimoniales. Esto no significa necesariamente una división de 50/50; significa que el tribunal dividirá los bienes de una manera justa y equitativa según las circunstancias de su matrimonio. Entre los factores que el tribunal considera están la contribución de cada cónyuge a la adquisición de los bienes matrimoniales, el valor de los bienes separados, la situación económica de cada cónyuge y cualquier aumento o disminución del valor de los bienes separados durante el matrimonio.</p>
+
+                        <p>Por lo general, los bienes matrimoniales incluyen todos los bienes y deudas adquiridos durante el matrimonio, sin importar a nombre de quién esté el título o la cuenta. Esto puede incluir la casa familiar, cuentas de jubilación, cuentas de inversión, participaciones en negocios, vehículos, bienes personales y deudas. Los bienes separados, que normalmente son los bienes que se tenían antes del matrimonio o que se recibieron como regalo o herencia, generalmente se quedan con el cónyuge al que pertenecen, aunque hay excepciones.</p>
+
+                        <p>Valorar y clasificar los bienes con precisión es fundamental para lograr una división justa. Esto puede ser especialmente complejo en divorcios con patrimonio elevado que involucran empresas, consultorios profesionales, opciones sobre acciones, paquetes de compensación ejecutiva, propiedades inmobiliarias o colecciones valiosas. Cuando es necesario, trabajamos con contadores forenses, expertos en valuación de empresas, tasadores de bienes raíces y otros peritos para asegurar que los bienes se valoren correctamente y se dividan de manera justa.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Divorcios complejos y con patrimonio elevado</h2>
+                        <p>Los divorcios con patrimonio elevado presentan retos particulares. Cuando hay un patrimonio considerable en juego, los aspectos financieros del divorcio se vuelven aún más importantes y aumenta la posibilidad de disputas sobre la valuación, la clasificación y la división de los bienes. Las estructuras patrimoniales complejas, las empresas de capital cerrado, los consultorios profesionales, la compensación ejecutiva, las opciones sobre acciones, la compensación diferida y las múltiples propiedades requieren un análisis detallado y una planificación estratégica.</p>
+
+                        <p>En los divorcios con patrimonio elevado, uno de los cónyuges puede intentar ocultar bienes, subvalorar participaciones en negocios o malgastar los bienes matrimoniales. Llevamos a cabo una investigación y un intercambio de pruebas (discovery) minuciosos para descubrir bienes ocultos, rastrear fondos mezclados y asegurar que todos los bienes matrimoniales se contabilicen y valoren correctamente. Cuando es necesario, contratamos contadores forenses para analizar registros financieros, rastrear bienes e identificar transferencias indebidas o el despilfarro de bienes matrimoniales.</p>
+
+                        <p>Los divorcios con patrimonio elevado también suelen implicar consideraciones fiscales complicadas. Las decisiones sobre la división de bienes pueden tener consecuencias fiscales importantes, tanto en los impuestos inmediatos como en la planificación financiera a largo plazo. Trabajamos con profesionales en materia de impuestos para estructurar la división de bienes de la manera más eficiente posible desde el punto de vista fiscal.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Manutención conyugal (pensión alimenticia)</h2>
+                        <p>La manutención conyugal, también conocida como pensión alimenticia, es el apoyo económico que un cónyuge paga al otro después del divorcio. En Colorado, se puede otorgar manutención cuando el cónyuge que la solicita no tiene bienes suficientes para cubrir sus necesidades razonables y no puede mantenerse con un empleo adecuado, o cuando otros factores hacen que otorgarla sea justo y equitativo.</p>
+
+                        <p>Para matrimonios de duración moderada (de 3 a 20 años), Colorado cuenta con pautas de manutención que sugieren el monto y la duración de la manutención según la duración del matrimonio y los ingresos de las partes. Sin embargo, son pautas y no reglas obligatorias, y los tribunales pueden apartarse de ellas según las circunstancias específicas.</p>
+
+                        <p>Los factores que influyen en la manutención incluyen los recursos económicos de cada cónyuge, el nivel de vida durante el matrimonio, la distribución de los bienes matrimoniales, los ingresos y la situación laboral, la capacidad de generar ingresos, la edad y la salud de ambas partes, y las contribuciones a la educación o al desarrollo profesional del otro cónyuge. La manutención puede modificarse si las circunstancias cambian de manera sustancial después del divorcio, por ejemplo, por pérdida del empleo, discapacidad o jubilación.</p>
+
+                        <p>Representamos tanto a quienes pagan la manutención como a quienes la reciben, y defendemos que se otorgue una manutención justa según sus circunstancias específicas. Ya sea que usted necesite manutención para hacer la transición hacia la independencia económica o que le preocupe su obligación de pagarla, le brindamos asesoría estratégica para proteger sus intereses.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Asuntos de crianza en el divorcio</h2>
+                        <p>Si tiene hijos menores de edad, su divorcio deberá resolver las responsabilidades parentales (la autoridad legal para la toma de decisiones) y el tiempo de crianza (custodia física). Los tribunales de Colorado toman estas determinaciones según el interés superior del menor, considerando factores como los deseos de los padres y de los hijos, la relación entre los hijos y cada uno de los padres, la adaptación de los hijos a su hogar y a su comunidad, la salud mental y física de todas las partes, y la capacidad de cada padre para fomentar la relación de los hijos con el otro padre.</p>
+
+                        <p>El tribunal emitirá un plan de crianza que establece los horarios de tiempo de crianza, los horarios de días festivos y vacaciones, la autoridad para la toma de decisiones sobre educación, atención médica, religión y actividades extracurriculares, y los métodos para resolver disputas futuras. Le ayudamos a elaborar planes de crianza que protejan su tiempo con sus hijos y, al mismo tiempo, atiendan el interés superior de ellos.</p>
+
+                        <p>Para obtener información detallada sobre asuntos de custodia de menores, consulte nuestra página del área de práctica de <a href="/es/family-law/child-custody/">Custodia de menores</a>.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Manutención de menores</h2>
+                        <p>Colorado utiliza pautas establecidas por ley para calcular la manutención de menores con base en los ingresos de ambos padres, el número de hijos y el acuerdo de tiempo de crianza. La manutención de menores tiene como propósito cubrir las necesidades básicas de los hijos, como vivienda, alimentación, ropa y atención médica. Los gastos adicionales, como el cuidado infantil, el seguro médico y los gastos médicos extraordinarios, se distribuyen entre los padres.</p>
+
+                        <p>Calcular la manutención de menores puede complicarse cuando los padres tienen ingresos variables, son dueños de negocios, reciben compensación no tradicional o tienen hijos de otras relaciones. Nos aseguramos de que los cálculos de manutención reflejen con precisión los ingresos y los gastos, para lograr montos justos que atiendan las necesidades de sus hijos.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Separación legal</h2>
+                        <p>La separación legal es una alternativa al divorcio que permite a los cónyuges vivir por separado y resolver los asuntos financieros y de crianza mediante una orden del tribunal, pero sin dejar de estar legalmente casados. Algunas parejas eligen la separación legal por motivos religiosos, para conservar los beneficios del seguro médico, para mantener beneficios del Seguro Social o militares, o porque no están seguras de querer terminar el matrimonio de forma definitiva.</p>
+
+                        <p>Un proceso de separación legal resuelve los mismos asuntos que un divorcio: la división de bienes, la manutención conyugal, las responsabilidades parentales y la manutención de menores. El decreto de separación legal es similar a un decreto de divorcio, pero las partes siguen casadas y no pueden volver a casarse. Cualquiera de los cónyuges puede convertir más adelante la separación legal en divorcio presentando una moción ante el tribunal.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Mediación y métodos alternativos de resolución de conflictos</h2>
+                        <p>Muchos casos de divorcio se benefician de la mediación o de otros métodos alternativos de resolución de conflictos. La mediación consiste en reunirse con un tercero neutral que ayuda a facilitar la negociación y el acuerdo. La mediación puede ser menos confrontativa, menos costosa y más rápida que un litigio, y le permite tener más control sobre el resultado.</p>
+
+                        <p>Los tribunales de Colorado pueden exigir la mediación para ciertos asuntos, en particular las disputas de crianza. Aun cuando la mediación no sea obligatoria, puede ser una herramienta eficaz para resolver disputas y llegar a acuerdos que funcionen para ambas partes. Preparamos a nuestros clientes para la mediación, participamos en las sesiones de mediación y le ayudamos a evaluar las propuestas de acuerdo.</p>
+
+                        <p>Aunque apoyamos la mediación y los acuerdos cuando es apropiado, también reconocemos que algunos casos no pueden resolverse por acuerdo y requieren litigio. Cuando es necesario ir a juicio, le brindamos una representación hábil ante el tribunal para proteger sus intereses.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Cómo proteger sus intereses durante el divorcio</h2>
+                        <p>El divorcio requiere tomar decisiones que afectarán su seguridad económica y sus relaciones familiares durante muchos años. Es fundamental que usted entienda sus derechos, sus opciones y los resultados probables antes de tomar decisiones importantes. Le damos un consejo claro y honesto sobre los puntos fuertes y débiles de su caso para que pueda tomar decisiones informadas.</p>
+
+                        <p>Durante el proceso de divorcio, es importante evitar acciones que puedan perjudicar su caso. No malgaste los bienes matrimoniales, no publique nada sobre su divorcio en las redes sociales, no presente nuevas parejas sentimentales a sus hijos sin el acuerdo de su cónyuge o la autorización del tribunal, y no se comunique directamente con su cónyuge sobre los asuntos en disputa sin la orientación de su abogado. Asesoramos a nuestros clientes sobre cómo proteger sus intereses mientras el divorcio está en trámite.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Modificaciones y cumplimiento posteriores al decreto</h2>
+                        <p>Las circunstancias pueden cambiar de manera significativa después del divorcio, y los términos de su decreto de divorcio pueden dejar de ser adecuados o viables. La ley de Colorado permite la modificación de los planes de crianza, la manutención de menores y la manutención conyugal cuando ocurren cambios de circunstancias sustanciales y continuos.</p>
+
+                        <p>Algunas razones comunes para solicitar una modificación son la pérdida del empleo o cambios importantes en los ingresos, la reubicación, cambios en las necesidades o los horarios de los hijos, un nuevo matrimonio, la jubilación o problemas de salud. Ayudamos a nuestros clientes en los procesos de modificación posteriores al decreto para ajustar los términos del divorcio a sus circunstancias actuales.</p>
+
+                        <p>También nos encargamos de asuntos de cumplimiento cuando un excónyuge no cumple con las órdenes del tribunal relacionadas con la división de bienes, los pagos de manutención, el tiempo de crianza u otras disposiciones. Las medidas por desacato al tribunal pueden incluir el embargo de salario, gravámenes sobre bienes, tiempo de crianza de reposición, el pago de honorarios de abogados y, en casos graves, cárcel.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Divorcio de parejas del mismo sexo</h2>
+                        <p>Los matrimonios entre personas del mismo sexo tienen derecho al mismo trato legal que los matrimonios entre personas de distinto sexo en los procesos de divorcio. Sin embargo, los divorcios entre personas del mismo sexo a veces presentan asuntos particulares, sobre todo para las parejas que tuvieron relaciones largas antes de que el matrimonio fuera legal, que se casaron en Colorado pero viven en otro lugar, o que tienen hijos de relaciones anteriores o mediante reproducción asistida.</p>
+
+                        <p>Ofrecemos representación con experiencia en divorcios de parejas del mismo sexo, atendiendo tanto los asuntos comunes de cualquier divorcio como los aspectos particulares de su situación, con sensibilidad y comprensión.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Divorcio de militares</h2>
+                        <p>Los divorcios en los que participan miembros del servicio militar implican consideraciones legales adicionales, como la aplicación de la ley federal (la Ley de Alivio Civil para Miembros del Servicio Militar, Servicemembers Civil Relief Act), la división de los beneficios de jubilación militar, los beneficios médicos militares, asuntos de jurisdicción y residencia, y complicaciones en la custodia de los hijos cuando uno de los padres puede ser desplegado o trasladado.</p>
+
+                        <p>Los beneficios de jubilación militar suelen ser bienes matrimoniales importantes que deben valorarse y dividirse de acuerdo con normas federales y estatales específicas. Ayudamos a nuestros clientes a manejar las complejidades del divorcio militar para asegurar la debida protección de sus derechos e intereses.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>El proceso de divorcio: qué esperar</h2>
+                        <p>Entender el proceso de divorcio puede ayudarle a reducir la ansiedad sobre lo que viene. Aunque cada divorcio es único, la mayoría pasa por estas etapas generales:</p>
+
+                        <p><strong>Consulta inicial:</strong> Nos reunimos con usted para entender su situación, explicarle sus derechos y opciones, hablar de los resultados probables y describirle cómo abordaremos su caso.</p>
+
+                        <p><strong>Presentación y notificación:</strong> Uno de los cónyuges presenta ante el tribunal una Petición de Disolución del Matrimonio. Al otro cónyuge se le notifica la petición y tiene la oportunidad de responder.</p>
+
+                        <p><strong>Órdenes temporales:</strong> Si hay asuntos inmediatos que resolver (como quién se queda en la casa familiar, el tiempo de crianza temporal o la manutención temporal), podemos solicitar órdenes temporales que regulen estos asuntos mientras dura el divorcio.</p>
+
+                        <p><strong>Intercambio de pruebas (discovery):</strong> Ambas partes intercambian información y documentos financieros. Esto puede incluir declaraciones juradas financieras, declaraciones de impuestos, estados de cuenta bancarios, estados de cuentas de jubilación, registros de negocios y otros documentos pertinentes.</p>
+
+                        <p><strong>Negociación:</strong> Trabajamos para negociar un acuerdo que resuelva todos los asuntos del divorcio. Esto puede incluir negociación directa, mediación o procesos de derecho colaborativo.</p>
+
+                        <p><strong>Juicio:</strong> Si no se logra un acuerdo, el caso pasa a juicio, donde un juez decide los asuntos en disputa.</p>
+
+                        <p><strong>Decreto:</strong> Una vez resueltos todos los asuntos (ya sea por acuerdo o por decisión del tribunal), el tribunal dicta un Decreto de Disolución del Matrimonio que finaliza su divorcio.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Por qué elegir a Neiley Law para su divorcio</h2>
+                        <p>El divorcio es demasiado importante para confiarlo a cualquiera. En Neiley Law combinamos una amplia experiencia en derecho de familia con un modelo de despacho pequeño y especializado que garantiza una atención personalizada. Cuando trabaja con nosotros, usted no es solo un expediente más: trabaja directamente con abogados con experiencia que comprenden las complejidades legales y las dificultades emocionales del divorcio.</p>
+
+                        <p>Nos tomamos el tiempo de escuchar sus preocupaciones, entender sus metas y diseñar estrategias adaptadas a su situación específica. Ya sea que su divorcio implique asuntos financieros complejos, disputas de custodia u otros retos, le brindamos una representación hábil diseñada para proteger sus intereses y ayudarle a seguir adelante.</p>
+                    </div>
+
+                    <div class="content-section" data-aos="fade-up">
+                        <h2>Comuníquese con nuestros abogados de divorcio</h2>
+                        <p>Si está considerando el divorcio o si le han notificado documentos de divorcio, le invitamos a programar una consulta para hablar de su situación. Comuníquese hoy con Neiley Law para reunirse con un abogado de divorcio con experiencia en nuestra oficina de <a href="/es/locations/carbondale/">Carbondale</a> o de <a href="/es/locations/rifle/">Rifle</a>. Revisaremos sus circunstancias, le explicaremos sus opciones y conversaremos sobre cómo podemos ayudarle a atravesar esta transición difícil y proteger su futuro.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-up">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Contáctenos</h3>
+                                <p><i class="bi bi-telephone" aria-hidden="true"></i> <a href="tel:970-963-6363">970-963-6363</a></p>
+                                <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:office@neiley.com">office@neiley.com</a></p>
+                                <a href="/es/#contact" class="btn btn-primary w-100">Programe una consulta</a>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Servicios relacionados</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/es/family-law/child-custody/">Custodia de menores</a></li>
+                                    <li><a href="/es/family-law/spousal-support/">Manutención conyugal</a></li>
+                                    <li><a href="/family-law/high-asset-divorce/">División de bienes</a></li>
+                                    <li><a href="/family-law/high-asset-divorce/">Divorcio con patrimonio elevado</a></li>
+                                    <li><a href="/family-law/post-decree/">Modificaciones posteriores al decreto</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Servicios de derecho de familia</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/es/family-law/">Panorama del derecho de familia</a></li>
+                                    <li><a href="/family-law/prenuptial-agreements/">Acuerdos prenupciales</a></li>
+                                    <li><a href="/family-law/parental-responsibilities/">Derechos parentales</a></li>
+                                    <li><a href="/es/family-law/civil-protection-orders/">Órdenes de protección</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Nuestras oficinas</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="/es/locations/carbondale/">Oficina de Carbondale</a></li>
+                                    <li><a href="/es/locations/rifle/">Oficina de Rifle</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Neiley Law. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="/resources/" class="text-white me-3">Recursos</a>
+                    <a href="/privacy.html" class="text-white">Política de privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

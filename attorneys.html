@@ -1,9 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NEILEY LAW</title>
+    <title>Our Team | Sarah M. Neiley &amp; Staff | Neiley Law</title>
+    <meta name="description" content="Meet Sarah M. Neiley and the Neiley Law team, representing clients in high-asset divorce, parenting, and support matters across Western Colorado." />
+    <link rel="canonical" href="https://www.neiley.com/attorneys.html" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Our Team | Sarah M. Neiley &amp; Staff | Neiley Law" />
+    <meta property="og:description" content="Meet Sarah M. Neiley and the Neiley Law team, representing clients in high-asset divorce, parenting, and support matters across Western Colorado." />
+    <meta property="og:url" content="https://www.neiley.com/attorneys.html" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Team | Sarah M. Neiley &amp; Staff | Neiley Law" />
+    <meta name="twitter:description" content="Meet Sarah M. Neiley and the Neiley Law team, representing clients in high-asset divorce, parenting, and support matters across Western Colorado." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.neiley.com/attorneys.html#sarah-link",
+  "name": "Sarah M. Neiley",
+  "jobTitle": "Partner",
+  "worksFor": {
+    "@id": "https://www.neiley.com/#firm"
+  },
+  "image": "https://www.neiley.com/assets/images/opt/sarah1-800.webp",
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Denver"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Colorado Boulder"
+    }
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Ninth J.D. Bar Association"
+    },
+    {
+      "@type": "Organization",
+      "name": "Pitkin County Bar Association"
+    },
+    {
+      "@type": "Organization",
+      "name": "Colorado Bar Association"
+    }
+  ],
+  "knowsAbout": [
+    "Family law",
+    "Divorce",
+    "High-asset divorce",
+    "Parenting rights",
+    "Prenuptial agreements"
+  ]
+}
+    </script>
     <link
       rel="icon"
       type="image/png"
@@ -38,13 +123,14 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body data-spy="scroll" data-target=".navbar">
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html#hero">
           <img
-            src="./assets/images/AVL-LOGO-LightCamel.png"
-            alt="logo"
+            src="/assets/images/opt/logo-nd.png"
+            alt="Neiley Law"
             width="100%"
             id="logo"
           />
@@ -112,298 +198,316 @@
         </div>
       </div>
     </nav>
+    <main id="main" tabindex="-1">
 
     <!-- legal team  -->
 
-    <section id="lawyers">
-      <div class="">
-        <!-- header -->
-
-        <div class="row">
-          <div
-            class="col-12 text-center"
-            data-aos="fade-down"
-            data-aos-delay="150"
+    <section id="team-intro" class="section-padding">
+      <div class="container text-center" data-aos="fade-up">
+        <div class="section-title mb-0">
+          <span class="eyebrow">Neiley Law</span>
+          <h1 class="display-4 fw-semibold">OUR TEAM</h1>
+          <div class="line"></div>
+          <p>
+            We provide a team of attorneys and staff with extensive trial,
+            evidentiary, and negotiation experience.
+          </p>
+        </div>
+        <nav class="team-jump" aria-label="Team members">
+          <a href="#sarah-link"
+            ><span class="team-jump-name">Sarah M. Neiley</span
+            ><span class="team-jump-role">Partner</span></a
           >
-            <div class="section-title">
-              <h1 class="display-4 fw-semibold">ATTORNEYS</h1>
-              <div class="line" id="sarah-link"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- sarah -->
-
-        <div id="sarah" class="row lawyer">
-          <div class="lawyer-span" data-aos="fade-down" data-aos-delay="150">
-            <div class="speaker image-zoom">
-              <div>
-                <picture>
-                  <source
-                    media="(max-width: 799px)"
-                    srcset="./assets/images/sarah-shortspan.png"
-                  />
-                  <img src="./assets/images/sarah-span3.png" alt="Sarah Span" />
-                </picture>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="sarah-bio"
-          class="row lawyer bio g-4"
-          data-aos="fade-down"
-          data-aos-delay="150"
-        >
-          <p>
-            <!-- <span
-              class="first-line"
-              style="font-size: 26px; font-weight: bold; color: var(--c-dark)"
-            > -->
-            Sarah represents clients in sophisticated Family Law matters
-            involving high-asset marital estates, complex property and business
-            valuations, challenging income analyses, significant parenting
-            disputes, and litigation of prenuptial and postnuptial agreements.
-            <!-- </span> -->
-            While she is highly skilled in navigating complicated legal and
-            financial issues, Sarah brings the same level of dedication and care
-            to every case—no matter its size or complexity.
-          </p>
-
-          <p>
-            A strategic and attentive advocate, Sarah guides her clients through
-            each stage of their case with clarity and purpose. She prioritizes
-            helping clients make informed, carefully considered decisions and is
-            adept at managing even the most difficult family-law conflicts.
-             Because resolution looks different for every client, Sarah takes
-            the time to listen deeply, understand each client’s needs and goals,
-            and develop a personalized, outcome-focused strategy. She encourages
-            out-of-court settlement whenever possible and is known for her
-            ability to work collaboratively with clients and opposing counsel to
-            craft creative, forward-thinking solutions.
-          </p>
-
-          <p>
-            Since transitioning from government service as a criminal
-            prosecutor, Sarah has dedicated her practice exclusively to Family
-            Law. Her breadth of experience, litigation skill, and
-            client-centered approach enable her to guide clients through some of
-            the most personal and impactful challenges of their lives.
-          </p>
-
-          <p>
-            At Neiley Law, we understand that family relationships form
-            the foundation of individual well-being and long-term success. With
-            this in mind, we devote ourselves fully to our clients and deliver
-            legal services rooted in excellence, integrity, and unwavering
-            commitment.
-          </p>
-
-          <div class="dets-row">
-            <div class="bottom-group" data-aos="fade-down" data-aos-delay="100">
-              <h3 style="text-align: center">Areas of Practice</h3>
-              <div class="line"></div>
-              <h5 style="text-align: center">Family Law</h5>
-              <p style="text-indent: 0">
-                • Divorce and Legal Separation
-                <br />
-                • Parenting Rights
-                <br />
-                • Civil Protection Orders
-                <br />
-                • Appeals
-              </p>
-            </div>
-            <div class="bottom-group" data-aos="fade-down" data-aos-delay="150">
-              <h3 style="text-align: center">Education</h3>
-              <div class="line"></div>
-              <p style="text-indent: 0">
-                • University of Denver,
-                <br />
-                <span style="color: var(--c-brand)"> &emsp;Juris Doctor </span>
-                <br />
-                • Denver Law Review,
-                <br />
-                <span style="color: var(--c-brand)"> &emsp;Senior Editor </span>
-                <br />
-                • University of Colorado at Boulder,
-                <br />
-                <span style="color: var(--c-brand)">
-                  &emsp;B.A. English Literature and Spanish,
-                </span>
-                <br />
-                <span style="color: var(--c-brand)">
-                  &emsp;<i>summa cum laude</i>
-                </span>
-              </p>
-            </div>
-            <div class="bottom-group" data-aos="fade-down" data-aos-delay="200">
-              <h3 style="text-align: center">
-                Memberships
-                <div class="line"></div>
-              </h3>
-              <p style="text-indent: 0">
-                • Ninth J.D. Bar Association,
-                <br />
-                <span style="color: var(--c-brand)"> &emsp;President </span>
-
-                <br />
-                • Pitkin County Bar Assocation
-                <br />
-                • Colorado Bar Association
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- zoe -->
-
-        <div id="zoe" class="row lawyer" style="margin-top: 75px">
-          <div class="lawyer-span" data-aos="fade-down" data-aos-delay="150">
-            <div class="speaker image-zoom">
-              <div>
-                <picture>
-                  <source
-                    media="(max-width: 799px)"
-                    srcset="./assets/images/shortspan-zoe.png"
-                  />
-                  <img src="./assets/images/zoe-span2.png" alt="Zoe Span" />
-                </picture>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="zoe-bio"
-          class="row lawyer bio g-4"
-          data-aos="fade-down"
-          data-aos-delay="150"
-        >
-          <p>
-            Zoe started as one of the firm’s paralegals and has recently been
-            certified as a Licensed Legal Paraprofessional. Though Zoe works in
-            all areas of practice, her main practice area is Family Law. She is
-            a critical member of our Legal Team who has a keen eye and natural
-            ability to identify and analyze important facts, evidence, legal
-            issues. Zoe works with efficiency and is dedicated to ensuring that
-            our team and clients are prepared and equipped to achieve
-            resolution, whether through a negotiated settlement or court
-            hearing. Zoe provides great care and understanding to our clients
-            who enjoy working with her and know that she is invested in their
-            individual cases and successes. Zoe began working as a paralegal
-            with our attorneys in early 2022. Prior to working as a paralegal,
-            Zoe held the positions of both Account Clerk and Court Clerk for the
-            Garfield County Combined Courts. During her time as a clerk, Zoe
-            gained intimate familiarity with the court’s documentation and
-            filing processes, and she was responsible for managing and balancing
-            the court’s registry account for the entire Ninth Judicial District.
-            Zoe is a native of the Roaring Fork Valley, and in combination with
-            her background as a court clerk, her knowledge and resourcefulness
-            are great assets to our firm and clients.
-          </p>
-        </div>
-
-        <!-- header -->
-
-        <div class="row" style="margin-top: 50px">
-          <div
-            class="col-12 text-center"
-            data-aos="fade-down"
-            data-aos-delay="150"
+          <a href="#zoe"
+            ><span class="team-jump-name">Zoe M. Dotson</span
+            ><span class="team-jump-role">Licensed Legal Paraprofessional</span></a
           >
-            <div class="section-title">
-              <h1 class="display-4 fw-semibold">PARALEGALS</h1>
-              <div class="line"></div>
+          <a href="#mar"
+            ><span class="team-jump-name">Mary Ann Leonardi</span
+            ><span class="team-jump-role">Paralegal</span></a
+          >
+        </nav>
+      </div>
+    </section>
+
+    <!-- sarah -->
+
+    <section id="sarah-link" class="profile section-padding">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <div class="profile-portrait" data-aos="fade-up">
+              <img
+                src="/assets/images/opt/sarah1-800.webp"
+              srcset="/assets/images/opt/sarah1-480.webp 480w, /assets/images/opt/sarah1-800.webp 800w, /assets/images/opt/sarah1-1200.webp 1200w"
+              sizes="(min-width: 992px) 40vw, 100vw"
+              width="800" height="1200" decoding="async"
+                alt="Sarah M. Neiley"
+                class="framed"
+              />
             </div>
+          </div>
+          <div class="col-lg-7 profile-body" data-aos="fade-up" data-aos-delay="100">
+            <span class="eyebrow">Partner</span>
+            <h2 class="profile-name">Sarah M. Neiley</h2>
+            <ul class="glance">
+              <li><span>Practice</span>Family Law, exclusively</li>
+              <li><span>Background</span>Former criminal prosecutor</li>
+              <li><span>Leadership</span>President, Ninth J.D. Bar Association</li>
+            </ul>
+            <p class="profile-lead">
+              Sarah represents clients in sophisticated Family Law matters
+              involving high-asset marital estates, complex property and
+              business valuations, challenging income analyses, significant
+              parenting disputes, and litigation of prenuptial and postnuptial
+              agreements. While she is highly skilled in navigating complicated
+              legal and financial issues, Sarah brings the same level of
+              dedication and care to every case—no matter its size or
+              complexity.
+            </p>
+            <p>
+              A strategic and attentive advocate, Sarah guides her clients
+              through each stage of their case with clarity and purpose. She
+              prioritizes helping clients make informed, carefully considered
+              decisions and is adept at managing even the most difficult
+              family-law conflicts. Because resolution looks different for
+              every client, Sarah takes the time to listen deeply, understand
+              each client’s needs and goals, and develop a personalized,
+              outcome-focused strategy. She encourages out-of-court settlement
+              whenever possible and is known for her ability to work
+              collaboratively with clients and opposing counsel to craft
+              creative, forward-thinking solutions.
+            </p>
+            <blockquote class="profile-quote">
+              Because resolution looks different for every client, Sarah takes
+              the time to listen deeply.
+            </blockquote>
+            <p>
+              Since transitioning from government service as a criminal
+              prosecutor, Sarah has dedicated her practice exclusively to Family
+              Law. Her breadth of experience, litigation skill, and
+              client-centered approach enable her to guide clients through some
+              of the most personal and impactful challenges of their lives.
+            </p>
+            <p>
+              At Neiley Law, we understand that family relationships form the
+              foundation of individual well-being and long-term success. With
+              this in mind, we devote ourselves fully to our clients and deliver
+              legal services rooted in excellence, integrity, and unwavering
+              commitment.
+            </p>
           </div>
         </div>
 
-        <!-- mar -->
-
-        <div id="mar" class="row lawyer">
-          <div class="lawyer-span" data-aos="fade-down" data-aos-delay="150">
-            <div class="speaker image-zoom">
-              <div>
-                <picture>
-                  <source
-                    media="(max-width: 799px)"
-                    srcset="./assets/images/mar-shortspan.png"
-                  />
-                  <img
-                    src="./assets/images/mar-span2.png"
-                    alt="Mary Ann Span"
-                  />
-                </picture>
+        <div class="credentials framed-panel" data-aos="fade-up">
+          <div class="framed-inner">
+            <div class="row g-0">
+              <div class="col-lg-4 cred-col">
+                <span class="pi-numeral">I</span>
+                <h3>Areas of Practice</h3>
+                <p class="cred-sub">Family Law</p>
+                <ul class="pi-list">
+                  <li><a href="./family-law/divorce/">Divorce and Legal Separation</a></li>
+                  <li><a href="./family-law/child-custody/">Parenting Rights</a></li>
+                  <li><a href="./family-law/civil-protection-orders/">Civil Protection Orders</a></li>
+                  <li><a href="./family-law/family-law-appeals/">Appeals</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-4 cred-col">
+                <span class="pi-numeral">II</span>
+                <h3>Education</h3>
+                <ul class="cred-list">
+                  <li>
+                    <strong>Juris Doctor</strong>
+                    <span>University of Denver</span>
+                  </li>
+                  <li>
+                    <strong>Senior Editor</strong>
+                    <span>Denver Law Review</span>
+                  </li>
+                  <li>
+                    <strong>B.A., English Literature and Spanish</strong>
+                    <span>University of Colorado at Boulder</span>
+                    <em>summa cum laude</em>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-4 cred-col">
+                <span class="pi-numeral">III</span>
+                <h3>Memberships</h3>
+                <ul class="cred-list">
+                  <li>
+                    <strong>President</strong>
+                    <span>Ninth J.D. Bar Association</span>
+                  </li>
+                  <li>
+                    <strong>Member</strong>
+                    <span>Pitkin County Bar Association</span>
+                  </li>
+                  <li>
+                    <strong>Member</strong>
+                    <span>Colorado Bar Association</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-
-        <div
-          id="mar-bio"
-          class="row lawyer bio g-4"
-          data-aos="fade-down"
-          data-aos-delay="150"
-        >
-          <p>
-            <!-- <span
-              style="font-size: 26px; font-weight: bold; color: var(--c-dark)"
-              class="first-line"
-            > -->
-            Mary Ann is one of the firm’s Family Law paralegals.
-            <!-- </span> -->
-            She also provides administrative support to the firm and clients.
-            Mary Ann is integral to our Legal Team and the detail-oriented
-            advocacy and representation that our clients receive. Not only is
-            Mary Ann an experienced and consummate professional, she offers a
-            steady, guiding hand to our Legal Team and clients. Clients of
-            Neiley Law receive the utmost care and attention when working
-            with Mary Ann. She has over 30 years of experience working with
-            attorneys in the Roaring Fork Valley, including 12 years of
-            experience working at a distinguished Family Law firm in Aspen. Mary
-            Ann is passionate about her work. She is equally passionate about
-            volunteering at animal rescue organizations and has been a longtime
-            volunteer with Colorado Animal Rescue based in Glenwood Springs.
-          </p>
         </div>
       </div>
     </section>
-    <!-- End Cap -->
-    <div class="row" style="background-color: var(--c-light)">
-      <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
-        <div class="section-title">
-          <div
-            class="line"
-            id="sarah-link"
-            style="margin-top: 50px; background-color: var(--c-light)"
-          ></div>
+
+    <!-- zoe -->
+
+    <section id="zoe" class="profile profile-alt section-padding">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5 order-lg-2">
+            <div class="profile-portrait" data-aos="fade-up">
+              <img
+                src="/assets/images/opt/zoe1-800.webp"
+              srcset="/assets/images/opt/zoe1-480.webp 480w, /assets/images/opt/zoe1-800.webp 800w, /assets/images/opt/zoe1-1200.webp 1200w"
+              sizes="(min-width: 992px) 40vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async"
+                alt="Zoe M. Dotson"
+                class="framed"
+              />
+            </div>
+          </div>
+          <div class="col-lg-7 order-lg-1 profile-body" data-aos="fade-up" data-aos-delay="100">
+            <span class="eyebrow">Licensed Legal Paraprofessional</span>
+            <h2 class="profile-name">Zoe M. Dotson</h2>
+            <ul class="glance">
+              <li><span>Practice</span>Family Law</li>
+              <li><span>Background</span>Former Court Clerk, Garfield County</li>
+              <li><span>Roots</span>Roaring Fork Valley native</li>
+            </ul>
+            <p class="profile-lead">
+              Zoe started as one of the firm’s paralegals and has recently been
+              certified as a Licensed Legal Paraprofessional. Though Zoe works
+              in all areas of practice, her main practice area is Family Law.
+            </p>
+            <p>
+              She is a critical member of our Legal Team who has a keen eye and
+              natural ability to identify and analyze important facts, evidence,
+              legal issues. Zoe works with efficiency and is dedicated to
+              ensuring that our team and clients are prepared and equipped to
+              achieve resolution, whether through a negotiated settlement or
+              court hearing. Zoe provides great care and understanding to our
+              clients who enjoy working with her and know that she is invested
+              in their individual cases and successes.
+            </p>
+            <p>
+              Zoe began working as a paralegal with our attorneys in early 2022.
+              Prior to working as a paralegal, Zoe held the positions of both
+              Account Clerk and Court Clerk for the Garfield County Combined
+              Courts. During her time as a clerk, Zoe gained intimate
+              familiarity with the court’s documentation and filing processes,
+              and she was responsible for managing and balancing the court’s
+              registry account for the entire Ninth Judicial District.
+            </p>
+            <p>
+              Zoe is a native of the Roaring Fork Valley, and in combination
+              with her background as a court clerk, her knowledge and
+              resourcefulness are great assets to our firm and clients.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- mar -->
+
+    <section id="mar" class="profile section-padding">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <div class="profile-portrait" data-aos="fade-up">
+              <img
+                src="/assets/images/opt/mar4-800.webp"
+              srcset="/assets/images/opt/mar4-480.webp 480w, /assets/images/opt/mar4-800.webp 800w, /assets/images/opt/mar4-1200.webp 1200w"
+              sizes="(min-width: 992px) 40vw, 100vw"
+              width="800" height="1200" loading="lazy" decoding="async"
+                alt="Mary Ann Leonardi"
+                class="framed"
+              />
+            </div>
+          </div>
+          <div class="col-lg-7 profile-body" data-aos="fade-up" data-aos-delay="100">
+            <span class="eyebrow">Paralegal</span>
+            <h2 class="profile-name">Mary Ann Leonardi</h2>
+            <ul class="glance">
+              <li><span>Experience</span>30+ years in the Roaring Fork Valley</li>
+              <li><span>Family Law</span>12 years at an Aspen firm</li>
+              <li><span>Community</span>Colorado Animal Rescue volunteer</li>
+            </ul>
+            <p class="profile-lead">
+              Mary Ann is one of the firm’s Family Law paralegals. She also
+              provides administrative support to the firm and clients.
+            </p>
+            <p>
+              Mary Ann is integral to our Legal Team and the detail-oriented
+              advocacy and representation that our clients receive. Not only is
+              Mary Ann an experienced and consummate professional, she offers a
+              steady, guiding hand to our Legal Team and clients. Clients of
+              Neiley Law receive the utmost care and attention when working
+              with Mary Ann.
+            </p>
+            <p>
+              She has over 30 years of experience working with attorneys in the
+              Roaring Fork Valley, including 12 years of experience working at a
+              distinguished Family Law firm in Aspen. Mary Ann is passionate
+              about her work. She is equally passionate about volunteering at
+              animal rescue organizations and has been a longtime volunteer with
+              Colorado Animal Rescue based in Glenwood Springs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- consultation -->
+
+    <section id="team-cta" class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9" data-aos="fade-up">
+            <div class="framed-panel text-center">
+              <div class="framed-inner">
+                <span class="eyebrow">Work With Us</span>
+                <h2>Speak with our team</h2>
+                <div class="line"></div>
+                <p>
+                  To speak with our attorneys, please schedule a consultation.
+                  We look forward to speaking with you.
+                </p>
+                <a href="./index.html#contact" class="btn btn-brand"
+                  >Schedule a Consultation</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- footer -->
+    </main>
     <footer class="footer-cont">
       <div class="footer-top">
         <div class="container">
           <div class="row gy-5">
             <div class="col-lg-3 col-sm-6 special-foot">
               <a href="#">
-                <img src="./assets/images/AVL-LOGO-LightCamel.png" alt="" />
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law home" />
               </a>
               <div class="line special"></div>
               <p>NEILEY LAW</p>
               <div class="social-icons">
-                <a href="#">
-                  <i class="ri-instagram-line"></i>
-                </a>
-                <a href="#">
-                  <i class="ri-linkedin-box-line"></i>
-                </a>
+                <a href="#" aria-label="Neiley Law on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law on LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
               </div>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">LEARN MORE</h5>
+              <h2 class="h5 mb-0">LEARN MORE</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -414,6 +518,9 @@
                 </li>
                 <li>
                   <a href="./index.html#practice">Our Practice</a>
+                </li>
+                <li>
+                  <a href="/resources/">Resources</a>
                 </li>
                 <li>
                   <a href="./privacy.html">Privacy Policy</a>
@@ -427,7 +534,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONNECT</h5>
+              <h2 class="h5 mb-0">CONNECT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>
@@ -439,7 +546,7 @@
               </ul>
             </div>
             <div class="footer-box col-lg-3 col-sm-6">
-              <h5 class="mb-0">CONTACT</h5>
+              <h2 class="h5 mb-0">CONTACT</h2>
               <div class="line"></div>
               <ul class="footer-box">
                 <li>1000 Dolores Way, Suite B</li>
@@ -486,9 +593,7 @@
     "></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="/assets/js/main.js"></script>
     <script>
       Fancybox.bind('[data-fancybox="gallery"]', {
         //

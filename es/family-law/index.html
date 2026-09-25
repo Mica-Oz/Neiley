@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abogado de Derecho de Familia en Colorado | Western Slope | Neiley Law</title>
+    <meta
+      name="description"
+      content="Abogados con experiencia en derecho de familia en Colorado, al servicio del Western Slope y las comunidades de montaña. Divorcio, custodia de menores, manutención conyugal. Llame al (970) 963-6363 para una consulta."
+    />
+    <link rel="canonical" href="https://www.neiley.com/es/family-law/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/family-law/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/family-law/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/family-law/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="es_US" />
+    <meta property="og:title" content="Abogado de Derecho de Familia en Colorado | Western Slope | Neiley Law" />
+    <meta property="og:description" content="Abogados con experiencia en derecho de familia en Colorado, al servicio del Western Slope y las comunidades de montaña. Divorcio, custodia de menores, manutención conyugal. Llame al (970) 963-6363 para una consulta." />
+    <meta property="og:url" content="https://www.neiley.com/es/family-law/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abogado de Derecho de Familia en Colorado | Western Slope | Neiley Law" />
+    <meta name="twitter:description" content="Abogados con experiencia en derecho de familia en Colorado, al servicio del Western Slope y las comunidades de montaña. Divorcio, custodia de menores, manutención conyugal. Llame al (970) 963-6363 para una consulta." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.neiley.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Derecho de familia",
+      "item": "https://www.neiley.com/es/family-law/"
+    }
+  ]
+}
+    </script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Neiley Law - Family Law",
+      "description": "Family law attorneys serving Colorado's Western Slope and mountain communities",
+      "url": "https://neiley.com/family-law/",
+      "telephone": "+1-970-963-6363",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "State",
+        "name": "Colorado"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/es/">
+          <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" width="100%" id="logo" />
+        </a>
+        <button class="navbar-toggler" aria-label="Abrir o cerrar el menú de navegación" aria-controls="navbarNav" aria-expanded="false" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/es/#hero">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#about">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#team">Equipo</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/es/#practice">Áreas de práctica</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/#locations">Oficinas</a></li>
+          </ul>
+          <a href="/es/#contact" class="btn btn-brand ms-lg-3">Contacto</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" tabindex="-1">
+
+    <section id="location-hero" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h1 class="display-3 fw-semibold">Abogados de Derecho de Familia en Colorado</h1>
+            <div class="line" style="background-color: var(--c-brand)"></div>
+            <p class="lead">Representación con experiencia en derecho de familia en el Western Slope de Colorado y las comunidades de montaña</p>
+            <a href="/es/#contact" class="btn btn-brand btn-lg mt-3">Programe una consulta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <article>
+              <h2>Servicios integrales de derecho de familia en Colorado</h2>
+              <p>
+                Cuando su familia enfrenta un problema legal, usted necesita un abogado que combine un conocimiento jurídico sólido con una verdadera comprensión de lo que está viviendo. En Neiley Law, nuestros abogados de derecho de familia en Colorado ofrecen representación integral a familias de todo el Western Slope y las comunidades de montaña, en el Valle de Roaring Fork y el Condado de Garfield.
+              </p>
+
+              <p>
+                Los asuntos de derecho de familia rara vez son solo cuestiones legales: son situaciones muy personales que afectan a sus hijos, su seguridad económica y su futuro. Nuestro despacho, por ser pequeño y especializado, le garantiza una atención enfocada y personalizada durante todo el proceso. Su abogado conocerá cada detalle de su caso y participará personalmente desde la consulta hasta la resolución.
+              </p>
+
+              <h2>Divorcio y separación legal</h2>
+              <p>
+                El divorcio es uno de los cambios más importantes de la vida. Ya sea que usted enfrente una disolución del matrimonio sencilla o un divorcio complejo con bienes considerables, nuestros abogados le brindan la orientación y la defensa que necesita para atravesar este proceso difícil.
+              </p>
+
+              <h3>Patrimonios elevados y bienes matrimoniales complejos</h3>
+              <p>
+                Las comunidades de montaña de Colorado presentan retos particulares en los casos de divorcio. Nuestros abogados manejan con frecuencia divorcios complejos que incluyen:
+              </p>
+              <ul>
+                <li><strong>Bienes raíces de lujo:</strong> División de patrimonios matrimoniales que incluyen casas en la montaña, propiedades con acceso directo a las pistas de esquí (ski-in/ski-out), casas vacacionales y bienes raíces de inversión en distintas ubicaciones</li>
+                <li><strong>Participaciones en negocios:</strong> Trabajo con contadores forenses y expertos en valuación de empresas para valorar y dividir con precisión participaciones en empresas de capital cerrado, consultorios profesionales y sociedades</li>
+                <li><strong>Carteras de inversión:</strong> Atención de inversiones complejas, como acciones, bonos, cuentas de jubilación, fideicomisos e inversiones alternativas</li>
+                <li><strong>Compensación ejecutiva:</strong> Manejo de opciones sobre acciones, unidades de acciones restringidas (RSU), compensación diferida, bonos e incentivos por desempeño</li>
+                <li><strong>Patrimonio heredado:</strong> Protección de bienes separados, como herencias, participaciones en fideicomisos y patrimonio familiar transmitido de generación en generación</li>
+              </ul>
+
+              <h3>Divorcio y separación legal de parejas del mismo sexo</h3>
+              <p>
+                Ofrecemos representación con experiencia a parejas LGBTQ+ que atraviesan un divorcio o una separación legal. Los divorcios entre personas del mismo sexo presentan consideraciones particulares respecto a los bienes adquiridos antes de que el matrimonio fuera legal, los derechos parentales cuando la biología no coincide con la filiación y los acuerdos de custodia complejos. Nuestros abogados comprenden estos matices y defienden eficazmente a nuestros clientes LGBTQ+.
+              </p>
+
+              <h3>Manutención conyugal y modificaciones</h3>
+              <p>
+                En Colorado, la manutención conyugal (pensión alimenticia) depende de numerosos factores, como la duración del matrimonio, la diferencia de ingresos, la edad, la salud y la capacidad de generar ingresos. Nuestros abogados negocian acuerdos justos de manutención conyugal o litigan cuando es necesario para lograr resultados adecuados. También nos encargamos de modificaciones cuando las circunstancias cambian de manera significativa, por ejemplo, por pérdida del empleo, jubilación, un nuevo matrimonio o cambios importantes en los ingresos.
+              </p>
+
+              <h3>El proceso de divorcio en Colorado</h3>
+              <p>
+                Colorado es un estado de divorcio sin culpa, lo que significa que ninguno de los cónyuges necesita demostrar que el otro actuó mal. Sin embargo, esto no significa que el divorcio sea sencillo. El proceso incluye:
+              </p>
+              <ul>
+                <li>Cumplir con el requisito de residencia de 91 días en Colorado</li>
+                <li>Presentar y notificar la petición de divorcio</li>
+                <li>Divulgación de información financiera y declaraciones financieras obligatorias</li>
+                <li>Audiencias de órdenes temporales para asuntos inmediatos</li>
+                <li>Intercambio de pruebas (discovery) y recopilación de información</li>
+                <li>Mediación o negociaciones para llegar a un acuerdo</li>
+                <li>Juicio si no se logra un acuerdo</li>
+                <li>Decreto final y órdenes permanentes</li>
+              </ul>
+
+              <p>
+                Nuestros abogados le acompañan en cada etapa, asegurándose de que sus derechos estén protegidos y de que su voz sea escuchada durante todo el proceso.
+              </p>
+
+              <h2>Derechos y responsabilidades parentales</h2>
+              <p>
+                La ley de Colorado se enfoca en el interés superior del menor al decidir sobre la custodia, el tiempo de crianza y la autoridad para la toma de decisiones. Nuestros abogados ponen en primer lugar el bienestar de sus hijos, mientras defienden acuerdos de crianza que funcionen para su familia.
+              </p>
+
+              <h3>Asignación de responsabilidades parentales</h3>
+              <p>
+                En Colorado, la “custodia” se llama “asignación de responsabilidades parentales” (APR, por sus siglas en inglés). Esto incluye tanto el tiempo de crianza (custodia física) como las responsabilidades de toma de decisiones (custodia legal). Nuestros abogados le ayudan con:
+              </p>
+              <ul>
+                <li><strong>Horarios de tiempo de crianza:</strong> Creación de horarios prácticos que se adapten a los compromisos de trabajo, los calendarios escolares y la realidad de la vida en las comunidades de montaña</li>
+                <li><strong>Toma de decisiones:</strong> Determinación de cómo se tomarán las decisiones importantes sobre educación, atención médica, religión y actividades extracurriculares</li>
+                <li><strong>Horarios de días festivos y vacaciones:</strong> Elaboración de acuerdos justos para días festivos, recesos escolares y vacaciones de verano</li>
+                <li><strong>Transporte e intercambio:</strong> Atención de la logística cuando los padres viven en distintos pueblos de montaña o a distancias considerables</li>
+              </ul>
+
+              <h3>Derechos parentales de parejas del mismo sexo</h3>
+              <p>
+                Los derechos parentales de las parejas del mismo sexo requieren atención cuidadosa para asegurar que los derechos de ambos padres estén protegidos. Le ayudamos con:
+              </p>
+              <ul>
+                <li>El establecimiento de la filiación legal de padres o madres no biológicos</li>
+                <li>La adopción por el segundo padre o madre cuando sea necesario</li>
+                <li>Planes de crianza que reconozcan la igualdad de derechos de ambos padres</li>
+                <li>La protección de los derechos parentales cuando la relación termina</li>
+              </ul>
+
+              <h3>Manutención de menores y gastos</h3>
+              <p>
+                Colorado utiliza pautas basadas en los ingresos para calcular la manutención de menores, tomando en cuenta:
+              </p>
+              <ul>
+                <li>Los ingresos brutos de ambos padres</li>
+                <li>El número de hijos</li>
+                <li>La distribución del tiempo de crianza</li>
+                <li>Los costos de atención médica</li>
+                <li>Los gastos de cuidado infantil relacionados con el trabajo</li>
+                <li>Los gastos extraordinarios</li>
+              </ul>
+
+              <p>
+                Nuestros abogados se aseguran de que los cálculos de ingresos sean precisos (algo especialmente importante con los ingresos variables, comunes entre los profesionales del Western Slope), de que se consideren adecuadamente los gastos no ordinarios y de que se soliciten modificaciones cuando las circunstancias cambien de manera sustancial.
+              </p>
+
+              <h3>Reubicación y traslado</h3>
+              <p>
+                Cuando uno de los padres desea mudarse con los hijos, la ley de Colorado exige procedimientos estrictos. Ya sea que usted quiera mudarse o se oponga a una mudanza propuesta, nuestros abogados le ofrecen representación con experiencia en estos casos de alto impacto. Las disputas de reubicación suelen involucrar oportunidades de trabajo, apoyo familiar, ventajas educativas y la importancia de mantener relaciones significativas con ambos padres.
+              </p>
+
+              <h3>Modificación de planes de crianza</h3>
+              <p>
+                La vida cambia. Cuando las circunstancias cambian de manera sustancial, puede ser necesario modificar el plan de crianza. Tramitamos modificaciones por motivos como:
+              </p>
+              <ul>
+                <li>Cambios de empleo o reubicación</li>
+                <li>Un nuevo matrimonio y nuevas dinámicas familiares</li>
+                <li>Las necesidades cambiantes de los hijos según su desarrollo</li>
+                <li>Consideraciones escolares y compromisos extracurriculares</li>
+                <li>Cambios en los horarios de trabajo de los padres</li>
+                <li>Preocupaciones de seguridad</li>
+              </ul>
+
+              <h2>Acuerdos prenupciales y posnupciales</h2>
+              <p>
+                Los acuerdos matrimoniales cumplen una función importante: protegen bienes, aclaran las expectativas financieras y reducen los conflictos en caso de divorcio. Nuestros abogados redactan acuerdos prenupciales y posnupciales detallados que:
+              </p>
+              <ul>
+                <li>Protegen los bienes previos al matrimonio y las herencias</li>
+                <li>Definen los bienes separados y los bienes matrimoniales</li>
+                <li>Abordan participaciones en negocios y consultorios profesionales</li>
+                <li>Establecen disposiciones sobre manutención conyugal o la renuncia a ella</li>
+                <li>Protegen el patrimonio familiar y los objetivos de planificación patrimonial</li>
+                <li>Aclaran las responsabilidades financieras durante el matrimonio</li>
+              </ul>
+
+              <p>
+                Nos aseguramos de que estos acuerdos cumplan con los requisitos legales de Colorado para que sean válidos y exigibles, protegiendo de manera justa los intereses de ambas partes.
+              </p>
+
+              <h2>Desacato y cumplimiento posterior al decreto</h2>
+              <p>
+                Cuando un excónyuge no cumple con las órdenes del tribunal, existen recursos legales. Representamos a clientes que buscan hacer cumplir órdenes relacionadas con:
+              </p>
+              <ul>
+                <li>Obligaciones de pago de manutención de menores</li>
+                <li>Manutención conyugal</li>
+                <li>Requisitos de división de bienes</li>
+                <li>Incumplimientos del tiempo de crianza</li>
+                <li>Disputas sobre la autoridad para la toma de decisiones</li>
+              </ul>
+
+              <p>
+                Los procedimientos por desacato pueden dar lugar a diversas soluciones, como órdenes de pago, tiempo de crianza de reposición, el pago de honorarios de abogados e incluso cárcel por incumplimientos intencionales.
+              </p>
+
+              <h2>Órdenes de protección civil</h2>
+              <p>
+                En situaciones de abuso doméstico, acoso o amenazas creíbles, las órdenes de protección civil brindan protección legal. Nuestros abogados asisten tanto a los solicitantes que piden una orden de protección como a las personas demandadas que se defienden de las acusaciones. Comprendemos las graves consecuencias que estas órdenes tienen para las relaciones familiares, el empleo, el derecho a portar armas de fuego y en el ámbito penal.
+              </p>
+
+              <h2>Matrimonio de hecho (common law marriage)</h2>
+              <p>
+                Colorado reconoce el matrimonio de hecho, pero para demostrar o refutar su existencia se requieren pruebas específicas. Atendemos casos relacionados con:
+              </p>
+              <ul>
+                <li>Establecer el matrimonio de hecho para efectos de divorcio</li>
+                <li>Defenderse de reclamaciones de matrimonio de hecho</li>
+                <li>La división de bienes cuando se disputa el matrimonio de hecho</li>
+                <li>Aclarar desde cuándo la relación se convirtió en matrimonio</li>
+              </ul>
+
+              <h2>Por qué elegir a Neiley Law para su caso de derecho de familia</h2>
+
+              <h3>Representación con experiencia en comunidades de montaña</h3>
+              <p>
+                Comprendemos la dinámica particular de las familias del Western Slope y de las comunidades de montaña. Desde los patrones de empleo de temporada que afectan el cálculo de la manutención hasta los horarios de custodia que se adaptan a las temporadas de esquí y a las variaciones del turismo, ofrecemos una representación basada en el conocimiento de la comunidad local.
+              </p>
+
+              <h3>Experiencia sólida, atención personalizada</h3>
+              <p>
+                Nuestro despacho maneja asuntos de derecho de familia complejos y de alto impacto con el mismo nivel de preparación que los despachos grandes, pero con una diferencia fundamental en la forma de atender a nuestros clientes. Usted trabaja directamente con abogados con experiencia que conocen cada detalle de su caso y que están personalmente comprometidos con lograr el mejor resultado posible.
+              </p>
+
+              <h3>Servicio integral</h3>
+              <p>
+                A veces, los asuntos de derecho de familia se cruzan con cuestiones penales: acusaciones de violencia doméstica, incumplimientos de órdenes de protección o disputas de custodia derivadas de cargos penales. Nuestro doble enfoque en derecho de familia nos permite ofrecer una representación continua en ambas áreas de práctica, sin necesidad de acudir a varios despachos ni de crear estrategias contradictorias.
+              </p>
+
+              <h2>Nuestras oficinas de derecho de familia</h2>
+              <p>
+                Atendemos a familias de todo el Western Slope de Colorado y las comunidades de montaña desde dos oficinas convenientes:
+              </p>
+              <ul>
+
+                <li><a href="/es/locations/carbondale/">Oficina del Valle de Roaring Fork</a> - Al servicio de Aspen, Carbondale, Basalt y el Condado de Pitkin</li>
+                <li><a href="/es/locations/rifle/">Oficina de Rifle</a> - Al servicio del Condado de Garfield y el corredor de la I-70</li>
+              </ul>
+
+              <h2>Áreas de práctica en derecho de familia</h2>
+              <div class="row mt-4 mb-4">
+                <div class="col-md-6">
+                  <ul>
+                    <li><a href="/es/family-law/divorce/">Divorcio y separación legal</a></li>
+                    <li><a href="/es/family-law/child-custody/">Custodia de menores y tiempo de crianza</a></li>
+                    <li>Manutención de menores y modificaciones</li>
+                    <li>Manutención conyugal</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li>Acuerdos prenupciales y posnupciales</li>
+                    <li>División de bienes</li>
+                    <li>Órdenes de protección civil</li>
+                    <li>Cumplimiento posterior al decreto</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h2>Programe su consulta de derecho de familia</h2>
+              <p>
+                Si enfrenta un asunto de derecho de familia en Colorado, comuníquese hoy con Neiley Law para programar una consulta. Ofrecemos horarios flexibles y podemos reunirnos en cualquiera de nuestras dos oficinas del Western Slope.
+              </p>
+              <p>
+                Llame al <strong>(970) 963-6363</strong> o escriba a <strong>office@neiley.com</strong> para hablar sobre su asunto de derecho de familia con un abogado con experiencia en derecho de familia en Colorado.
+              </p>
+
+              <p>
+                Ya sea que esté considerando el divorcio, necesite modificar un acuerdo de custodia, requiera un acuerdo prenupcial o enfrente otro reto de derecho de familia, Neiley Law le ofrece la representación legal especializada que necesita, con la atención personalizada que usted merece.
+              </p>
+
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4" data-aos="fade-up">
+              <div class="card-body">
+                <h3 class="card-title h4">Programe una consulta</h3>
+                <p class="card-text">
+                  <strong>Teléfono:</strong> (970) 963-6363<br />
+                  <strong>Correo electrónico:</strong> office@neiley.com
+                </p>
+                <a href="/es/#contact" class="btn btn-brand w-100">Contáctenos hoy</a>
+              </div>
+            </div>
+
+            <div class="card shadow-sm mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h3 class="card-title h4">Nuestras oficinas</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a href="/es/locations/carbondale/">Oficina del Valle de Roaring Fork</a></li>
+                  <li class="mb-2"><a href="/es/locations/rifle/">Oficina de Rifle</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h3 class="card-title h4">Áreas de práctica relacionadas</h3>
+                <ul class="list-unstyled">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+    <footer class="footer-cont">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-5">
+            <div class="col-lg-3 col-sm-6 special-foot">
+              <a href="/es/"><img src="/assets/images/opt/logo-nd.png" alt="Página de inicio de Neiley Law" /></a>
+              <div class="line special"></div>
+              <p>NEILEY LAW</p>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONTACTO</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>970-963-6363</li>
+                <li>office@neiley.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row g-4 justify-content-between">
+            <div class="col-auto">
+              <p class="mb-0">© Copyright Neiley Law. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

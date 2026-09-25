@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colorado Divorce Timeline &amp; Consultation Checklist | Neiley Law</title>
+    <meta name="description" content="Estimate the earliest possible Colorado divorce decree date under the 91-day rule, and see what to bring to your first family law consultation with Neiley Law." />
+    <link rel="canonical" href="https://www.neiley.com/resources/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Colorado Divorce Timeline &amp; Consultation Checklist | Neiley Law" />
+    <meta property="og:description" content="Estimate the earliest possible Colorado divorce decree date under the 91-day rule, and see what to bring to your first family law consultation with Neiley Law." />
+    <meta property="og:url" content="https://www.neiley.com/resources/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Colorado Divorce Timeline &amp; Consultation Checklist | Neiley Law" />
+    <meta name="twitter:description" content="Estimate the earliest possible Colorado divorce decree date under the 91-day rule, and see what to bring to your first family law consultation with Neiley Law." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32x32.png"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/assets/images/opt/logo-nd.png"
+            alt="Neiley Law"
+            width="100%"
+            id="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#practice">Practice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#locations">Locations</a>
+            </li>
+          </ul>
+          <a href="/#contact" class="btn btn-brand ms-lg-3">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" tabindex="-1">
+    <section id="resources-intro" class="section-padding">
+      <div class="container text-center" data-aos="fade-up">
+        <div class="section-title mb-0">
+          <span class="eyebrow">Resources</span>
+          <h1 class="display-4 fw-semibold">Preparing for Your Case</h1>
+          <div class="line"></div>
+          <p>
+            Practical tools to help you understand the process and make the
+            most of your first meeting with us.
+          </p>
+        </div>
+        <nav class="team-jump" aria-label="On this page">
+          <a href="#timeline"><span class="team-jump-name">Divorce Timeline</span><span class="team-jump-role">Colorado’s 91-day rule</span></a>
+          <a href="#checklist"><span class="team-jump-name">Consultation Checklist</span><span class="team-jump-role">What to bring</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <section id="timeline" class="profile profile-alt section-padding">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5" data-aos="fade-up">
+            <span class="eyebrow">Tool</span>
+            <h2 class="profile-name">Colorado Divorce Timeline</h2>
+            <p class="profile-lead">
+              Colorado law requires at least 91 days between the date the court
+              gains jurisdiction over the other spouse (usually when they are
+              served, or when they respond) and the earliest date a decree can
+              be entered.
+            </p>
+            <form class="timeline-calc framed-panel" data-timeline-calc>
+              <div class="framed-inner">
+                <label for="tl-date" class="intake-label">Date your spouse was served or responded</label>
+                <input id="tl-date" type="date" class="form-control" required />
+                <output class="timeline-result" for="tl-date" data-timeline-result aria-live="polite">
+                  Enter a date to see the earliest possible decree date.
+                </output>
+                <p class="intake-hint">
+                  An estimate for general information only, not legal advice.
+                  Most cases take longer, depending on negotiation, the court’s
+                  calendar, and whether issues are contested.
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <ol class="timeline">
+              <li>
+                <h3>Initial Consultation</h3>
+                <p>We meet with you to understand your situation, explain your rights and options, discuss likely outcomes, and outline our approach to your case.</p>
+              </li>
+              <li>
+                <h3>Filing and Service</h3>
+                <p>One spouse files a Petition for Dissolution of Marriage with the court. The other spouse is served with the petition and has an opportunity to respond.</p>
+              </li>
+              <li>
+                <h3>Temporary Orders</h3>
+                <p>If immediate issues need to be addressed, such as who stays in the family home, temporary parenting time, or temporary support, we can request temporary orders.</p>
+              </li>
+              <li>
+                <h3>Discovery</h3>
+                <p>Both parties exchange financial information and documents, including financial affidavits, tax returns, bank and retirement statements, and business records.</p>
+              </li>
+              <li>
+                <h3>Negotiation</h3>
+                <p>We work to negotiate a settlement addressing all issues, through direct negotiation, mediation, or collaborative processes.</p>
+              </li>
+              <li>
+                <h3>Trial, if Needed</h3>
+                <p>If settlement cannot be reached, the case proceeds to trial, where a judge decides the contested issues.</p>
+              </li>
+              <li>
+                <h3>Decree</h3>
+                <p>Once all issues are resolved, by agreement or court decision, the court enters a Decree of Dissolution of Marriage finalizing your divorce.</p>
+              </li>
+            </ol>
+            <p class="mt-4"><a href="/family-law/divorce/">Read more about divorce in Colorado</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist" class="profile section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="text-center" data-aos="fade-up">
+              <span class="eyebrow">Checklist</span>
+              <h2 class="profile-name">Your First Consultation</h2>
+              <p class="careers-lead mb-5">
+                Bring what you have. You don’t need everything on this list to
+                meet with us.
+              </p>
+            </div>
+            <div class="framed-panel checklist" data-aos="fade-up">
+              <div class="framed-inner">
+                <div class="row g-0">
+                  <div class="col-lg-6 cred-col">
+                    <span class="pi-numeral">I</span>
+                    <h3>Documents</h3>
+                    <ul class="check-list">
+                      <li><label><input type="checkbox" /> Photo identification</label></li>
+                      <li><label><input type="checkbox" /> Marriage certificate, if available</label></li>
+                      <li><label><input type="checkbox" /> Any existing court orders, parenting plans, or protection orders</label></li>
+                      <li><label><input type="checkbox" /> Prenuptial or postnuptial agreement, if one exists</label></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 cred-col">
+                    <span class="pi-numeral">II</span>
+                    <h3>Finances</h3>
+                    <ul class="check-list">
+                      <li><label><input type="checkbox" /> Recent pay stubs</label></li>
+                      <li><label><input type="checkbox" /> The last two to three years of tax returns</label></li>
+                      <li><label><input type="checkbox" /> Recent bank, investment, and retirement statements</label></li>
+                      <li><label><input type="checkbox" /> A list of major assets and debts</label></li>
+                      <li><label><input type="checkbox" /> Business records, if you own a business</label></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 cred-col">
+                    <span class="pi-numeral">III</span>
+                    <h3>Children</h3>
+                    <ul class="check-list">
+                      <li><label><input type="checkbox" /> Children’s names and ages</label></li>
+                      <li><label><input type="checkbox" /> Current parenting schedule, formal or informal</label></li>
+                      <li><label><input type="checkbox" /> School and activity schedules</label></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 cred-col">
+                    <span class="pi-numeral">IV</span>
+                    <h3>Your Questions</h3>
+                    <ul class="check-list">
+                      <li><label><input type="checkbox" /> A short timeline of key events: marriage, separation, moves</label></li>
+                      <li><label><input type="checkbox" /> Your goals and biggest concerns</label></li>
+                      <li><label><input type="checkbox" /> A list of questions for us</label></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="text-center mt-4">
+                  <button type="button" class="btn btn-brand" data-print>Print Checklist</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team-cta" class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9" data-aos="fade-up">
+            <div class="framed-panel text-center">
+              <div class="framed-inner">
+                <span class="eyebrow">Next Step</span>
+                <h2>Ready to talk it through?</h2>
+                <div class="line"></div>
+                <p>To speak with our attorneys, please schedule a consultation. We look forward to speaking with you.</p>
+                <a href="/#contact" class="btn btn-brand">Schedule a Consultation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    </main>
+    <footer class="footer-cont">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-5">
+            <div class="col-lg-3 col-sm-6 special-foot">
+              <a href="/">
+                <img src="/assets/images/opt/logo-nd.png" alt="Neiley Law home" />
+              </a>
+              <div class="line special"></div>
+              <p>NEILEY LAW</p>
+              <div class="social-icons">
+                <a href="#" aria-label="Neiley Law on Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law on LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">LEARN MORE</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>
+                  <a href="/#about">About</a>
+                </li>
+                <li>
+                  <a href="/#team">Our Team</a>
+                </li>
+                <li>
+                  <a href="/#practice">Our Practice</a>
+                </li>
+                <li>
+                  <a href="/resources/">Resources</a>
+                </li>
+                <li>
+                  <a href="/privacy.html">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONNECT</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>
+                  <a href="/careers.html">Careers</a>
+                </li>
+                <li>
+                  <a href="/#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONTACT</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>1000 Dolores Way, Suite B</li>
+                <li>Carbondale, CO 81623</li>
+                <li>-</li>
+                <li>111 East Third Street, Unit 219</li>
+                <li>Rifle, CO 81650</li>
+                <li>-</li>
+                <li>970-963-6363</li>
+                <li>office@neiley.com</li>
+                <li>www.neiley.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row g-4 justify-content-between">
+            <div class="col-auto">
+              <p class="mb-0">
+                &copy; Copyright Neiley Law. All Rights Reserved.
+              </p>
+              <p class="mb-0">
+                Neiley Law LLC is not affiliated with any governmental
+                entity.
+              </p>
+            </div>
+            <div class="col-auto">
+              <p class="mb-0">
+                Web Design by
+                <a href="https://micaoz-3e29397c429a.herokuapp.com/">Mica Oz</a>
+              </p>
+              <p class="mb-0">
+                Photography by
+                <a href="https://www.siriraitto.com/">Siri Raitto</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

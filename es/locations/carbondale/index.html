@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var intro = false;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("nl-theme");
+          var m = localStorage.getItem("nl-motion");
+          if (t) d.setAttribute("data-theme", t);
+          if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
+          if (m) d.setAttribute("data-motion", m);
+          intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+        } catch (e) {}
+        // Full intro once per session; after that, browsers with page
+        // transitions cross-fade instead of showing the loading cover.
+        if (intro) d.classList.add("is-intro");
+        if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Never leave the loading screen up if main.js fails to run.
+        setTimeout(function () {
+          d.classList.remove("is-loading");
+          d.classList.add("is-ready");
+        }, 6000);
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abogados en Carbondale | Derecho de familia en el Roaring Fork Valley | Neiley Law</title>
+    <meta
+      name="description"
+      content="Abogados de derecho de familia con experiencia en Carbondale: Neiley Law. Atendemos el Roaring Fork Valley y los condados de Pitkin y Garfield desde nuestra oficina en 1000 Dolores Way, Suite B."
+    />
+    <link rel="canonical" href="https://www.neiley.com/es/locations/carbondale/" />
+    <link rel="alternate" hreflang="en" href="https://www.neiley.com/locations/carbondale/" />
+    <link rel="alternate" hreflang="es" href="https://www.neiley.com/es/locations/carbondale/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.neiley.com/locations/carbondale/" />
+    <meta name="theme-color" content="#071104" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neiley Law" />
+    <meta property="og:locale" content="es_US" />
+    <meta property="og:title" content="Abogados en Carbondale | Derecho de familia en el Roaring Fork Valley | Neiley Law" />
+    <meta property="og:description" content="Abogados de derecho de familia con experiencia en Carbondale: Neiley Law. Atendemos el Roaring Fork Valley y los condados de Pitkin y Garfield desde nuestra oficina en 1000 Dolores Way, Suite B." />
+    <meta property="og:url" content="https://www.neiley.com/es/locations/carbondale/" />
+    <meta property="og:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Neiley Law, Family Law, Carbondale and Rifle, Colorado" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abogados en Carbondale | Derecho de familia en el Roaring Fork Valley | Neiley Law" />
+    <meta name="twitter:description" content="Abogados de derecho de familia con experiencia en Carbondale: Neiley Law. Atendemos el Roaring Fork Valley y los condados de Pitkin y Garfield desde nuestra oficina en 1000 Dolores Way, Suite B." />
+    <meta name="twitter:image" content="https://www.neiley.com/assets/images/og-image.jpg" />
+    <script type="application/ld+json" data-seo>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.neiley.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Oficinas",
+      "item": "https://www.neiley.com/es/#locations"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Abogados en Carbondale",
+      "item": "https://www.neiley.com/es/locations/carbondale/"
+    }
+  ]
+}
+    </script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32x32.png"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Schema Markup for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Neiley Law - Carbondale Office",
+      "image": "https://www.neiley.com/assets/images/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1000 Dolores Way, Suite B",
+        "addressLocality": "Carbondale",
+        "addressRegion": "CO",
+        "postalCode": "81623",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.4022,
+        "longitude": -107.2111
+      },
+      "url": "https://neiley.com/locations/carbondale/",
+      "telephone": "+1-970-963-6363",
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Carbondale"
+        },
+        {
+          "@type": "City",
+          "name": "Aspen",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Pitkin County"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Basalt"
+        },
+        {
+          "@type": "City",
+          "name": "Glenwood Springs"
+        },
+        {
+          "@type": "City",
+          "name": "Snowmass Village"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/es/">
+          <img
+            src="/assets/images/opt/logo-nd.png"
+            alt="Neiley Law"
+            width="100%"
+            id="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir o cerrar el menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/es/#hero">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/es/#about">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/es/#team">Equipo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/es/#practice">Áreas de práctica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/es/#locations">Oficinas</a>
+            </li>
+          </ul>
+          <a href="/es/#contact" class="btn btn-brand ms-lg-3">Contacto</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" tabindex="-1">
+
+    <!-- Hero Section -->
+    <section id="location-hero" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h1 class="display-3 fw-semibold">Abogados de derecho de familia en Carbondale</h1>
+            <div class="line" style="background-color: var(--c-brand)"></div>
+            <p class="lead">
+              Representación especializada en derecho de familia en el Roaring Fork Valley
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <article>
+              <h2>Su despacho especializado en derecho de familia en el Roaring Fork Valley</h2>
+              <p>
+                Cuando necesita un abogado de derecho de familia con experiencia en el Roaring Fork Valley, Neiley Law le ofrece una representación legal sólida con la atención personalizada que solo un despacho pequeño y especializado puede brindar. Nuestra oficina de Carbondale está convenientemente ubicada en 1000 Dolores Way, Suite B, con fácil acceso para clientes de los condados de Pitkin y Garfield y de las comunidades de montaña cercanas.
+              </p>
+
+              <p>
+                Mantenemos un despacho de tamaño reducido a propósito, para que cada cliente reciba una atención dedicada. Nuestros abogados combinan un amplio conocimiento jurídico con un servicio directo y cercano, lo que nos permite conocer a fondo cada caso y mantener una relación directa con nuestros clientes durante todo el proceso legal.
+              </p>
+
+              <h2>Servicios integrales de derecho de familia en el Roaring Fork Valley</h2>
+              <p>
+                Desde nuestra oficina de Carbondale, Neiley Law atiende a clientes en todo el Roaring Fork Valley, incluidos Aspen, Basalt, Snowmass Village, Glenwood Springs y las comunidades cercanas.
+              </p>
+
+              <h3>Derecho de familia para patrimonios elevados</h3>
+              <p>
+                Nuestros abogados de derecho de familia se especializan en casos familiares complejos, entre ellos:
+              </p>
+              <ul>
+                <li><strong>Divorcio con patrimonio elevado:</strong> Manejamos divorcios complejos que involucran bienes raíces de lujo, participaciones en empresas, carteras de inversión y bienes considerables, con la experiencia especializada que estos casos exigen.</li>
+                <li><strong>División de bienes compleja:</strong> Dividimos patrimonios conyugales que incluyen propiedades en el Roaring Fork Valley, casas vacacionales, propiedades con acceso directo a las pistas de esquí, bienes comerciales y propiedades de inversión.</li>
+                <li><strong>Valuación de empresas:</strong> Trabajamos con contadores forenses para valuar con precisión empresas privadas, consultorios y despachos profesionales, e inversiones.</li>
+                <li><strong>Compensación ejecutiva:</strong> Atendemos opciones sobre acciones, compensación diferida, bonos y estructuras de ingresos complejas, comunes entre los profesionales del Valle.</li>
+                <li><strong>Acuerdos prenupciales y posnupciales:</strong> Redactamos acuerdos matrimoniales sólidos para proteger bienes considerables y el patrimonio familiar.</li>
+                <li><strong>Custodia de menores:</strong> Elaboramos planes de crianza que toman en cuenta escuelas privadas, viajes internacionales, varias residencias y las circunstancias de familias de alto perfil.</li>
+                <li><strong>Manutención conyugal:</strong> Negociamos y litigamos una manutención adecuada en matrimonios de altos ingresos, tomando en cuenta el nivel de vida de la pareja.</li>
+                <li><strong>Protección de bienes:</strong> Protegemos herencias, participaciones en fideicomisos y bienes propios (no conyugales) en los procesos de divorcio.</li>
+              </ul>
+
+              <h3>Asuntos de crianza y custodia</h3>
+              <p>
+                Representamos a madres y padres en todo tipo de conflictos de crianza, incluida la asignación de responsabilidades parentales, el tiempo de crianza, la toma de decisiones, la reubicación y la modificación de órdenes existentes. Nuestro enfoque se basa en el interés superior de los menores, sin dejar de proteger la relación y los derechos de nuestros clientes.
+              </p>
+
+              <h3>Órdenes de protección civil y apelaciones en derecho de familia</h3>
+              <p>
+                Representamos tanto a solicitantes como a demandados en procesos de órdenes de protección civil, y llevamos apelaciones de sentencias de derecho de familia ante el Tribunal de Apelaciones de Colorado.
+              </p>
+
+              <h2>Por qué elegir a Neiley Law para su caso de derecho de familia en el Roaring Fork Valley</h2>
+
+              <h3>La ventaja de un despacho especializado</h3>
+              <p>
+                Nuestro tamaño reducido, elegido a propósito, es nuestra mayor fortaleza. Aunque los bufetes más grandes pueden ofrecer muchos recursos, nosotros le ofrecemos algo más valioso: la atención directa y constante de abogados con experiencia que conocen su caso a fondo. Desde nuestra oficina de Carbondale, atendemos el Roaring Fork Valley con un profundo conocimiento local del estilo de vida, de los procedimientos de los tribunales y de las estrechas relaciones profesionales que benefician a nuestros clientes.
+              </p>
+
+              <h3>Amplia experiencia con un trato personalizado</h3>
+              <p>
+                Como despacho especializado, manejamos casos complejos y de alto riesgo del mismo nivel que los bufetes más grandes, pero con una diferencia fundamental en la forma en que atendemos a nuestros clientes:
+              </p>
+              <ul>
+                <li>Patrimonios conyugales de varios millones de dólares con carteras de bienes diversas</li>
+                <li>Valuación de empresas y división de bienes compleja</li>
+                <li>Conflictos de custodia que involucran varias residencias</li>
+                <li>Aspectos de fideicomisos y herencias en los procesos de divorcio</li>
+                <li>Acuerdos prenupciales que protegen patrimonios considerables</li>
+              </ul>
+
+              <h3>Conocemos las particularidades del Valle</h3>
+              <p>
+                El Roaring Fork Valley presenta retos legales particulares que requieren conocimientos especializados:
+              </p>
+              <ul>
+                <li>Bienes raíces de lujo que abarcan varias propiedades</li>
+                <li>Empleos de temporada que afectan los cálculos de custodia y manutención</li>
+                <li>Segundas y terceras residencias usadas por temporada o como propiedades de inversión</li>
+                <li>Profesionales de altos ingresos con compensación variable o diferida</li>
+                <li>Consideraciones sobre escuelas privadas y actividades extracurriculares</li>
+                <li>Viajes internacionales y custodia que involucra a varios estados</li>
+                <li>Protección de la privacidad de personas y familias de alto perfil</li>
+              </ul>
+
+              <h3>Acceso directo a abogados con experiencia</h3>
+              <p>
+                En Neiley Law, usted trabaja directamente con abogados con experiencia desde la consulta hasta la resolución de su caso. No hay capas de abogados asociados principiantes ni gestores de casos: su abogado conoce cada detalle de su caso y participa personalmente en todas las etapas importantes.
+              </p>
+
+              <h2>Tribunales locales</h2>
+              <p>
+                La mayoría de los asuntos de derecho de familia en el Roaring Fork Valley se tramitan en los Combined Courts (tribunales combinados) del condado de Pitkin o del condado de Garfield:
+              </p>
+              <div class="card my-4">
+                <div class="card-body">
+                  <h3 class="card-title h5">Pitkin County Combined Courts</h3>
+                  <p class="card-text mb-1">
+                    506 East Main Street<br />
+                    Aspen, CO 81611<br />
+                    Teléfono: (970) 925-7635
+                  </p>
+                </div>
+              </div>
+              <div class="card my-4">
+                <div class="card-body">
+                  <h3 class="card-title h5">Garfield County Combined Courts</h3>
+                  <p class="card-text mb-1">
+                    109 8th Street, Suite 104<br />
+                    Glenwood Springs, CO 81601<br />
+                    Teléfono: (970) 945-8631
+                  </p>
+                </div>
+              </div>
+
+              <h2>Al servicio de todo el Roaring Fork Valley</h2>
+              <p>
+                Desde nuestra oficina de Carbondale, en 1000 Dolores Way, Suite B, atendemos a clientes en toda la región, incluidas estas comunidades:
+              </p>
+              <ul>
+                <li>Carbondale</li>
+                <li>Aspen y West Aspen</li>
+                <li>Snowmass Village</li>
+                <li>Basalt</li>
+                <li>El Jebel</li>
+                <li>Glenwood Springs</li>
+                <li>Woody Creek</li>
+                <li>Old Snowmass</li>
+                <li>Missouri Heights</li>
+                <li>Todos los condados de Pitkin, Garfield y Eagle</li>
+              </ul>
+
+              <h2>Programe una consulta</h2>
+              <p>
+                Si necesita un abogado de derecho de familia en el Roaring Fork Valley, comuníquese hoy mismo con Neiley Law para programar una consulta.
+              </p>
+              <p>
+                Llámenos al <strong>(970) 963-6363</strong> o escríbanos a <strong>office@neiley.com</strong> para hablar de su caso con un abogado de derecho de familia con experiencia en el Roaring Fork Valley.
+              </p>
+
+            </article>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4" data-aos="fade-up">
+              <div class="card-body">
+                <h3 class="card-title h4">Oficina de Carbondale</h3>
+                <p class="card-text">
+                  <strong>Dirección:</strong><br />
+                  1000 Dolores Way, Suite B<br />
+                  Carbondale, CO 81623
+                </p>
+                <p class="card-text">
+                  <strong>Área de servicio:</strong><br />
+                  Carbondale, Aspen, Basalt, Glenwood Springs y todo el Roaring Fork Valley
+                </p>
+                <p class="card-text">
+                  <strong>Teléfono:</strong> (970) 963-6363<br />
+                  <strong>Correo electrónico:</strong> office@neiley.com
+                </p>
+                <p class="card-text">
+                  <strong>Horario:</strong><br />
+                  Lunes a viernes: 9:00 a. m. - 5:00 p. m.
+                </p>
+                <a
+                  href="https://maps.google.com/?q=1000+Dolores+Way+Suite+B+Carbondale+CO+81623"
+                  target="_blank" rel="noopener"
+                  class="btn btn-brand w-100"
+                  >Cómo llegar</a
+                >
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="card shadow-sm mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="ratio ratio-4x3">
+                <iframe title="Mapa de la oficina de Neiley Law en Carbondale"
+                  src="https://www.google.com/maps?q=1000+Dolores+Way+Suite+B+Carbondale+CO+81623&output=embed"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Practice Areas -->
+            <div class="card shadow-sm mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h3 class="card-title h4">Áreas de práctica</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="/es/family-law/">Derecho de familia</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/family-law/high-asset-divorce/">Divorcio con patrimonio elevado</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/es/family-law/divorce/">Divorcio</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/es/family-law/child-custody/">Custodia de menores</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/es/family-law/spousal-support/">Manutención conyugal</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/family-law/prenuptial-agreements/">Acuerdos prenupciales</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/es/family-law/civil-protection-orders/">Órdenes de protección civil</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Other Locations -->
+            <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body">
+                <h3 class="card-title h4">Otras oficinas</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="/es/locations/rifle/">Oficina de Rifle</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    </main>
+    <footer class="footer-cont">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-5">
+            <div class="col-lg-3 col-sm-6 special-foot">
+              <a href="/es/">
+                <img src="/assets/images/opt/logo-nd.png" alt="Página de inicio de Neiley Law" />
+              </a>
+              <div class="line special"></div>
+              <p>NEILEY LAW</p>
+              <div class="social-icons">
+                <a href="#" aria-label="Neiley Law en Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Neiley Law en LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">MÁS INFORMACIÓN</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>
+                  <a href="/es/#about">Nosotros</a>
+                </li>
+                <li>
+                  <a href="/es/#team">Nuestro equipo</a>
+                </li>
+                <li>
+                  <a href="/es/#practice">Nuestra práctica</a>
+                </li>
+                <li>
+                  <a href="/resources/">Recursos</a>
+                </li>
+                <li>
+                  <a href="/privacy.html">Política de privacidad</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONÉCTESE</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>
+                  <a href="/careers.html">Empleos</a>
+                </li>
+                <li>
+                  <a href="/es/#contact">Contacto</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-box col-lg-3 col-sm-6">
+              <h2 class="h5 mb-0">CONTACTO</h2>
+              <div class="line"></div>
+              <ul class="footer-box">
+                <li>1000 Dolores Way, Suite B</li>
+                <li>Carbondale, CO 81623</li>
+                <li>-</li>
+                <li>111 East Third Street, Unit 219</li>
+                <li>Rifle, CO 81650</li>
+                <li>-</li>
+                <li>970-963-6363</li>
+                <li>office@neiley.com</li>
+                <li>www.neiley.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row g-4 justify-content-between">
+            <div class="col-auto">
+              <p class="mb-0">
+                © Copyright Neiley Law. Todos los derechos reservados.
+              </p>
+              <p class="mb-0">
+                Neiley Law LLC no está afiliado a ninguna entidad
+                gubernamental.
+              </p>
+            </div>
+            <div class="col-auto">
+              <p class="mb-0">
+                Diseño web por
+                <a href="https://micaoz-3e29397c429a.herokuapp.com/">Mica Oz</a>
+              </p>
+              <p class="mb-0">
+                Fotografía por
+                <a href="https://www.siriraitto.com/">Siri Raitto</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
