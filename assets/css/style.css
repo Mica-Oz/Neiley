@@ -345,7 +345,7 @@ main:focus {
 .page-header {
   background-color: var(--c-deep);
   border-bottom: 1px solid var(--c-hairline);
-  padding: 160px 0 80px;
+  padding: 100px 0 80px;
 }
 .page-header h1.text-white {
   color: var(--c-heading) !important;

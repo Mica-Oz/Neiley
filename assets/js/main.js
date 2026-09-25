@@ -361,7 +361,7 @@
     });
   }
 
-  /* ---------- Quick Exit (safety pages) ---------- */
+  /* ---------- Quick Exit (every page) ---------- */
 
   // Leaves instantly for a neutral page. location.replace() swaps out this
   // history entry, so the Back button doesn't return here.
@@ -375,7 +375,6 @@
   }
 
   function setupQuickExit() {
-    if (!root.hasAttribute("data-quick-exit")) return;
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "quick-exit";
@@ -418,8 +417,9 @@
         sessionStorage.setItem("nl-exit-note", "1");
       } catch (e) {}
     });
-    var main = document.getElementById("main");
-    if (main) main.insertBefore(note, main.firstChild);
+    // Above the navbar, so it is never hidden behind it.
+    var anchor = document.querySelector(".navbar") || document.getElementById("main");
+    if (anchor) anchor.parentNode.insertBefore(note, anchor);
   }
 
   /* ---------- Mobile call bar ---------- */
