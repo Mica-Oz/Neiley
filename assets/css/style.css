@@ -34,11 +34,11 @@
 
 :root,
 :root[data-theme="light"]
-  :is(
+  :where(
     #hero,
     #counter,
     #contact .section-title,
-    .navbar.is-over-hero,
+    .navbar,
     .page-header,
     .speaker-content,
     .location-hover-content,
@@ -67,6 +67,12 @@
   --c-shadow: rgba(0, 0, 0, 0.45);
   --c-toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23d5bf98' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --c-chevron: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23d5bf98' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+/* Light mode keeps the navbar, footer and page headers on Neiley green (G3) */
+:root[data-theme="light"] :where(.navbar, .page-header, .footer-cont, footer.bg-dark) {
+  --c-deep: var(--g3);
+  --c-nav-rgb: 14, 36, 8;
 }
 
 :root[data-theme="light"] {
@@ -109,7 +115,6 @@
 :root {
   --loader-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 802 802' fill='none' stroke='%23d5bf98' stroke-width='22' stroke-linejoin='miter'%3E%3Cpath class='f' pathLength='1' d='M52 52H750V750H52Z'/%3E%3Cpath class='a' pathLength='1' d='M53 750L401 110L749 750'/%3E%3Cpath class='v' pathLength='1' d='M52 380L401 705L750 380'/%3E%3C/svg%3E");
   --loader-mark-draw: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 802 802' fill='none' stroke='%23d5bf98' stroke-width='22' stroke-linejoin='miter'%3E%3Cstyle%3Epath%7Bstroke-dasharray:1%3Bstroke-dashoffset:1%3Banimation:d 1.3s cubic-bezier%28.65%2C0%2C.35%2C1%29 forwards%7D.a%7Banimation-delay:.35s%7D.v%7Banimation-delay:.65s%7D%40keyframes d%7Bto%7Bstroke-dashoffset:0%7D%7D%3C/style%3E%3Cpath class='f' pathLength='1' d='M52 52H750V750H52Z'/%3E%3Cpath class='a' pathLength='1' d='M53 750L401 110L749 750'/%3E%3Cpath class='v' pathLength='1' d='M52 380L401 705L750 380'/%3E%3C/svg%3E");
-  --loader-mark-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 802 802' fill='none' stroke='%23162d0d' stroke-width='22' stroke-linejoin='miter'%3E%3Cpath class='f' pathLength='1' d='M52 52H750V750H52Z'/%3E%3Cpath class='a' pathLength='1' d='M53 750L401 110L749 750'/%3E%3Cpath class='v' pathLength='1' d='M52 380L401 705L750 380'/%3E%3C/svg%3E");
 }
 html::before,
 html::after {
@@ -162,16 +167,24 @@ html.is-intro::after {
     letter-spacing: 0.5em;
   }
 }
-/* Quick page-to-page version matches the chosen theme */
-:root[data-theme="light"]:not(.is-intro)::before {
-  background-color: var(--nl);
-  background-image: var(--loader-mark-light);
-}
-:root[data-theme="light"]:not(.is-intro)::after {
-  color: var(--g4);
+/* Light mode: same tan drawing on Neiley green (G3) */
+:root[data-theme="light"]::before {
+  background-color: var(--g3);
 }
 
 /* RESET & HELPERS */
+
+/* Nothing may scroll the page sideways (clip keeps the sticky navbar working) */
+html,
+body {
+  overflow-x: hidden;
+}
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
 
 body {
   font-family: var(--font-base);
@@ -457,9 +470,8 @@ main:focus {
   transform: scale(1.04);
   filter: brightness(1.2);
 }
-/* Brightening only suits the bronze mark; tan and green stay true to palette */
-.navbar.is-over-hero .navbar-brand img,
-:root[data-theme="light"] .navbar-brand img {
+/* Brightening suits the bronze mark; the tan hero mark stays true to palette */
+.navbar.is-over-hero .navbar-brand img {
   filter: none !important;
 }
 .navbar-brand:hover .brand-word,
@@ -484,6 +496,7 @@ main:focus {
 /* Theme and motion toggles (injected by main.js) */
 .site-prefs {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   margin-left: 16px;
@@ -500,6 +513,7 @@ main:focus {
   border: 1px solid var(--c-hairline);
   border-radius: 100px;
   color: var(--c-link);
+  white-space: nowrap;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 .pref-btn:hover {
@@ -561,6 +575,12 @@ main:focus {
 .navbar .btn {
   font-size: 13px;
   padding: 12px calc(24px - 0.24em) 11px 24px;
+}
+
+/* Narrow sidebar cards: tighter tracking keeps labels on one line */
+.card .btn {
+  letter-spacing: 0.14em;
+  padding-inline: 12px;
 }
 
 .btn-brand,
@@ -653,6 +673,15 @@ h2 {
   #hero h1 {
     font-size: 70px;
   }
+}
+@media (max-width: 575px) {
+  #hero h1 {
+    font-size: clamp(44px, 14vw, 64px);
+  }
+}
+/* The quote band's row sits outside a .container; cancel its gutters */
+#counter > .row {
+  margin-inline: 0;
 }
 
 /* SECTION TITLE */

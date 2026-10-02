@@ -6,7 +6,6 @@
   var LOGOS = {
     dark: "/assets/images/opt/logo-nd.png", // bronze on dark green
     hero: "/assets/images/opt/logo-n.png", // tan, matches the hero title
-    light: "/assets/images/opt/logo-g4.png", // deep green on ivory
   };
 
   var ICONS = {
@@ -203,7 +202,7 @@
     var overHero = !!hero && window.scrollY < 8;
     nav.classList.toggle("is-over-hero", overHero);
     if (logo) {
-      var src = overHero ? LOGOS.hero : isLight() ? LOGOS.light : LOGOS.dark;
+      var src = overHero ? LOGOS.hero : LOGOS.dark;
       if (logo.getAttribute("src") !== src) logo.setAttribute("src", src);
     }
   }
@@ -452,8 +451,8 @@
   // First visit of a session: hold the drawn-logo intro for at least
   // INTRO_MIN ms and until the hero video (or the page) is ready, but never
   // longer than INTRO_MAX. Later page loads just fade the cover away.
-  var INTRO_MIN = 2100;
-  var INTRO_MAX = 4500;
+  var INTRO_MIN = 3000; // full draw (~2.3s) plus a short hold
+  var INTRO_MAX = 5500;
   var revealed = false;
 
   function reveal() {
