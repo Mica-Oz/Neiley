@@ -2079,32 +2079,24 @@ footer img {
     display: none;
   }
 }
-/* Floats above the Quick Exit button so it never pushes the page around */
+/* Safety notice bar across the top of every page */
 .quick-exit-note {
-  position: fixed;
-  right: 20px;
-  bottom: calc(20px + 52px + 12px + env(safe-area-inset-bottom, 0px));
-  z-index: 1040;
-  width: min(360px, calc(100vw - 24px));
-  display: grid;
-  gap: 12px;
-  justify-items: start;
-  padding: 16px 18px;
-  background-color: var(--c-surface);
-  border: 1px solid var(--c-hairline);
-  box-shadow: var(--box-shadow);
-  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 24px;
+  padding: 14px 20px;
+  background-color: var(--c-bg-alt);
+  border-bottom: 1px solid var(--c-hairline);
+  text-align: center;
 }
-@media (max-width: 767px) {
-  .quick-exit-note {
-    right: 12px;
-    bottom: calc(56px + 12px + 48px + 10px + env(safe-area-inset-bottom, 0px));
-  }
+.exit-note-hidden .quick-exit-note {
+  display: none;
 }
 .quick-exit-note p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 16px;
 }
 .quick-exit-note kbd {
   padding: 1px 6px;

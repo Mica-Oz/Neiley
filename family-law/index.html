@@ -13,6 +13,7 @@
           if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
           if (m) d.setAttribute("data-motion", m);
           intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+          if (sessionStorage.getItem("nl-exit-note") === "1") d.classList.add("exit-note-hidden");
         } catch (e) {}
         // Full intro once per session; after that, browsers with page
         // transitions cross-fade instead of showing the loading cover.
@@ -78,7 +79,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="/assets/css/style.css?v=20261005b" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261005c" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -97,6 +98,10 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="quick-exit-note" role="note">
+      <p>For your safety: press <kbd>Esc</kbd> or select <strong>Quick Exit</strong> at any time to leave this site immediately. Consider using a private browsing window.</p>
+      <button type="button" class="quick-exit-dismiss" data-exit-dismiss>Got it</button>
+    </div>
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
@@ -433,6 +438,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/assets/js/main.js?v=20261005b"></script>
+    <script src="/assets/js/main.js?v=20261005c"></script>
   </body>
 </html>

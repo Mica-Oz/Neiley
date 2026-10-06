@@ -13,6 +13,7 @@
           if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
           if (m) d.setAttribute("data-motion", m);
           intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+          if (sessionStorage.getItem("nl-exit-note") === "1") d.classList.add("exit-note-hidden");
         } catch (e) {}
         // Full intro once per session; after that, browsers with page
         // transitions cross-fade instead of showing the loading cover.
@@ -81,13 +82,17 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="/assets/css/style.css?v=20261005b" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261005c" />
     <script type="application/ld+json">
       { "@context": "https://schema.org", "@type": "LegalService", "name": "Neiley Law - Civil Protection Orders", "description": "Civil protection order attorneys serving Western Colorado", "provider": { "@type": "Attorney", "name": "Neiley Law" }, "areaServed": [ { "@type": "City", "name": "Aspen", "containedIn": { "@type": "State", "name": "Colorado" } }, { "@type": "City", "name": "Rifle", "containedIn": { "@type": "State", "name": "Colorado" } } ], "serviceType": "Civil Protection Order Law" }
     </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <div class="quick-exit-note" role="note">
+      <p>Por su seguridad: presione <kbd>Esc</kbd> o seleccione <strong>Salida rápida</strong> en cualquier momento para salir de este sitio de inmediato. Considere usar una ventana de navegación privada.</p>
+      <button type="button" class="quick-exit-dismiss" data-exit-dismiss>Entendido</button>
+    </div>
     <nav class="navbar navbar-expand-lg sticky-top"><div class="container-fluid"><a class="navbar-brand" href="/es/"><img src="/assets/images/opt/logo-nd.png" alt="Neiley Law" width="100%" id="logo" /></a><button class="navbar-toggler" aria-label="Abrir o cerrar el menú de navegación" aria-controls="navbarNav" aria-expanded="false" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="/es/#hero">Inicio</a></li><li class="nav-item"><a class="nav-link" href="/es/#about">Nosotros</a></li><li class="nav-item"><a class="nav-link" href="/es/#team">Equipo</a></li><li class="nav-item"><a class="nav-link" href="/es/#practice">Áreas de práctica</a></li><li class="nav-item"><a class="nav-link" href="/es/#locations">Oficinas</a></li></ul><a href="/es/#contact" class="btn btn-brand ms-lg-3">Contacto</a></div></div></nav>
     <main id="main" tabindex="-1">
 
@@ -151,6 +156,6 @@
 
     </main>
     <footer class="footer-cont"><div class="footer-top"><div class="container"><div class="row gy-5"><div class="col-lg-3 col-sm-6 special-foot"><a href="/es/"><img src="/assets/images/opt/logo-nd.png" alt="Neiley Law, página de inicio" /></a><div class="line special"></div><p>NEILEY LAW</p><div class="social-icons"><a href="#" aria-label="Neiley Law en Instagram"><i class="ri-instagram-line" aria-hidden="true"></i></a><a href="#" aria-label="Neiley Law en LinkedIn"><i class="ri-linkedin-box-line" aria-hidden="true"></i></a></div></div><div class="footer-box col-lg-3 col-sm-6"><h2 class="h5 mb-0">MÁS INFORMACIÓN</h2><div class="line"></div><ul class="footer-box"><li><a href="/es/#about">Nosotros</a></li><li><a href="/es/#team">Nuestro equipo</a></li><li><a href="/es/#practice">Nuestra práctica</a></li><li><a href="/resources/">Recursos</a></li><li><a href="/privacy.html">Política de privacidad</a></li></ul></div><div class="footer-box col-lg-3 col-sm-6"><h2 class="h5 mb-0">CONÉCTESE</h2><div class="line"></div><ul class="footer-box"><li><a href="/careers.html">Empleos</a></li><li><a href="/es/#contact">Contacto</a></li></ul></div><div class="footer-box col-lg-3 col-sm-6"><h2 class="h5 mb-0">CONTACTO</h2><div class="line"></div><ul class="footer-box"><li>1000 Dolores Way, Suite B</li><li>Carbondale, CO 81623</li><li>-</li><li>111 East Third Street, Unit 219</li><li>Rifle, CO 81650</li><li>-</li><li>970-963-6363</li><li>office@neiley.com</li><li>www.neiley.com</li></ul></div></div></div></div><div class="footer-bottom"><div class="container"><div class="row g-4 justify-content-between"><div class="col-auto"><p class="mb-0">&copy; Copyright Neiley Law. Todos los derechos reservados.</p><p class="mb-0">Neiley Law LLC no está afiliado a ninguna entidad gubernamental.</p></div><div class="col-auto"><p class="mb-0">Diseño web por <a href="https://micaoz-3e29397c429a.herokuapp.com/">Mica Oz</a></p><p class="mb-0">Fotografía por <a href="https://www.siriraitto.com/">Siri Raitto</a></p></div></div></div></div></footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script><script src="https://unpkg.com/aos@next/dist/aos.js"></script><script src="/assets/js/main.js?v=20261005b"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script><script src="https://unpkg.com/aos@next/dist/aos.js"></script><script src="/assets/js/main.js?v=20261005c"></script>
   </body>
 </html>

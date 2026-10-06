@@ -399,32 +399,18 @@
       if (e.key === "Escape" && !e.defaultPrevented) quickExit();
     });
 
-    // One-line safety notice, once per browser session (session storage
-    // only, so nothing lasting is left on the device).
-    var seen = false;
-    try {
-      seen = sessionStorage.getItem("nl-exit-note") === "1";
-    } catch (e) {}
-    if (seen) return;
-    var note = document.createElement("div");
-    note.className = "quick-exit-note";
-    note.setAttribute("role", "note");
-    note.innerHTML =
-      "<p>" +
-      (isSpanish
-        ? "Por su seguridad: presione <kbd>Esc</kbd> o seleccione <strong>Salida rápida</strong> en cualquier momento para salir de este sitio de inmediato. Considere usar una ventana de navegación privada."
-        : "For your safety: press <kbd>Esc</kbd> or select <strong>Quick Exit</strong> at any time to leave this site immediately. Consider using a private browsing window.") +
-      '</p><button type="button" class="quick-exit-dismiss">' +
-      (isSpanish ? "Entendido" : "Got it") +
-      "</button>";
-    note.querySelector("button").addEventListener("click", function () {
-      note.remove();
-      try {
-        sessionStorage.setItem("nl-exit-note", "1");
-      } catch (e) {}
-    });
-    // Floats beside the button (fixed), so inserting it never shifts the page.
-    document.body.appendChild(note);
+    // The safety notice is in each page's HTML (so it never shifts the page
+    // after load). "Got it" hides it for the rest of the session; the <head>
+    // script hides it before first paint on later pages.
+    var dismiss = document.querySelector("[data-exit-dismiss]");
+    if (dismiss) {
+      dismiss.addEventListener("click", function () {
+        root.classList.add("exit-note-hidden");
+        try {
+          sessionStorage.setItem("nl-exit-note", "1");
+        } catch (e) {}
+      });
+    }
   }
 
   /* ---------- Mobile call bar ---------- */

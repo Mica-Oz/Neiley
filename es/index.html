@@ -13,6 +13,7 @@
           if (!m && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) m = "reduce";
           if (m) d.setAttribute("data-motion", m);
           intro = m !== "reduce" && !sessionStorage.getItem("nl-intro");
+          if (sessionStorage.getItem("nl-exit-note") === "1") d.classList.add("exit-note-hidden");
         } catch (e) {}
         // Full intro once per session; after that, browsers with page
         // transitions cross-fade instead of showing the loading cover.
@@ -134,10 +135,14 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="/assets/css/style.css?v=20261005b" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261005c" />
   </head>
   <body data-spy="scroll" data-target=".navbar">
     <a class="skip-link" href="#main">Saltar al contenido principal</a>
+    <div class="quick-exit-note" role="note">
+      <p>Por su seguridad: presione <kbd>Esc</kbd> o seleccione <strong>Salida rápida</strong> en cualquier momento para salir de este sitio de inmediato. Considere usar una ventana de navegación privada.</p>
+      <button type="button" class="quick-exit-dismiss" data-exit-dismiss>Entendido</button>
+    </div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
@@ -1480,7 +1485,7 @@
     "></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/assets/js/main.js?v=20261005b"></script>
+    <script src="/assets/js/main.js?v=20261005c"></script>
     <script>
       Fancybox.bind('[data-fancybox="gallery"]', {
         //
