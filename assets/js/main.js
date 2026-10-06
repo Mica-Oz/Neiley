@@ -220,7 +220,14 @@
     },
     { passive: true }
   );
-  window.addEventListener("load", tuckHero);
+  window.addEventListener("load", function () {
+    tuckHero();
+    // Enable smooth scrolling for in-page links only after the browser has
+    // jumped to any #anchor in the URL, so arriving on a section doesn't glide.
+    setTimeout(function () {
+      if (!isReduced()) root.classList.add("smooth-scroll");
+    }, 400);
+  });
   window.addEventListener("resize", function () {
     tuckHero();
     updateNav();
@@ -416,9 +423,8 @@
         sessionStorage.setItem("nl-exit-note", "1");
       } catch (e) {}
     });
-    // Above the navbar, so it is never hidden behind it.
-    var anchor = document.querySelector(".navbar") || document.getElementById("main");
-    if (anchor) anchor.parentNode.insertBefore(note, anchor);
+    // Floats beside the button (fixed), so inserting it never shifts the page.
+    document.body.appendChild(note);
   }
 
   /* ---------- Mobile call bar ---------- */
