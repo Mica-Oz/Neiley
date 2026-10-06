@@ -19,6 +19,12 @@
         // transitions cross-fade instead of showing the loading cover.
         if (intro) d.classList.add("is-intro");
         if (intro || !("onpagereveal" in window)) d.classList.add("is-loading");
+        // Links to a #section (e.g. a team bio) skip the page cross-fade, so
+        // the browser lands on the section directly instead of fading in the
+        // top of the page first and then jumping.
+        addEventListener("pagereveal", function (e) {
+          if (location.hash && e.viewTransition) e.viewTransition.skipTransition();
+        });
         // Never leave the loading screen up if main.js fails to run.
         setTimeout(function () {
           d.classList.remove("is-loading");
@@ -104,7 +110,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="/assets/css/style.css?v=20261005d" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261005e" />
     <!-- Schema Markup for LocalBusiness -->
     <script type="application/ld+json">
     {
@@ -560,6 +566,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/assets/js/main.js?v=20261005d"></script>
+    <script src="/assets/js/main.js?v=20261005e"></script>
   </body>
 </html>
