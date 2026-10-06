@@ -413,6 +413,23 @@
     }
   }
 
+  /* ---------- Mobile menu ---------- */
+
+  // Close the collapsed phone menu once a link in it is chosen (matters for
+  // same-page links like /#about, where the page doesn't reload).
+  function setupMenuClose() {
+    var menu = document.querySelector(".navbar .navbar-collapse");
+    if (!menu) return;
+    menu.addEventListener("click", function (e) {
+      if (!e.target.closest("a") || !menu.classList.contains("show")) return;
+      if (window.bootstrap && bootstrap.Collapse) {
+        bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
+      } else {
+        menu.classList.remove("show");
+      }
+    });
+  }
+
   /* ---------- Mobile call bar ---------- */
 
   var ICON_PHONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>';
@@ -456,6 +473,19 @@
       sessionStorage.setItem("nl-intro", "1");
     } catch (e) {}
     observeLines();
+    // Arriving on a #section (e.g. a team member's bio): show that section in
+    // place instead of fading it in right after the page loads.
+    if (location.hash) {
+      var target = null;
+      try {
+        target = document.querySelector(decodeURIComponent(location.hash));
+      } catch (e) {}
+      if (target) {
+        target.querySelectorAll("[data-aos]").forEach(function (el) {
+          el.removeAttribute("data-aos");
+        });
+      }
+    }
     if (window.AOS) {
       AOS.init({
         once: true,
@@ -504,6 +534,7 @@
   setupIntake();
   setupTools();
   setupQuickExit();
+  setupMenuClose();
   buildCallBar();
   tuckHero();
   updateNav();

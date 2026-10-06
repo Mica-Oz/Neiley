@@ -1637,7 +1637,7 @@ footer img {
 
 /* Softer, shorter rise than the AOS default */
 [data-aos="fade-up"]:not(.aos-animate) {
-  transform: translate3d(0, 28px, 0);
+  transform: translate3d(0, 28px, 0) !important; /* AOS's own 100px wins otherwise */
 }
 
 /* Reduced motion: set from the OS preference or the navbar toggle */
